@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+!
+<head>
+    <meta charset="utf-8">
+    <title>Suits</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+
+
+
+
+
+     <!-- --------- FAVICON ---------- -->
+     <link rel="shortcut icon" href="Img/ICON.png" type="image/x-icon">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/suitsstyle.css" rel="stylesheet">
+</head>
+
+<body  >
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <!-- --------------- HEADER --------------- -->
+      <header class="header">
+        <div class="header__content">
+            <a class="header__logo" href="index.html">
+                <svg width="65" height="39" viewBox="0 0 75 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.2946 33.2629H29.3823L28.4319 31.4414H16.8691L10.1373 46.0929H3.0095L22.8881 1.97994H31.1246L50.924 46.0929H43.4794L28.4319 11.4836L27.3231 14.1763L42.2122 48.3105H54.1711L32.5502 0H21.6209L0 48.3105H11.642L18.2946 33.2629Z" fill="black" fill-opacity="0.8"/>
+                    <path d="M38.1732 1.97994L37.2228 0H75L66.4467 10.4541H44.1922L47.9937 19.1658H69.6938L60.9029 29.0655H50.132L49.5776 27.0855H60.1109L65.5755 20.9873H46.6473L41.1035 8.39493H65.5755L70.7233 1.97994H38.1732Z" fill="black" fill-opacity="0.8"/>
+                    </svg>
+              </a>
+          <ul class="header__menu">
+            <li><a  href="index.html#about">About me</a></li>
+            <li><a href="index.html#portfolio1">Portfolio</a></li>
+            <li><a href="index.html#contact">Contatti</a></li>
+
+          </ul>
+          <div class="header__quick">
+
+            <div class="icon-hamburger">
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <script>
+        let item = document.querySelector('.icon-hamburger');
+        item.addEventListener("click", function() {
+              document.body.classList.toggle('menu-open');
+        });
+      </script>
+
+      <!-- --------------- HEADER --------------- -->
+
+        <!-- --------------- HEADER --------------- -->
+
+        <!-- Navbar & Hero End -->
+
+
+
+
+        <div class="cover img-res pt-5" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('Img/suits.jpg.webp');">
+          <div class="cover__content">
+            <h1 style="font-size: 80px;"> <span style=" color:red; ";> SUITS </span></h1>
+
+          <a href="#Progetto" class="btn btn-primary-gradient mt-4 py-sm-3 px-4 px-sm-5 rounded-pill me-3 animated slideInLeft">Il Progetto</a>
+          </div>
+        </div>
+
+<!--Swipe-->
+<div class="mt-lg-1 container-xxl py-5" id="Progetto">
+    <div class="container py-5 px-lg-5">
+    <div class="text-center wow fadeInUp " data-wow-delay="0.1s">
+        <h5 class="text-primary-gradient fw-medium">Web Design</h5>
+        <h1 class="mb-5">Il Progetto</h1>
+
+        <div id="carouselExampleInterval" class="carousel  carousel-dark slide slide wow fadeInUp" >
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="Img/suitss1.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="Img/suitss2.png" class="d-block w-100" alt="...">
+              </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+</div>
+</div>
+
+
+<!--Swipe-->
+
+
+
+
+
+        <!-- Process Start -->
+        <div class="container-xxl py-5">
+            <div class="container py-5 px-lg-5">
+                <div class="text-center pb-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="text-primary-gradient fw-medium">Front-End Project</h5>
+                    <h1 class="mb-5">Strumenti Utilizzati</h1>
+                </div>
+                <div class="row gy-5 gx-4 justify-content-center">
+                    <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="position-relative bg-light rounded pt-5 pb-4 px-4">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient2 rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
+                                <i class="fa fa-table fa-3x "></i>
+                            </div>
+                            <h5 class="mt-4 mb-3">Figma</h5>
+                            <p class="mb-0">Utilizzo di Figma creando prima il mockup.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="position-relative bg-light rounded pt-5 pb-4 px-4">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient2 rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
+                                <i class="fa fa-cog fa-3x "></i>
+                            </div>
+                            <h5 class="mt-4 mb-3">Html & Css</h5>
+                            <p class="mb-0">Utilizzo di Html & Css per personalizzazione del sito web.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="position-relative bg-light rounded pt-5 pb-4 px-4">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient2 rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
+                                <i class="fa fa-cog fa-3x "></i>
+                            </div>
+                            <h5 class="mt-4 mb-3">JavaScript</h5>
+                            <p class="mb-0">Utilizzo in JavaScript per dare animazioni e dinamicità alla pagina. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Process Start -->
+
+        <div class="container-xxl py-5" id="Prototipo">
+          <div class="container py-5 px-lg-5">
+              <div class="row g-5 align-items-center">
+                  <div class="col-lg-6">
+                      <img class="img-fluid wow fadeInUp" data-wow-delay="0.1s" src="Img/Harvey-removebg.png">
+                  </div>
+                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+
+                      <h1 class="mb-4">Progetto completo</h1>
+
+                      <div class="row g-4">
+                          <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                              <a href="https://github.com/Felix2897/Suits" target="_blank" class="d-flex bg-primary-gradient rounded py-3 px-4">
+                                  <i class="fab fa-github-alt fa-3x text-white flex-shrink-0"></i>
+                                  <div class="ms-3">
+                                      <p class="text-white mb-0">Git-hub</p>
+                                      <h5 class="text-white mb-0">Repository</h5>
+                                  </div>
+                              </a>
+                          </div>
+                          <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
+                              <a href="https://www.figma.com/file/GRk5wHlKaz1NzxYJHgjQm9/Suits?type=design&node-id=0%3A1&mode=design&t=S1dox6djZ9VWA6yG-1" target="_blank" class="d-flex bg-secondary-gradient rounded py-3 px-4">
+                                  <i class="fab fa-figma fa-3x text-white flex-shrink-0"></i>
+                                  <div class="ms-3">
+                                      <p class="text-white mb-0">Prototipo</p>
+                                      <h5 class="text-white mb-0">Figma</h5>
+                                  </div>
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
+<footer>
+    <div class="top-footer">
+        <p>Andrea Feliziani</p>
+    </div>
+    <div class="middle-footer">
+        <ul class="footer-menu">
+            <li class="footer_menu_list">
+                <a href="index.html">Home</a>
+            </li>
+            <li class="footer_menu_list">
+                <a href="index.html#about">About</a>
+            </li>
+            <li class="footer_menu_list">
+                <a href="index.html#portfolio1">Portfolio</a>
+            </li>
+            <li class="footer_menu_list">
+                <a href="index.html#contact">Contatti</a>
+            </li>
+        </ul>
+    </div>
+    <div class="footer-social-icons">
+        <a style="color: black;" href="https://www.instagram.com/andrea_feliziani/" target="_blank"><div class="icon"><i class="fab fa-instagram"></i></div></a>
+        <a style="color: black;" href="https://www.linkedin.com/in/andrea-feliziani/" target="_blank"><div class="icon"><i class="fab fa-linkedin-in"></i></div></a>
+        <a style="color: black;" href="https://github.com/Felix2897" target="_blank"><div class="icon"><i class="fab fa-github"></i></div></a>
+    </div>
+    <div class="bottom-footer">
+        <p>Copyright &copy; <a href="index.html" style="text-decoration: none;">Andrea Feliziani</a> - All rights reserved</p>
+    </div>
+</footer>
+
+
+<!-- Footer -->
+
+
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

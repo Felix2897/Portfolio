@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- --------- FAVICON ---------- -->
+    <link rel="shortcut icon" href="Img/ICON.png" type="image/x-icon">
+
+    <title>Portfolio | Andrea Feliziani</title>
+
+        <!-- Icon Font Stylesheet -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+        <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <!-- --------------- HEADER --------------- -->
+        <header class="header">
+            <div class="header__content">
+                <a class="header__logo" href="index.html">
+                    <svg class="oyt" width="65" height="39" viewBox="0 0 75 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.2946 33.2629H29.3823L28.4319 31.4414H16.8691L10.1373 46.0929H3.0095L22.8881 1.97994H31.1246L50.924 46.0929H43.4794L28.4319 11.4836L27.3231 14.1763L42.2122 48.3105H54.1711L32.5502 0H21.6209L0 48.3105H11.642L18.2946 33.2629Z" fill="rgba(0, 0, 0, 0.8)"/>
+                        <path d="M38.1732 1.97994L37.2228 0H75L66.4467 10.4541H44.1922L47.9937 19.1658H69.6938L60.9029 29.0655H50.132L49.5776 27.0855H60.1109L65.5755 20.9873H46.6473L41.1035 8.39493H65.5755L70.7233 1.97994H38.1732Z" fill="rgba(0, 0, 0, 0.8)"/>
+                    </svg>
+                </a>
+                <ul class="header__menu">
+                    <li><a href="#about">About me</a></li>
+                    <li><a href="#portfolio1">Portfolio</a></li>
+                    <li><a href="#contact">Contatti</a></li>
+                </ul>
+                <div class="header__quick">
+                    <div class="icon-hamburger">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <script>
+            let item = document.querySelector('.icon-hamburger');
+            item.addEventListener("click", function() {
+                document.body.classList.toggle('menu-open');
+            });
+
+
+        </script>
+
+        <!-- -------------- MAIN ---------------- -->
+        <main class="wrapper">
+            <!-- -------------- FEATURED BOX ---------------- -->
+            <div class="featured-box" id="home">
+                <div class="featured-text">
+                    <div class="featured-text-card">
+                        <span>Andrea Feliziani</span>
+                    </div>
+                    <div class="featured-name">
+                        <p>I'm <span class="typedText"></span></p>
+                    </div>
+                    <div class="featured-text-btn">
+                        <a href="#portfolio1" class="btn blue-btn">Portfolio</a>
+                        <a id="downloadLink" class="btn" href="CV.pdf" download>Download CV <i class="uil uil-file-alt"></i></a>
+                    </div>
+                    <div class="social_icons">
+                        <a style="color: black;" href="https://www.instagram.com/andrea_feliziani/" target="_blank"><div class="icon"><i class="fab fa-instagram"></i></div></a>
+                        <a style="color: black;" href="https://www.linkedin.com/in/andrea-feliziani/" target="_blank"><div class="icon"><i class="fab fa-linkedin-in"></i></div></a>
+                        <a style="color: black;" href="https://github.com/Felix2897" target="_blank"><div class="icon"><i class="fab fa-github"></i></div></a>
+                    </div>
+                </div>
+                <div class="featured-image">
+                    <div class="image">
+                        <img src="assets/images/Andrea.jpeg" alt="avatar">
+                    </div>
+                </div>
+            </div>
+
+            <!-- -------------- ABOUT BOX ---------------- -->
+            <section class="section" id="about">
+                <div class="top-header">
+                    <h1>About Me</h1>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="about-info">
+                            <h3>Chi sono</h3>
+                            <p>Sono un UI/UX designer e sviluppatore Front-end con una solida base tecnica acquisita presso l'Istituto Tecnico in Informatica. Ho ulteriormente affinato le mie competenze attraverso la laurea triennale in Design del Prodotto ad Ascoli Piceno, integrando il mio background tecnico con una prospettiva più ampia sulla progettazione.
+                                Il mio percorso accademico è proseguito con la laurea magistrale in Teoria e Tecnologia della Comunicazione presso l'Università degli Studi di Milano-Bicocca dove ho approfondito i principi di comunicazione e ho sviluppato competenze pratiche nel Front-end e nell'UX/UI Design.
+                            </p>
+                            <div class="about-btn">
+                                <a id="downloadLink" class="btn2" href="CV.pdf" download>Download CV <i class="uil uil-file-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="skills-box">
+                            <div class="skills-header">
+                                <h3>UI/UX Designer</h3>
+                            </div>
+                            <div class="skills-list">
+                                <span>Figma</span>
+                                <span>Adobe XD</span>
+                                <span>Photoshop</span>
+                                <span>Illustrator</span>
+                                <span>Indesign</span>
+                                <span>Lightroom</span>
+                            </div>
+                        </div>
+                        <div class="skills-box">
+                            <div class="skills-header">
+                                <h3>Front-end Developer</h3>
+                            </div>
+                            <div class="skills-list">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>Bootstrap</span>
+                                <span>JavaScript</span>
+                                <span>React</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- -------------- PROJECT BOX ---------------- -->
+            <section class="section" id="projects">
+                <div class="top-header">
+                    <h1>Carriera</h1>
+                </div>
+                <div class="project-container">
+                    <div class="project-box">
+                        <i class="uil uil-university"></i>
+                        <h3>Diploma</h3>
+                        <p>ITIS San Severino Marche </p>
+                        <label class="teoria">Perito informatico</label>
+                    </div>
+                    <div class="project-box">
+                        <i class="uil uil-university"></i>
+                        <h3>Laurea Triennale</h3>
+                        <p>Unicam Camerino </p>
+                        <label class="teoria">Disegno Industriale e Ambientale</label>
+                    </div>
+                    <div class="project-box">
+                        <i class="uil uil-university"></i>
+                        <h3>Laurea Magistrale</h3>
+                        <p>Università Milano Bicocca </p>
+                        <label class="teoria">Teoria e Tecnologia della comunicazione</label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- --------------- Portfolio --------------- -->
+            <section class="section" id="portfolio1">
+                <div class="top-header">
+                    <h1>Portfolio</h1>
+                </div>
+                <div class="container3">
+                    <div class="card" style="--clr: #009688">
+                        <div class="img-box">
+                            <img src="Img/heroimg.png" alt="Dream Travels">
+                        </div>
+                        <div class="content">
+                            <h2><span style="color: #8F12FD;">Dream Travels</span></h2>
+                            <p>Web Design</p>
+                            <a style="background-color:  #8F12FD;" href="Serenity.html">Read More</a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--clr: #009688">
+                        <div class="img-box">
+                            <img src="Img/opmobile.png" alt="Oplà">
+                        </div>
+                        <div class="content">
+                            <h2><span style="color: #708D81;">Oplà</span></h2>
+                            <p>UI/UX Design</p>
+                            <a style="background-color:  #708D81;" href="Oplà.html">Read More</a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--clr: #03A9F4">
+                        <div class="img-box">
+                            <img src="Img/minilogo.png" alt="Secure it with Cyber">
+                        </div>
+                        <div class="content">
+                            <h2 style="color: #2bb5e0;">Secure it with Cyber</h2>
+                            <p>Front-End Project</p>
+                            <a style="background-color: #262B47;" href="Secure It witch Cyber.html">Read More</a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--clr: #009688">
+                        <div class="img-box">
+                            <img src="Img/Group 2.png" alt="Study Ward">
+                        </div>
+                        <div class="content">
+                            <h2><span style="color: #FF9B52;">Study</span> <span style="color: #3D5CFF;">Ward</span></h2>
+                            <p>UI/UX Design</p>
+                            <a style="background-color:  #FF9B52;" href="Study.html">Read More</a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--clr: #483c32">
+                        <div class="img-box">
+                            <img src="Img/vr.png" alt="Valeri">
+                        </div>
+                        <div class="content">
+                            <h2 style="color:#483c32;">Valeri</h2>
+                            <p>UI/UX Design</p>
+                            <a href="VR2.html">Read More</a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--clr: #CC0000">
+                        <div class="img-box">
+                            <img src="Img/mike.png" alt="Suits">
+                        </div>
+                        <div class="content">
+                            <h2 style="color: red;">Suits</h2>
+                            <p>Front-End Project</p>
+                            <a style="background-color: #CC0000;" href="Suits.html">Read More</a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--clr: #03A9F4">
+                        <div class="img-box">
+                            <img src="Img/smart-table.png" alt="Smart Table">
+                        </div>
+                        <div class="content">
+                            <h2 style="color: #262B47;">Smart Table</h2>
+                            <p>UI/UX Design</p>
+                            <a style="background-color: #FF9B52;" href="Smart-Table.html">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- -------------- CONTACT BOX ---------------- -->
+            <section class="section" id="contact">
+                <div class="top-header">
+                    <h1>Restiamo in contatto</h1>
+                    <span>Per qualsiasi proposta contattami qui</span>
+                </div>
+                <div class="row">
+                    <div class="col2">
+                        <div class="contact-info">
+                            <h2>Dove trovarmi <i class="uil uil-corner-right-down"></i></h2>
+                            <p><i class="uil uil-envelope"></i> <span class="cell">Email:</span>andrea.feliziani97@gmail.com</p>
+                            <p><i class="uil uil-phone"></i> <span class="cell">Tel:</span>3396443800</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- --------------- FOOTER --------------- -->
+        <footer>
+            <div class="top-footer">
+                <p>Andrea Feliziani</p>
+            </div>
+            <div class="middle-footer">
+                <ul class="footer-menu">
+                    <li class="footer_menu_list"><a href="#home">Home</a></li>
+                    <li class="footer_menu_list"><a href="#about">About</a></li>
+                    <li class="footer_menu_list"><a href="#portfolio1">Portfolio</a></li>
+                    <li class="footer_menu_list"><a href="#contact">Contatti</a></li>
+                </ul>
+            </div>
+            <div class="footer-social-icons">
+                <a style="color: black;" href="https://www.instagram.com/andrea_feliziani/" target="_blank"><div class="icon"><i class="fab fa-instagram"></i></div></a>
+                <a style="color: black;" href="https://www.linkedin.com/in/andrea-feliziani/" target="_blank"><div class="icon"><i class="fab fa-linkedin-in"></i></div></a>
+                <a style="color: black;" href="https://github.com/Felix2897" target="_blank"><div class="icon"><i class="fab fa-github"></i></div></a>
+            </div>
+            <div class="bottom-footer">
+                <p>Copyright &copy; <a href="index.html" style="text-decoration: none;">Andrea Feliziani</a> - All rights reserved</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ----- TYPING JS Link ----- -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <!-- ----- SCROLL REVEAL JS Link ----- -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- ----- MAIN JS ----- -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
