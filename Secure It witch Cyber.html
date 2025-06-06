@@ -17,7 +17,7 @@
     <!-- Fallback PNG per browser che non supportano SVG favicon -->
     <link
       rel="shortcut icon"
-      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAANCSURBVFiFtZdNaBNBFMd/k2ySbNJsm9Sm1tYPPKiFgngQD4IXwYMePHjw4MGDBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0+AAAAABJRU5ErkJggg=="
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAANCSURBVFiFtZdNaBNBFMd/k2ySbNJsm9Sm1tYPPKiFgngQD4IXwYMePHjw4MGDBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0+AAAAABJRU5ErkJggg=="
     />
     <!-- Font Awesome -->
     <link
@@ -270,7 +270,87 @@
         </div>
 
         <div class="project-gallery">
-          <div class="glass-card gallery-container">
+          <!-- Carousel per Desktop -->
+          <div class="glass-card gallery-container d-none d-md-block">
+            <div
+              id="projectCarousel"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="Img/SECUREITS1.png"
+                    class="d-block w-100 carousel-image"
+                    alt="Secure It Screenshot 1"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="Img/SECUREITS2.png"
+                    class="d-block w-100 carousel-image"
+                    alt="Secure It Screenshot 2"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="Img/SECUREITS3.png"
+                    class="d-block w-100 carousel-image"
+                    alt="Secure It Screenshot 3"
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#projectCarousel"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#projectCarousel"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#projectCarousel"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#projectCarousel"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#projectCarousel"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Galleria Verticale per Mobile -->
+          <div class="glass-card gallery-container d-md-none">
             <div class="vertical-gallery">
               <div class="gallery-item">
                 <img

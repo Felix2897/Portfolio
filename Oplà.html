@@ -17,7 +17,7 @@
     <!-- Fallback PNG per browser che non supportano SVG favicon -->
     <link
       rel="shortcut icon"
-      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAANCSURBVFiFtZdNaBNBFMd/k2ySbNJsm9Sm1tYPPKiFgngQD4IXwYMePHjw4MGDBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0+AAAAABJRU5ErkJggg=="
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAANCSURBVFiFtZdNaBNBFMd/k2ySbNJsm9Sm1tYPPKiFgngQD4IXwYMePHjw4MGDBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0+AAAAABJRU5ErkJggg=="
     />
     <!-- Font Awesome -->
     <link
@@ -310,28 +310,128 @@
         </div>
 
         <div class="project-gallery">
-          <div class="gallery-container">
-            <div class="gallery-main">
-              <img
-                id="main-image"
-                src="Img/1OP.png"
-                alt="Oplà Project"
-                class="img-fluid"
-              />
+          <!-- Carousel per Desktop -->
+          <div class="glass-card gallery-container d-none d-md-block">
+            <div
+              id="projectCarousel"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="Img/1OP.png"
+                    class="d-block w-100 carousel-image"
+                    alt="Oplà Screenshot 1"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="Img/30P.png"
+                    class="d-block w-100 carousel-image"
+                    alt="Oplà Screenshot 2"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="Img/4OP.png"
+                    class="d-block w-100 carousel-image"
+                    alt="Oplà Screenshot 3"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="Img/5OP.png"
+                    class="d-block w-100 carousel-image"
+                    alt="Oplà Screenshot 4"
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#projectCarousel"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#projectCarousel"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#projectCarousel"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#projectCarousel"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#projectCarousel"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#projectCarousel"
+                  data-bs-slide-to="3"
+                  aria-label="Slide 4"
+                ></button>
+              </div>
             </div>
-            <div class="gallery-thumbnails">
-              <div class="thumbnail active" data-image="Img/1OP.png">
-                <img src="Img/1OP.png" alt="Screen 1" class="img-fluid" />
-              </div>
+          </div>
 
-              <div class="thumbnail" data-image="Img/30P.png">
-                <img src="Img/30P.png" alt="Screen 3" class="img-fluid" />
+          <!-- Galleria Verticale per Mobile -->
+          <div class="glass-card gallery-container d-md-none">
+            <div class="vertical-gallery">
+              <div class="gallery-item">
+                <img
+                  src="Img/1OP.png"
+                  class="img-fluid gallery-image"
+                  alt="Oplà Screenshot 1"
+                />
               </div>
-              <div class="thumbnail" data-image="Img/4OP.png">
-                <img src="Img/4OP.png" alt="Screen 4" class="img-fluid" />
+              <div class="gallery-item">
+                <img
+                  src="Img/30P.png"
+                  class="img-fluid gallery-image"
+                  alt="Oplà Screenshot 2"
+                />
               </div>
-              <div class="thumbnail" data-image="Img/5OP.png">
-                <img src="Img/5OP.png" alt="Screen 5" class="img-fluid" />
+              <div class="gallery-item">
+                <img
+                  src="Img/4OP.png"
+                  class="img-fluid gallery-image"
+                  alt="Oplà Screenshot 3"
+                />
+              </div>
+              <div class="gallery-item">
+                <img
+                  src="Img/5OP.png"
+                  class="img-fluid gallery-image"
+                  alt="Oplà Screenshot 4"
+                />
               </div>
             </div>
           </div>
@@ -461,7 +561,7 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-    <script src="script.js"></script>
+
     <script src="js/opla-script.js"></script>
   </body>
 </html>

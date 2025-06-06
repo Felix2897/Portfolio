@@ -1785,3 +1785,157 @@ img {
   -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.1) inset !important;
   transition: background-color 5000s ease-in-out 0s;
 }
+
+/* Oplà Project Specific Styles - Showcase Section */
+
+/* Project Gallery */
+.project-gallery {
+  margin-top: 2rem;
+}
+
+.gallery-container {
+  padding: 2rem;
+  border-radius: 1.5rem;
+}
+
+/* Vertical Gallery - Slide una sotto l'altra per mobile */
+.vertical-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.gallery-item {
+  width: 100%;
+  text-align: center;
+}
+
+.gallery-image {
+  border-radius: 1rem;
+  max-height: 600px;
+  object-fit: contain;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: translateY(-5px);
+}
+
+/* Carousel Image per desktop */
+.carousel-image {
+  border-radius: 1rem;
+  max-height: 600px;
+  object-fit: contain;
+  width: 100%;
+}
+
+/* Custom Carousel Controls */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+  height: 50px;
+  background: rgba(21, 21, 37, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.carousel-control-prev {
+  left: -25px;
+}
+
+.carousel-control-next {
+  right: -25px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+  background: rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 20px;
+  height: 20px;
+  background-size: 20px 20px;
+}
+
+/* Custom Carousel Indicators */
+.carousel-indicators {
+  bottom: -50px;
+}
+
+.carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators button.active {
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+}
+
+/* Badge Custom for this page */
+.badge-custom {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  background: linear-gradient(
+    90deg,
+    rgba(99, 102, 241, 0.1),
+    rgba(236, 72, 153, 0.1)
+  );
+  color: var(--color-primary);
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+  .gallery-image {
+    max-height: 400px;
+  }
+
+  .vertical-gallery {
+    gap: 1.5rem;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .gallery-container {
+    padding: 1.5rem;
+  }
+
+  .gallery-image {
+    max-height: 300px;
+  }
+
+  .vertical-gallery {
+    gap: 1.5rem;
+  }
+}
