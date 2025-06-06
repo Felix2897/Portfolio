@@ -1,304 +1,608 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valeri Franco - Andrea Feliziani | Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzUiIGhlaWdodD0iNDkiIHZpZXdCb3g9IjAgMCA3NSA0OSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZmF2aWNvbi1ncmFkaWVudCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNjM2NmYxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlYzQ4OTkiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cGF0aCBkPSJNMTguMjk0NiAzMy4yNjI5SDI5LjM4MjNMMjguNDMxOSAzMS40NDE0SDE2Ljg2OTFMMTAuMTM3MyA0Ni4wOTI5SDMuMDA5NUwyMi44ODgxIDEuOTc5OTRIMzEuMTI0Nkw1MC45MjQgNDYuMDkyOUg0My40Nzk0TDI4LjQzMTkgMTEuNDgzNkwyNy4zMjMxIDE0LjE3NjNMNDIuMjEyMiA0OC4zMTA1SDU0LjE3MTFMMzIuNTUwMiAwSDIxLjYyMDlMMCA0OC4zMTA1SDExLjY0MkwxOC4yOTQ2IDMzLjI2MjlaIiBmaWxsPSJ1cmwoI2Zhdmljb24tZ3JhZGllbnQpIiAvPgogIDxwYXRoIGQ9Ik0zOC4xNzMyIDEuOTc5OTRMMzcuMjIyOCAwSDc1TDY2LjQ0NjcgMTAuNDU0MUg0NC4xOTIyTDQ3Ljk5MzcgMTkuMTY1OEg2OS42OTM4TDYwLjkwMjkgMjkuMDY1NUg1MC4xMzJMNDkuNTc3NiAyNy4wODU1SDYwLjExMDlMNjUuNTc1NSAyMC45ODczSDQ2LjY0NzNMNDEuMTAzNSA4LjM5NDkzSDY1LjU3NTVMNTB5LjcyMzMgMS45Nzk5NEgzOC4xNzMyWiIgZmlsbD0idXJsKCNmYXZpY29uLWdyYWRpZW50KSIgLz4KPC9zdmc+"
+    />
+    <!-- Fallback PNG per browser che non supportano SVG favicon -->
+    <link
+      rel="shortcut icon"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAANCSURBVFiFtZdNaBNBFMd/k2ySbNJsm9Sm1tYPPKiFgngQD4IXwYMePHjw4MGDBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0+AAAAABJRU5ErkJggg=="
+    />
 
-<head>
-    <meta charset="utf-8">
-    <title>Valeri Franco</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Orbitron:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/valeri-style.css" />
+  </head>
+  <body>
+    <!-- SVG Definitions -->
+    <svg
+      class="svg-defs"
+      width="0"
+      height="0"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient id="logo-gradient-1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#6366f1" />
+          <stop offset="100%" stop-color="#ec4899" />
+        </linearGradient>
+        <linearGradient id="logo-gradient-2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#ec4899" />
+          <stop offset="100%" stop-color="#6366f1" />
+        </linearGradient>
+        <linearGradient
+          id="valeri-gradient-1"
+          x1="0%"
+          y1="0%"
+          x2="100%"
+          y2="0%"
+        >
+          <stop offset="0%" stop-color="#4294E3" />
+          <stop offset="100%" stop-color="#8F12FD" />
+        </linearGradient>
+      </defs>
+    </svg>
 
+    <!-- Particles Background -->
+    <div id="particles-js" class="particles-container"></div>
 
-
-
-<!-- --------- FAVICON ---------- -->
-<link rel="shortcut icon" href="Img/ICON.png" type="image/x-icon">
-
-<!-- Favicon -->
-<link href="img/favicon.ico" rel="icon">
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/VR.css" rel="stylesheet">
-</head>
-
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
-    <div class="container p-0">
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
+    <!-- Loader -->
+    <div class="loader">
+      <div class="loader-content">
+        <div class="loader-logo">
+          <svg
+            class="logo-svg"
+            width="65"
+            height="39"
+            viewBox="0 0 75 49"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="logo-path-1"
+              d="M18.2946 33.2629H29.3823L28.4319 31.4414H16.8691L10.1373 46.0929H3.0095L22.8881 1.97994H31.1246L50.924 46.0929H43.4794L28.4319 11.4836L27.3231 14.1763L42.2122 48.3105H54.1711L32.5502 0H21.6209L0 48.3105H11.642L18.2946 33.2629Z"
+            />
+            <path
+              class="logo-path-2"
+              d="M38.1732 1.97994L37.2228 0H75L66.4467 10.4541H44.1922L47.9937 19.1658H69.6938L60.9029 29.0655H50.132L49.5776 27.0855H60.1109L65.5755 20.9873H46.6473L41.1035 8.39493H65.5755L70.7233 1.97994H38.1732Z"
+            />
+          </svg>
         </div>
-        <!-- Spinner End -->
+        <div class="loader-bar-container">
+          <div class="loader-bar"></div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Header -->
+    <header class="header fixed-top">
+      <div class="container">
+        <div class="header-inner">
+          <a href="index.html" class="logo">
+            <svg
+              class="logo-svg"
+              width="65"
+              height="39"
+              viewBox="0 0 75 49"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="logo-path-1"
+                d="M18.2946 33.2629H29.3823L28.4319 31.4414H16.8691L10.1373 46.0929H3.0095L22.8881 1.97994H31.1246L50.924 46.0929H43.4794L28.4319 11.4836L27.3231 14.1763L42.2122 48.3105H54.1711L32.5502 0H21.6209L0 48.3105H11.642L18.2946 33.2629Z"
+              />
+              <path
+                class="logo-path-2"
+                d="M38.1732 1.97994L37.2228 0H75L66.4467 10.4541H44.1922L47.9937 19.1658H69.6938L60.9029 29.0655H50.132L49.5776 27.0855H60.1109L65.5755 20.9873H46.6473L41.1035 8.39493H65.5755L70.7233 1.97994H38.1732Z"
+              />
+            </svg>
+          </a>
 
-        <!-- Navbar & Hero Start -->
-        <!-- --------------- HEADER --------------- -->
-      <header class="header">
-        <div class="header__content">
-            <a class="header__logo" href="index.html">
-                <svg width="65" height="39" viewBox="0 0 75 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18.2946 33.2629H29.3823L28.4319 31.4414H16.8691L10.1373 46.0929H3.0095L22.8881 1.97994H31.1246L50.924 46.0929H43.4794L28.4319 11.4836L27.3231 14.1763L42.2122 48.3105H54.1711L32.5502 0H21.6209L0 48.3105H11.642L18.2946 33.2629Z" fill="black" fill-opacity="0.8"/>
-                    <path d="M38.1732 1.97994L37.2228 0H75L66.4467 10.4541H44.1922L47.9937 19.1658H69.6938L60.9029 29.0655H50.132L49.5776 27.0855H60.1109L65.5755 20.9873H46.6473L41.1035 8.39493H65.5755L70.7233 1.97994H38.1732Z" fill="black" fill-opacity="0.8"/>
-                    </svg>
-              </a>
-          <ul class="header__menu">
-            <li><a  href="index.html#about">About me</a></li>
-            <li><a href="index.html#portfolio1">Portfolio</a></li>
-            <li><a href="index.html#contact">Contatti</a></li>
+          <nav class="main-nav d-none d-md-block">
+            <ul class="nav-list">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="index.html#about" class="nav-link">Chi sono</a></li>
+              <li>
+                <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+              </li>
+              <li>
+                <a href="index.html#contact" class="nav-link">Contatti</a>
+              </li>
+            </ul>
+          </nav>
 
+          <div class="menu-toggle d-md-none">
+            <div class="menu-toggle-bars"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <div class="container h-100">
+        <div class="mobile-menu-header">
+          <div class="logo">
+            <svg
+              class="logo-svg"
+              width="65"
+              height="39"
+              viewBox="0 0 75 49"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="logo-path-1"
+                d="M18.2946 33.2629H29.3823L28.4319 31.4414H16.8691L10.1373 46.0929H3.0095L22.8881 1.97994H31.1246L50.924 46.0929H43.4794L28.4319 11.4836L27.3231 14.1763L42.2122 48.3105H54.1711L32.5502 0H21.6209L0 48.3105H11.642L18.2946 33.2629Z"
+              />
+              <path
+                class="logo-path-2"
+                d="M38.1732 1.97994L37.2228 0H75L66.4467 10.4541H44.1922L47.9937 19.1658H69.6938L60.9029 29.0655H50.132L49.5776 27.0855H60.1109L65.5755 20.9873H46.6473L41.1035 8.39493H65.5755L70.7233 1.97994H38.1732Z"
+              />
+            </svg>
+          </div>
+          <button class="close-menu">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <nav class="mobile-nav">
+          <ul class="mobile-nav-list">
+            <li><a href="index.html" class="mobile-link">Home</a></li>
+            <li><a href="index.html#about" class="mobile-link">Chi sono</a></li>
+            <li>
+              <a href="index.html#portfolio" class="mobile-link">Portfolio</a>
+            </li>
+            <li>
+              <a href="index.html#contact" class="mobile-link">Contatti</a>
+            </li>
           </ul>
-          <div class="header__quick">
+        </nav>
 
-            <div class="icon-hamburger">
-              <span></span>
-              <span></span>
+        <div class="mobile-social">
+          <a
+            href="https://www.linkedin.com/in/andrea-feliziani/"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a
+            href="https://github.com/Felix2897"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/andrea_feliziani/"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <section class="project-hero">
+      <div class="hero-background">
+        <div class="hero-gradient"></div>
+        <div class="hero-shape hero-shape-1"></div>
+        <div class="hero-shape hero-shape-2"></div>
+      </div>
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Colonna di testo (sinistra) -->
+          <div class="col-lg-12 text-center">
+            <div class="hero-content">
+              <span class="portfolio-category mb-3">UI/UX Design</span>
+              <h1 class="hero-title">
+                Valeri
+                <span class="gradient-text">Franco</span>
+              </h1>
+              <p class="hero-description">
+                Progetto completo di identità visiva, sito web e app mobile per
+                l'azienda Valeri Franco. Un design moderno e funzionale per
+                un'esperienza utente ottimale.
+              </p>
+              <div class="hero-buttons">
+                <a href="#progetto" class="btn btn-primary">
+                  <span>Il Progetto</span>
+                  <i class="fas fa-arrow-down"></i>
+                </a>
+                <a href="#prototipo" class="btn btn-outline">
+                  <span>Prototipo</span>
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Colonna immagine (destra) -->
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator d-none d-md-flex">
+        <div class="scroll-mouse">
+          <div class="scroll-dot"></div>
+        </div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- Project Gallery Section -->
+    <section id="progetto" class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="badge-custom">Showcase</div>
+          <h2 class="section-title">Il Progetto</h2>
+        </div>
+
+        <div class="project-gallery">
+          <!-- Carousel per Desktop -->
+          <div class="glass-card gallery-container d-none d-md-block">
+            <div
+              id="projectCarousel"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="Img/svr1.png"
+                    class="d-block w-100 carousel-image"
+                    alt="Valeri Franco Screenshot 1"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="Img/svr2.png"
+                    class="d-block w-100 carousel-image"
+                    alt="Valeri Franco Screenshot 2"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="Img/svr3.png"
+                    class="d-block w-100 carousel-image"
+                    alt="Valeri Franco Screenshot 3"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="Img/svr4.png"
+                    class="d-block w-100 carousel-image"
+                    alt="Valeri Franco Screenshot 4"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="Img/svr5.png"
+                    class="d-block w-100 carousel-image"
+                    alt="Valeri Franco Screenshot 5"
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#projectCarousel"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#projectCarousel"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#projectCarousel"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#projectCarousel"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#projectCarousel"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#projectCarousel"
+                  data-bs-slide-to="3"
+                  aria-label="Slide 4"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#projectCarousel"
+                  data-bs-slide-to="4"
+                  aria-label="Slide 5"
+                ></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Galleria Verticale per Mobile -->
+          <div class="glass-card gallery-container d-md-none">
+            <div class="vertical-gallery">
+              <div class="gallery-item">
+                <img
+                  src="Img/svr1.png"
+                  class="img-fluid gallery-image"
+                  alt="Valeri Franco Screenshot 1"
+                />
+              </div>
+              <div class="gallery-item">
+                <img
+                  src="Img/svr2.png"
+                  class="img-fluid gallery-image"
+                  alt="Valeri Franco Screenshot 2"
+                />
+              </div>
+              <div class="gallery-item">
+                <img
+                  src="Img/svr3.png"
+                  class="img-fluid gallery-image"
+                  alt="Valeri Franco Screenshot 3"
+                />
+              </div>
+              <div class="gallery-item">
+                <img
+                  src="Img/svr4.png"
+                  class="img-fluid gallery-image"
+                  alt="Valeri Franco Screenshot 4"
+                />
+              </div>
+              <div class="gallery-item">
+                <img
+                  src="Img/svr5.png"
+                  class="img-fluid gallery-image"
+                  alt="Valeri Franco Screenshot 5"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </header>
-      <script>
-        let item = document.querySelector('.icon-hamburger');
-        item.addEventListener("click", function() {
-              document.body.classList.toggle('menu-open');
-        });
-      </script>
+      </div>
+    </section>
 
-      <!-- --------------- HEADER --------------- -->
+    <!-- Features Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="badge-custom">How It Works</div>
+          <h2 class="section-title">Il Lavoro</h2>
+        </div>
 
-        <!-- --------------- HEADER --------------- -->
-
-<div class="container hero-header">
-                <div class="container px-lg-5">
-                    <div class="row ">
-                        <div class="col-lg-12 text-center text-lg-center">
-
-                            <img class="img-fluid img-res vr pb-5" src="Img/io+.png" alt="o">
-
-
-                        </div>
-
-                    </div>
-                </div>
-                <div class="container px-lg-5">
-                    <div class="row ">
-                        <div class="col-lg-12 text-center text-lg-center">
-
-
-
-                            <a href="#Progetto" class="btn btn-primary-gradient py-sm-3 px-4 px-sm-5 rounded-pill me-3 animated slideInLeft">Il progetto</a>
-                            <a href="#Prototipo" class="btn btn-secondary-gradient py-sm-3 px-4 px-sm-5 rounded-pill animated slideInRight">Prototipo</a>
-                        </div>
-
-                    </div>
-                </div>
-
-
-
-        <!-- Navbar & Hero End -->
-
-<div class="spacer"></div>
-
-<!--Swipe-->
-<div class="  mt-lg-n5 container-xxl py-1" id="Progetto">
-    <div class="container py-5 px-lg-5">
-    <div class="text-center wow fadeInUp " data-wow-delay="0.1s">
-        <h5 class="text-primary-gradient fw-medium">UI/UX Design</h5>
-        <h1 class="mb-5">Il Progetto</h1>
-
-        <div id="carouselExampleInterval" class="carousel  carousel-dark slide slide wow fadeInUp" >
-            <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="10000">
-                <img src="Img/svr1.png" class="d-block w-100" alt="...">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="glass-card tool-card text-center">
+              <div class="tool-icon">
+                <i class="fas fa-cog"></i>
               </div>
-              <div class="carousel-item" data-bs-interval="2000">
-                <img src="Img/svr2.png" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item" data-bs-interval="2000">
-                <img src="Img/svr3.png" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item" data-bs-interval="2000">
-                <img src="Img/svr4.png" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item" data-bs-interval="2000">
-                <img src="Img/svr5.png" class="d-block w-100" alt="...">
-              </div>
+              <h3 class="tool-title">Identità Visiva</h3>
+              <p class="tool-description">
+                Creazione di un'identità visiva completa per il negozio,
+                sviluppando un brand riconoscibile e coerente.
+              </p>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="glass-card tool-card text-center">
+              <div class="tool-icon tool-icon-secondary">
+                <i class="fas fa-sitemap"></i>
+              </div>
+              <h3 class="tool-title">Sito Web</h3>
+              <p class="tool-description">
+                Sviluppo di un sito web moderno e responsive per l'azienda,
+                ottimizzato per tutti i dispositivi.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="glass-card tool-card text-center">
+              <div class="tool-icon tool-icon-accent">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h3 class="tool-title">App Mobile</h3>
+              <p class="tool-description">
+                Progettazione di un'applicazione mobile intuitiva per migliorare
+                l'esperienza utente dell'azienda.
+              </p>
+            </div>
           </div>
         </div>
-</div>
+      </div>
+    </section>
 
-
-
-<!--Swipe-->
-
-
-
-
-
-        <!-- Process Start -->
-        <div class="container-xxl py-5">
-            <div class="container py-5 px-lg-5">
-                <div class="text-center pb-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <h5 class="text-primary-gradient fw-medium">How It Works</h5>
-                    <h1 class="mb-5">Il lavoro</h1>
-                </div>
-                <div class="row gy-5 gx-4 justify-content-center">
-                    <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="position-relative bg-light rounded pt-5 pb-4 px-4">
-                            <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
-                                <i class="fa fa-cog fa-3x text-white"></i>
-                            </div>
-                            <h5 class="mt-4 mb-3">Identità Visiva</h5>
-                            <p class="mb-0">Creazione di un identità visiva al negozio. </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="position-relative bg-light rounded pt-5 pb-4 px-4">
-                            <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
-                                <i class="fa fa-sitemap fa-3x text-white"></i>
-                            </div>
-                            <h5 class="mt-4 mb-3">Sito Web</h5>
-                            <p class="mb-0">Creazione di un sito web per l'azienda.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="position-relative bg-light rounded pt-5 pb-4 px-4">
-                            <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
-                                <i class="fa fa-mobile-alt  fa-3x text-white "></i>
-                            </div>
-                            <h5 class="mt-4 mb-3">App Mobile</h5>
-                            <p class="mb-0">Creazione di un App mobile per l'azienda.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Project Resources Section -->
+    <section id="prototipo" class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="badge-custom">Risorse</div>
+          <h2 class="section-title">Il Prototipo Completo</h2>
         </div>
 
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="hero-image-wrapper text-center">
+              <img
+                src="Img/iow.png"
+                alt="Valeri Franco Prototipo"
+                class="project-main-image"
+              />
+            </div>
+          </div>
 
+          <div class="col-lg-6">
+            <div class="glass-card resources-glass-card">
+              <div class="resources-content">
+                <h3 class="mb-4">Esplora tutti i dettagli</h3>
+                <p class="mb-4">
+                  Accedi alla documentazione completa del progetto e visita il
+                  prototipo Figma per esplorare tutte le funzionalità
+                  implementate.
+                </p>
 
-        <!-- Process Start -->
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <a
+                      href="Valeri .pdf"
+                      target="_blank"
+                      class="btn btn-primary w-100 d-flex align-items-center justify-content-center"
+                    >
+                      <i class="fab fa-google-drive me-2"></i>
+                      <div class="text-start">
+                        <div class="small">Sviluppo</div>
+                        <div class="fw-bold">Progettuale</div>
+                      </div>
+                    </a>
+                  </div>
 
-
-        <!-- Download Start -->
-        <div class="container-xxl py-5" id="Prototipo">
-            <div class="container py-5 px-lg-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6">
-                        <img class="img-fluid wow fadeInUp" data-wow-delay="0.1s" src="Img/iow.png">
-                    </div>
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <h1 class="mb-4">Il prototipo completo</h1>
-
-                        <div class="row g-4">
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
-                                <a href="Valeri .pdf" target="_blank" class="d-flex bg-secondary-gradient rounded py-3 px-4">
-                                    <i class="fab fa-google-drive fa-3x text-white flex-shrink-0"></i>
-                                    <div class="ms-3">
-                                        <p class="text-white mb-0">Sviluppo</p>
-                                        <h5 class="text-white mb-0">Progettuale</h5>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
-                                <a href="https://www.figma.com/file/wxAN9iNlGolXL7xUNAe4FX/Valeri-Franco?type=design&node-id=0%3A1&mode=design&t=q35NCnlraJMfvRPX-1" target="_blank" class="d-flex bg-secondary-gradient rounded py-3 px-4">
-                                    <i class="fab fa-figma fa-3x text-white flex-shrink-0"></i>
-                                    <div class="ms-3">
-                                        <p class="text-white mb-0">Prototipo</p>
-                                        <h5 class="text-white mb-0">Figma</h5>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                  <div class="col-sm-6">
+                    <a
+                      href="https://www.figma.com/file/wxAN9iNlGolXL7xUNAe4FX/Valeri-Franco?type=design&node-id=0%3A1&mode=design&t=q35NCnlraJMfvRPX-1"
+                      target="_blank"
+                      class="btn btn-outline w-100 d-flex align-items-center justify-content-center"
+                    >
+                      <i class="fab fa-figma me-2"></i>
+                      <div class="text-start">
+                        <div class="small">Prototipo</div>
+                        <div class="fw-bold">Figma</div>
+                      </div>
+                    </a>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-        <!-- Download End -->
+      </div>
+    </section>
 
-
-
-
-
-
-
-
-
-        <!-- Footer Start -->
-        <footer>
-            <div class="top-footer">
-                <p>Andrea Feliziani</p>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <div class="logo">
+              <svg
+                class="logo-svg"
+                width="65"
+                height="39"
+                viewBox="0 0 75 49"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="logo-path-1"
+                  d="M18.2946 33.2629H29.3823L28.4319 31.4414H16.8691L10.1373 46.0929H3.0095L22.8881 1.97994H31.1246L50.924 46.0929H43.4794L28.4319 11.4836L27.3231 14.1763L42.2122 48.3105H54.1711L32.5502 0H21.6209L0 48.3105H11.642L18.2946 33.2629Z"
+                />
+                <path
+                  class="logo-path-2"
+                  d="M38.1732 1.97994L37.2228 0H75L66.4467 10.4541H44.1922L47.9937 19.1658H69.6938L60.9029 29.0655H50.132L49.5776 27.0855H60.1109L65.5755 20.9873H46.6473L41.1035 8.39493H65.5755L70.7233 1.97994H38.1732Z"
+                />
+              </svg>
             </div>
-            <div class="middle-footer">
-                <ul class="footer-menu">
-                    <li class="footer_menu_list">
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li class="footer_menu_list">
-                        <a href="index.html#about">About</a>
-                    </li>
-                    <li class="footer_menu_list">
-                        <a href="index.html#portfolio1">Portfolio</a>
-                    </li>
-                    <li class="footer_menu_list">
-                        <a href="index.html#contact">Contatti</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer-social-icons">
-                <a style="color: black;" href="https://www.instagram.com/andrea_feliziani/" target="_blank"><div class="icon"><i class="fab fa-instagram"></i></div></a>
-                <a style="color: black;" href="https://www.linkedin.com/in/andrea-feliziani/" target="_blank"><div class="icon"><i class="fab fa-linkedin-in"></i></div></a>
-                <a style="color: black;" href="https://github.com/Felix2897" target="_blank"><div class="icon"><i class="fab fa-github"></i></div></a>
-            </div>
-            <div class="bottom-footer">
-                <p>Copyright &copy; <a href="index.html" style="text-decoration: none;">Andrea Feliziani</a> - All rights reserved</p>
-            </div>
-        </footer>
+            <p class="footer-name">Andrea Feliziani</p>
+          </div>
 
-        <!-- Footer End -->
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">Chi sono</a>
+            <a href="index.html#portfolio">Portfolio</a>
+            <a href="index.html#contact">Contatti</a>
+          </div>
 
+          <div class="footer-social">
+            <a
+              href="https://www.linkedin.com/in/andrea-feliziani/"
+              target="_blank"
+              class="social-icon"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a
+              href="https://github.com/Felix2897"
+              target="_blank"
+              class="social-icon"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/andrea_feliziani/"
+              target="_blank"
+              class="social-icon"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
 
+        <div class="footer-copyright">
+          <p>&copy; 2025 Andrea Feliziani. Tutti i diritti riservati.</p>
+        </div>
+      </div>
+    </footer>
 
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-</body>
-
+    <script src="js/valeri-script.js"></script>
+  </body>
 </html>

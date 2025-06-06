@@ -1,14 +1,13 @@
-/* Secure It with Cyber Project Specific Styles */
+/* Botanicare Project Specific Styles */
 
 /* Project Hero Section - Bootstrap Grid Approach */
-
 .project-hero {
   min-height: 100vh;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
-  padding-top: 100px;
+
   padding-bottom: 60px;
 }
 
@@ -34,6 +33,50 @@
   width: auto;
   max-width: 100%;
   object-fit: contain;
+  display: none;
+}
+
+.project-main-image.active {
+  display: block;
+}
+
+/* Carousel container per le immagini nella hero */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.carousel-images {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: linear-gradient(90deg, #64b68a, #9bd46a);
+  width: 12px;
+  height: 12px;
+  box-shadow: 0 0 10px rgba(100, 182, 138, 0.5);
 }
 
 /* Scroll indicator */
@@ -89,6 +132,32 @@
   border-radius: 1.5rem;
 }
 
+/* Vertical Gallery - Slide una sotto l'altra */
+.vertical-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.gallery-item {
+  width: 100%;
+  text-align: center;
+}
+
+.gallery-image {
+  border-radius: 1rem;
+  max-height: 600px;
+  object-fit: contain;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: translateY(-5px);
+}
+
+/* Carousel Image */
 .carousel-image {
   border-radius: 1rem;
   max-height: 600px;
@@ -122,8 +191,8 @@
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
   opacity: 1;
-  background: rgba(99, 102, 241, 0.2);
-  border-color: rgba(99, 102, 241, 0.3);
+  background: rgba(100, 182, 138, 0.2);
+  border-color: rgba(100, 182, 138, 0.3);
 }
 
 .carousel-control-prev-icon,
@@ -149,12 +218,8 @@
 }
 
 .carousel-indicators button.active {
-  background: linear-gradient(
-    90deg,
-    var(--color-primary),
-    var(--color-secondary)
-  );
-  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+  background: linear-gradient(90deg, #64b68a, #9bd46a);
+  box-shadow: 0 0 10px rgba(100, 182, 138, 0.5);
 }
 
 /* Tool Cards - Sistemare l'altezza */
@@ -177,7 +242,7 @@
 
 .tool-card:hover {
   transform: translateY(-10px);
-  border-color: rgba(99, 102, 241, 0.3);
+  border-color: rgba(100, 182, 138, 0.3);
 }
 
 .tool-card::before {
@@ -189,7 +254,7 @@
   bottom: 0;
   background: radial-gradient(
     circle at 50% 0%,
-    rgba(99, 102, 241, 0.1),
+    rgba(100, 182, 138, 0.1),
     transparent 70%
   );
   opacity: 0;
@@ -204,8 +269,8 @@
 .tool-icon {
   width: 4rem;
   height: 4rem;
-  background-color: rgba(99, 102, 241, 0.1);
-  color: var(--color-primary);
+  background-color: rgba(100, 182, 138, 0.1);
+  color: #64b68a;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -216,13 +281,13 @@
 }
 
 .tool-icon-secondary {
-  background-color: rgba(236, 72, 153, 0.1);
-  color: var(--color-secondary);
+  background-color: rgba(155, 212, 106, 0.1);
+  color: #9bd46a;
 }
 
 .tool-icon-accent {
-  background-color: rgba(249, 115, 22, 0.1);
-  color: var(--color-accent);
+  background-color: rgba(155, 212, 106, 0.1);
+  color: #9bd46a;
 }
 
 .tool-card:hover .tool-icon {
@@ -252,7 +317,7 @@
 
 .resources-glass-card:hover {
   transform: translateY(-10px);
-  border-color: rgba(99, 102, 241, 0.3);
+  border-color: rgba(100, 182, 138, 0.3);
 }
 
 .resources-content {
@@ -284,42 +349,86 @@
 }
 
 /* Portfolio Category */
-.portfolio-category.mb-4 {
+.portfolio-category.mb-3 {
   margin-top: 40px;
 }
 
-/* Vertical Gallery - Slide una sotto l'altra */
-.vertical-gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+/* Badge Custom for this page */
+.badge-custom {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  background: linear-gradient(
+    90deg,
+    rgba(100, 182, 138, 0.1),
+    rgba(155, 212, 106, 0.1)
+  );
+  color: #64b68a;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(100, 182, 138, 0.2);
+  margin-bottom: 1rem;
 }
 
-.gallery-item {
-  width: 100%;
-  text-align: center;
+/* Hero Shapes */
+.hero-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: 0;
+  opacity: 0.4;
 }
 
-.gallery-image {
-  border-radius: 1rem;
-  max-height: 600px;
-  object-fit: contain;
-  width: 100%;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+.hero-shape-1 {
+  top: 10%;
+  left: 10%;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #64b68a, transparent);
+  animation: float 15s ease-in-out infinite;
 }
 
-.gallery-image:hover {
-  transform: translateY(-5px);
+.hero-shape-2 {
+  bottom: 10%;
+  right: 10%;
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, #9bd46a, transparent);
+  animation: float 12s ease-in-out infinite;
+  animation-delay: 2s;
 }
 
-/* Ridurre spazi tra sezioni */
-.section {
-  padding: 3rem 0; /* Ridotto da 5rem a 3rem */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
-.section-header {
-  margin-bottom: 2.5rem; /* Ridotto da 4rem a 2.5rem */
+/* Buttons with Botanicare colors */
+.btn-primary {
+  background: linear-gradient(90deg, #64b68a, #9bd46a);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 15px rgba(100, 182, 138, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(100, 182, 138, 0.4);
+  color: white;
+}
+
+/* Gradient text for Botanicare */
+.gradient-text {
+  background: linear-gradient(90deg, #64b68a, #9bd46a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Responsive Design */
@@ -340,10 +449,6 @@
 
   .section {
     padding: 2.5rem 0; /* Ulteriormente ridotto per tablet */
-  }
-
-  .carousel-image {
-    max-height: 400px;
   }
 
   .project-main-image {
@@ -375,7 +480,8 @@
 
 @media (max-width: 767.98px) {
   .project-hero {
-    padding-top: 140px;
+    min-height: 80vh; /* Ridotto per mobile */
+
     padding-bottom: 40px;
   }
 
@@ -415,20 +521,12 @@
     padding: 1.5rem;
   }
 
-  .carousel-image {
-    max-height: 300px;
-  }
-
   .project-main-image {
     display: none; /* Nascondi l'immagine principale su mobile */
   }
 
   .gallery-image {
     max-height: 300px;
-  }
-
-  .vertical-gallery {
-    gap: 1.5rem;
   }
 
   .tool-card,
@@ -463,58 +561,23 @@
   transform: translateY(0);
 }
 
-/* Badge Custom for this page */
-.badge-custom {
-  display: inline-block;
-  padding: 0.5rem 1.25rem;
-  background: linear-gradient(
-    90deg,
-    rgba(99, 102, 241, 0.1),
-    rgba(236, 72, 153, 0.1)
-  );
-  color: var(--color-primary);
-  border-radius: 9999px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  border: 1px solid rgba(99, 102, 241, 0.2);
-  margin-bottom: 1rem;
-}
-
-/* Hero Shapes */
-.hero-shape {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(60px);
-  z-index: 0;
-  opacity: 0.4;
-}
-
-.hero-shape-1 {
-  top: 10%;
-  left: 10%;
-  width: 300px;
-  height: 300px;
-  background: linear-gradient(135deg, var(--color-primary), transparent);
-  animation: float 15s ease-in-out infinite;
-}
-
-.hero-shape-2 {
-  bottom: 10%;
-  right: 10%;
-  width: 250px;
-  height: 250px;
-  background: linear-gradient(135deg, var(--color-secondary), transparent);
-  animation: float 12s ease-in-out infinite;
-  animation-delay: 2s;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
+/* Responsive per vertical gallery */
+@media (max-width: 991.98px) {
+  .gallery-image {
+    max-height: 400px;
   }
-  50% {
-    transform: translateY(-20px);
+
+  .vertical-gallery {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .gallery-image {
+    max-height: 300px;
+  }
+
+  .vertical-gallery {
+    gap: 1.5rem;
   }
 }

@@ -1,306 +1,637 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Botanicare - Andrea Feliziani | Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-<head>
-    <meta charset="utf-8">
-    <title>Botanicare</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzUiIGhlaWdodD0iNDkiIHZpZXdCb3g9IjAgMCA3NSA0OSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZmF2aWNvbi1ncmFkaWVudCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNjM2NmYxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlYzQ4OTkiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cGF0aCBkPSJNMTguMjk0NiAzMy4yNjI5SDI5LjM4MjNMMjguNDMxOSAzMS40NDE0SDE2Ljg2OTFMMTAuMTM3MyA0Ni4wOTI5SDMuMDA5NUwyMi44ODgxIDEuOTc5OTRIMzEuMTI0Nkw1MC45MjQgNDYuMDkyOUg0My40Nzk0TDI4LjQzMTkgMTEuNDgzNkwyNy4zMjMxIDE0LjE3NjNMNDIuMjEyMiA0OC4zMTA1SDU0LjE3MTFMMzIuNTUwMiAwSDIxLjYyMDlMMCA0OC4zMTA1SDExLjY0MkwxOC4yOTQ2IDMzLjI2MjlaIiBmaWxsPSJ1cmwoI2Zhdmljb24tZ3JhZGllbnQpIiAvPgogIDxwYXRoIGQ9Ik0zOC4xNzMyIDEuOTc5OTRMMzcuMjIyOCAwSDc1TDY2LjQ0NjcgMTAuNDU0MUg0NC4xOTIyTDQ3Ljk5MzcgMTkuMTY1OEg2OS42OTM4TDYwLjkwMjkgMjkuMDY1NUg1MC4xMzJMNDkuNTc3NiAyNy4wODU1SDYwLjExMDlMNjUuNTc1NSAyMC45ODczSDQ2LjY0NzNMNDEuMTAzNSA4LjM5NDkzSDY1LjU3NTVMNTB5LjcyMzMgMS45Nzk5NEgzOC4xNzMyWiIgZmlsbD0idXJsKCNmYXZpY29uLWdyYWRpZW50KSIgLz4KPC9zdmc+"
+    />
+    <!-- Fallback PNG per browser che non supportano SVG favicon -->
+    <link
+      rel="shortcut icon"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAANCSURBVFiFtZdNaBNBFMd/k2ySbNJsm9Sm1tYPPKiFgngQD4IXwYMePHjw4MGDBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0/16sGLBy8ePHjw4MGDB0+AAAAABJRU5ErkJggg=="
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Orbitron:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/botanicare-style.css" />
+  </head>
+  <body>
+    <!-- SVG Definitions -->
+    <svg
+      class="svg-defs"
+      width="0"
+      height="0"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient id="logo-gradient-1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#6366f1" />
+          <stop offset="100%" stop-color="#ec4899" />
+        </linearGradient>
+        <linearGradient id="logo-gradient-2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#ec4899" />
+          <stop offset="100%" stop-color="#6366f1" />
+        </linearGradient>
+        <linearGradient
+          id="botanicare-gradient-1"
+          x1="0%"
+          y1="0%"
+          x2="100%"
+          y2="0%"
+        >
+          <stop offset="0%" stop-color="#64B68A" />
+          <stop offset="100%" stop-color="#9BD46A" />
+        </linearGradient>
+      </defs>
+    </svg>
 
+    <!-- Particles Background -->
+    <div id="particles-js" class="particles-container"></div>
 
-
-
-     <!-- --------- FAVICON ---------- -->
-     <link rel="shortcut icon" href="Img/ICON.png" type="image/x-icon">
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/Botanicare.css" rel="stylesheet">
-</head>
-
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
-    <div class="container p-0">
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
+    <!-- Loader -->
+    <div class="loader">
+      <div class="loader-content">
+        <div class="loader-logo">
+          <svg
+            class="logo-svg"
+            width="65"
+            height="39"
+            viewBox="0 0 75 49"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="logo-path-1"
+              d="M18.2946 33.2629H29.3823L28.4319 31.4414H16.8691L10.1373 46.0929H3.0095L22.8881 1.97994H31.1246L50.924 46.0929H43.4794L28.4319 11.4836L27.3231 14.1763L42.2122 48.3105H54.1711L32.5502 0H21.6209L0 48.3105H11.642L18.2946 33.2629Z"
+            />
+            <path
+              class="logo-path-2"
+              d="M38.1732 1.97994L37.2228 0H75L66.4467 10.4541H44.1922L47.9937 19.1658H69.6938L60.9029 29.0655H50.132L49.5776 27.0855H60.1109L65.5755 20.9873H46.6473L41.1035 8.39493H65.5755L70.7233 1.97994H38.1732Z"
+            />
+          </svg>
         </div>
-        <!-- Spinner End -->
-
-
-        <!-- Navbar & Hero Start -->
-        <!-- --------------- HEADER --------------- -->
-        <header class="header">
-            <div class="header__content">
-              <a class="header__logo" href="index.html">
-                <svg width="65" height="39" viewBox="0 0 75 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18.2946 33.2629H29.3823L28.4319 31.4414H16.8691L10.1373 46.0929H3.0095L22.8881 1.97994H31.1246L50.924 46.0929H43.4794L28.4319 11.4836L27.3231 14.1763L42.2122 48.3105H54.1711L32.5502 0H21.6209L0 48.3105H11.642L18.2946 33.2629Z" fill="black" fill-opacity="0.8"/>
-                    <path d="M38.1732 1.97994L37.2228 0H75L66.4467 10.4541H44.1922L47.9937 19.1658H69.6938L60.9029 29.0655H50.132L49.5776 27.0855H60.1109L65.5755 20.9873H46.6473L41.1035 8.39493H65.5755L70.7233 1.97994H38.1732Z" fill="black" fill-opacity="0.8"/>
-                    </svg>
-              </a>
-              <ul class="header__menu">
-                <li><a  href="index.html#about">About me</a></li>
-                <li><a href="index.html#portfolio1">Portfolio</a></li>
-                <li><a href="index.html#contact">Contatti</a></li>
-
-              </ul>
-              <div class="header__quick">
-
-                <div class="icon-hamburger">
-                  <span></span>
-                  <span></span>
-                </div>
-              </div>
-            </div>
-          </header>
-          <script>
-            let item = document.querySelector('.icon-hamburger');
-            item.addEventListener("click", function() {
-                  document.body.classList.toggle('menu-open');
-            });
-          </script>
-
-
-      <!-- --------------- HEADER --------------- -->
-
-        <!-- --------------- HEADER --------------- -->
-
-            <div class="container  hero-header">
-                <div class="container px-lg-5">
-                    <div class="row g-5">
-                        <div class="col-lg-8 text-center text-lg-start">
-                            <svg     class="mb-4 animated slideInDown"        width="320" height="45" viewBox="0 0 320 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g opacity="0.88">
-                                <path d="M0 43.7139V7.71387H17.5364C22.0487 7.71387 25.4329 8.57105 27.689 10.2853C29.9794 11.9995 31.1245 14.2624 31.1245 17.0739C31.1245 18.9596 30.663 20.6053 29.7401 22.011C28.8171 23.3825 27.5523 24.4453 25.9457 25.1996C24.339 25.9539 22.4931 26.331 20.4078 26.331L21.3821 24.2224C23.6382 24.2224 25.638 24.5995 27.3814 25.3539C29.1248 26.0739 30.475 27.1539 31.4322 28.5939C32.4235 30.0339 32.9192 31.7995 32.9192 33.891C32.9192 36.9767 31.7056 39.3939 29.2786 41.1424C26.8516 42.8567 23.2793 43.7139 18.5619 43.7139H0ZM8.25543 37.4396H17.9466C20.1002 37.4396 21.724 37.0967 22.8178 36.411C23.9459 35.691 24.5099 34.5596 24.5099 33.0167C24.5099 31.5082 23.9459 30.3939 22.8178 29.6739C21.724 28.9195 20.1002 28.5424 17.9466 28.5424H7.64011V22.4739H16.5109C18.5277 22.4739 20.066 22.131 21.1257 21.4453C22.2196 20.7253 22.7665 19.6453 22.7665 18.2053C22.7665 16.7996 22.2196 15.7538 21.1257 15.0682C20.066 14.3482 18.5277 13.9882 16.5109 13.9882H8.25543V37.4396ZM51.7707 44.1253C48.8309 44.1253 46.2158 43.5081 43.9255 42.2739C41.6693 41.0396 39.8747 39.3595 38.5415 37.2339C37.2425 35.0739 36.593 32.6224 36.593 29.8796C36.593 27.1024 37.2425 24.651 38.5415 22.5253C39.8747 20.3653 41.6693 18.6853 43.9255 17.4853C46.2158 16.251 48.8309 15.6339 51.7707 15.6339C54.6764 15.6339 57.2744 16.251 59.5646 17.4853C61.855 18.6853 63.6497 20.3482 64.9486 22.4739C66.2477 24.5995 66.8971 27.0681 66.8971 29.8796C66.8971 32.6224 66.2477 35.0739 64.9486 37.2339C63.6497 39.3595 61.855 41.0396 59.5646 42.2739C57.2744 43.5081 54.6764 44.1253 51.7707 44.1253ZM51.7707 37.5424C53.1039 37.5424 54.3004 37.2339 55.36 36.6167C56.4198 35.9996 57.2572 35.1253 57.8725 33.9939C58.4878 32.8281 58.7955 31.4568 58.7955 29.8796C58.7955 28.2682 58.4878 26.8967 57.8725 25.7653C57.2572 24.6339 56.4198 23.7596 55.36 23.1424C54.3004 22.5253 53.1039 22.2167 51.7707 22.2167C50.4375 22.2167 49.2411 22.5253 48.1814 23.1424C47.1217 23.7596 46.2671 24.6339 45.6176 25.7653C45.0023 26.8967 44.6946 28.2682 44.6946 29.8796C44.6946 31.4568 45.0023 32.8281 45.6176 33.9939C46.2671 35.1253 47.1217 35.9996 48.1814 36.6167C49.2411 37.2339 50.4375 37.5424 51.7707 37.5424ZM83.5246 44.1253C80.2772 44.1253 77.7475 43.3024 75.9358 41.6567C74.124 39.9767 73.2182 37.491 73.2182 34.1996V9.9253H81.2172V34.0967C81.2172 35.2625 81.5249 36.171 82.1402 36.8224C82.7555 37.4396 83.593 37.7481 84.6527 37.7481C85.9174 37.7481 86.9942 37.4053 87.8831 36.7196L90.0367 42.3767C89.2163 42.9595 88.225 43.4053 87.0627 43.7139C85.9346 43.9881 84.7553 44.1253 83.5246 44.1253ZM68.9623 22.8339V16.6624H88.0882V22.8339H68.9623ZM111.448 43.7139V38.3139L110.935 37.131V27.4624C110.935 25.7482 110.405 24.411 109.346 23.451C108.32 22.491 106.731 22.011 104.577 22.011C103.107 22.011 101.654 22.2511 100.219 22.731C98.8171 23.1768 97.6206 23.7939 96.6293 24.5824L93.7578 18.9767C95.2619 17.9138 97.0737 17.091 99.1931 16.5082C101.312 15.9253 103.466 15.6339 105.654 15.6339C109.858 15.6339 113.123 16.6281 115.448 18.6167C117.772 20.6053 118.934 23.7081 118.934 27.9253V43.7139H111.448ZM103.039 44.1253C100.885 44.1253 99.0392 43.7653 97.501 43.0453C95.9627 42.291 94.7833 41.2796 93.9629 40.011C93.1425 38.7424 92.7323 37.3196 92.7323 35.7424C92.7323 34.0967 93.1254 32.6567 93.9116 31.4224C94.732 30.1882 96.0139 29.2281 97.7573 28.5424C99.5007 27.8224 101.774 27.4624 104.577 27.4624H111.91V32.1424H105.449C103.569 32.1424 102.27 32.451 101.552 33.0681C100.868 33.6853 100.526 34.4567 100.526 35.3824C100.526 36.411 100.919 37.2339 101.706 37.851C102.526 38.4338 103.637 38.7253 105.039 38.7253C106.372 38.7253 107.568 38.4167 108.628 37.7996C109.688 37.1481 110.457 36.2053 110.935 34.971L112.166 38.6739C111.585 40.4568 110.525 41.811 108.987 42.7367C107.448 43.6624 105.466 44.1253 103.039 44.1253ZM142.942 15.6339C145.128 15.6339 147.077 16.0796 148.787 16.971C150.53 17.8282 151.897 19.1653 152.889 20.9824C153.88 22.7653 154.376 25.0624 154.376 27.8739V43.7139H146.377V29.1081C146.377 26.8796 145.881 25.2339 144.89 24.171C143.932 23.1081 142.565 22.5767 140.788 22.5767C139.523 22.5767 138.378 22.851 137.352 23.3996C136.36 23.9139 135.574 24.7196 134.994 25.8167C134.446 26.9138 134.173 28.3196 134.173 30.0339V43.7139H126.174V16.0453H133.814V23.7082L132.379 21.3939C133.37 19.5424 134.789 18.1195 136.635 17.1253C138.48 16.1311 140.583 15.6339 142.942 15.6339Z" fill="#64B68A"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M177.155 45H180.092V40.9254C182.784 40.8716 188.481 40.2807 192.224 36.5174C197.17 31.542 196.608 23.1828 196.582 22.8291C196.527 22.1005 195.952 21.5217 195.228 21.4665C195.187 21.4636 194.811 21.4365 194.189 21.4365C191.728 21.4365 185.576 21.8667 181.616 25.8499C181.034 26.4349 180.531 27.0679 180.092 27.728V25.5345C181.536 24.1563 186.222 19.2169 186.222 13.1359C186.222 6.09991 179.946 0.588809 179.679 0.357432C179.129 -0.119144 178.314 -0.119144 177.763 0.357432C177.496 0.588809 171.221 6.09991 171.221 13.1359C171.221 18.9643 175.525 23.7433 177.155 25.3441V27.4779C176.757 26.9076 176.309 26.36 175.802 25.8494C171.841 21.8661 165.689 21.4359 163.229 21.4359C162.607 21.4359 162.23 21.4631 162.19 21.466C161.465 21.5208 160.889 22.1 160.835 22.8286C160.809 23.1818 160.247 31.541 165.194 36.5169C168.86 40.2026 174.399 40.8455 177.155 40.9209V45ZM183.693 27.9387C186.64 24.9762 191.325 24.4581 193.669 24.3975C193.608 26.7058 193.105 31.4542 190.147 34.4291C187.973 36.6146 184.854 37.4691 182.426 37.7916L188.246 31.9387C188.819 31.3619 188.819 30.4271 188.246 29.8504C187.672 29.2742 186.743 29.2737 186.17 29.8504L180.356 35.6954C180.681 33.2618 181.529 30.1148 183.693 27.9387ZM174.158 13.1364C174.158 8.94896 177.144 5.22129 178.724 3.54096C180.306 5.21635 183.285 8.93122 183.285 13.1364C183.285 16.2139 181.673 19.0422 180.191 20.9929V12.727C180.191 11.9115 179.533 11.2504 178.722 11.2504C177.912 11.2504 177.254 11.9115 177.254 12.727V21.0033C175.772 19.0571 174.158 16.2297 174.158 13.1364ZM173.725 27.9387C175.89 30.1148 176.739 33.2618 177.062 35.695L171.25 29.8499C170.675 29.2731 169.746 29.2731 169.173 29.8499C168.599 30.4266 168.599 31.3619 169.173 31.9382L174.993 37.7911C172.565 37.4685 169.446 36.6146 167.272 34.4291C164.327 31.4681 163.817 26.7093 163.753 24.3975C166.098 24.4587 170.78 24.9771 173.725 27.9387Z" fill="#64B68A"/>
-                                <path d="M219.935 44.3312C217.166 44.3312 214.586 43.8854 212.192 42.9941C209.834 42.0683 207.783 40.7655 206.039 39.0855C204.296 37.4054 202.928 35.4341 201.937 33.1712C200.98 30.9083 200.501 28.4227 200.501 25.7141C200.501 23.0054 200.98 20.5198 201.937 18.2569C202.928 15.9941 204.296 14.0227 206.039 12.3426C207.817 10.6626 209.885 9.37688 212.244 8.48549C214.602 7.55978 217.183 7.09692 219.986 7.09692C223.098 7.09692 225.9 7.64554 228.396 8.74264C230.925 9.80554 233.045 11.3826 234.754 13.4741L229.421 18.4112C228.191 17.0055 226.823 15.9597 225.319 15.2741C223.815 14.5541 222.175 14.1941 220.397 14.1941C218.721 14.1941 217.183 14.4683 215.782 15.0169C214.381 15.5655 213.167 16.3541 212.141 17.3826C211.116 18.4112 210.312 19.6284 209.731 21.0341C209.184 22.4397 208.911 23.9998 208.911 25.7141C208.911 27.4283 209.184 28.9884 209.731 30.3941C210.312 31.7997 211.116 33.0169 212.141 34.0455C213.167 35.0741 214.381 35.8626 215.782 36.4112C217.183 36.9598 218.721 37.2341 220.397 37.2341C222.175 37.2341 223.815 36.8912 225.319 36.2055C226.823 35.4855 228.191 34.4055 229.421 32.9655L234.754 37.9026C233.045 39.9941 230.925 41.5884 228.396 42.6855C225.9 43.7826 223.08 44.3312 219.935 44.3312ZM256.571 43.7141V38.3141L256.058 37.1312V27.4626C256.058 25.7484 255.527 24.4112 254.468 23.4512C253.443 22.4912 251.853 22.0112 249.7 22.0112C248.229 22.0112 246.777 22.2513 245.341 22.7312C243.939 23.177 242.743 23.7941 241.752 24.5826L238.88 18.9769C240.384 17.914 242.195 17.0912 244.316 16.5084C246.435 15.9255 248.588 15.6341 250.776 15.6341C254.981 15.6341 258.245 16.6283 260.57 18.6169C262.894 20.6055 264.057 23.7083 264.057 27.9255V43.7141H256.571ZM248.161 44.1255C246.008 44.1255 244.162 43.7655 242.623 43.0455C241.085 42.2912 239.906 41.2798 239.085 40.0112C238.265 38.7426 237.855 37.3198 237.855 35.7426C237.855 34.0969 238.247 32.6569 239.034 31.4226C239.855 30.1883 241.136 29.2283 242.88 28.5426C244.623 27.8226 246.896 27.4626 249.7 27.4626H257.032V32.1426H250.571C248.691 32.1426 247.392 32.4512 246.674 33.0683C245.99 33.6855 245.649 34.4569 245.649 35.3826C245.649 36.4112 246.041 37.2341 246.828 37.8512C247.648 38.434 248.759 38.7255 250.161 38.7255C251.494 38.7255 252.69 38.4169 253.75 37.7998C254.809 37.1483 255.578 36.2055 256.058 34.9712L257.288 38.6741C256.706 40.457 255.648 41.8112 254.109 42.7369C252.571 43.6626 250.588 44.1255 248.161 44.1255ZM271.296 43.7141V16.0455H278.936V23.8626L277.859 21.5998C278.679 19.6455 279.996 18.1712 281.807 17.1769C283.62 16.1484 285.825 15.6341 288.422 15.6341V23.0398C288.081 23.0054 287.773 22.9883 287.499 22.9883C287.226 22.954 286.935 22.9369 286.627 22.9369C284.44 22.9369 282.662 23.5712 281.295 24.8398C279.961 26.0741 279.295 28.0112 279.295 30.6512V43.7141H271.296ZM306.668 44.1255C303.524 44.1255 300.755 43.5083 298.362 42.2741C296.003 41.0398 294.175 39.3597 292.875 37.2341C291.577 35.0741 290.927 32.6226 290.927 29.8798C290.927 27.1026 291.56 24.6512 292.824 22.5255C294.124 20.3655 295.884 18.6855 298.105 17.4855C300.328 16.2512 302.841 15.6341 305.643 15.6341C308.344 15.6341 310.771 16.2169 312.924 17.3826C315.112 18.5141 316.839 20.1598 318.103 22.3198C319.368 24.4454 320 26.9998 320 29.9826C320 30.2912 319.984 30.6512 319.949 31.0626C319.916 31.4397 319.881 31.7997 319.846 32.1426H297.439V27.4626H315.642L312.565 28.8512C312.565 27.4112 312.275 26.1598 311.694 25.0969C311.113 24.034 310.309 23.2112 309.284 22.6283C308.258 22.0112 307.062 21.7026 305.694 21.7026C304.328 21.7026 303.114 22.0112 302.054 22.6283C301.028 23.2112 300.226 24.0512 299.644 25.1483C299.063 26.2112 298.772 27.4797 298.772 28.9541V30.1883C298.772 31.6969 299.098 33.034 299.746 34.1998C300.431 35.3312 301.37 36.2055 302.566 36.8226C303.797 37.4054 305.233 37.6969 306.874 37.6969C308.344 37.6969 309.626 37.4741 310.719 37.0283C311.847 36.5826 312.873 35.914 313.796 35.0226L318.052 39.6512C316.788 41.0912 315.198 42.2055 313.283 42.9941C311.369 43.7484 309.164 44.1255 306.668 44.1255Z" fill="#64B68A"/>
-                                </g>
-                                </svg>
-                            <h5 class="ciao  mb-4  pb-3 animated slideInDown">L'amore per le piante con un semplice tocco</h5>
-                            <a href="#Progetto" class="btn btn-primary-gradient py-sm-3 px-4 px-sm-5 rounded-pill me-3 animated slideInLeft">Il progetto</a>
-                            <a href="#Prototipo" class="btn btn-secondary-gradient py-sm-3 px-4 px-sm-5 rounded-pill animated slideInRight">Prototipo</a>
-                        </div>
-                        <div class=" relative col-lg-4 d-flex justify-content-center justify-content-lg-end wow fadeInUp" data-wow-delay="0.3s">
-
-                            <svg  class="Blob"    viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <path fill="#64B68A" d="M41.3,-36.9C55.7,-26.9,71,-13.5,68.4,-2.6C65.8,8.3,45.3,16.5,30.9,31.4C16.5,46.2,8.3,67.6,-2.1,69.7C-12.5,71.9,-25,54.7,-41.3,39.9C-57.6,25,-77.7,12.5,-81.2,-3.4C-84.6,-19.3,-71.3,-38.7,-55,-48.6C-38.7,-58.6,-19.3,-59.3,-2.9,-56.3C13.5,-53.4,26.9,-46.9,41.3,-36.9Z" transform="translate(100 100)" />
-                              </svg>
-
-                            <div class="owl-carousel screenshot-carousel">
-                                <img class="img-fluid" src="Img/bot1.png" alt="">
-                                <img class="img-fluid" src="Img/bot2.png" alt="">
-                                <img class="img-fluid" src="Img/bot3.png" alt="">
-                                <img class="img-fluid" src="Img/bot4.png" alt="">
-                                <img class="img-fluid" src="Img/bot5.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="loader-bar-container">
+          <div class="loader-bar"></div>
         </div>
+      </div>
+    </div>
 
+    <!-- Header -->
+    <header class="header fixed-top">
+      <div class="container">
+        <div class="header-inner">
+          <a href="index.html" class="logo">
+            <svg
+              class="logo-svg"
+              width="65"
+              height="39"
+              viewBox="0 0 75 49"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="logo-path-1"
+                d="M18.2946 33.2629H29.3823L28.4319 31.4414H16.8691L10.1373 46.0929H3.0095L22.8881 1.97994H31.1246L50.924 46.0929H43.4794L28.4319 11.4836L27.3231 14.1763L42.2122 48.3105H54.1711L32.5502 0H21.6209L0 48.3105H11.642L18.2946 33.2629Z"
+              />
+              <path
+                class="logo-path-2"
+                d="M38.1732 1.97994L37.2228 0H75L66.4467 10.4541H44.1922L47.9937 19.1658H69.6938L60.9029 29.0655H50.132L49.5776 27.0855H60.1109L65.5755 20.9873H46.6473L41.1035 8.39493H65.5755L70.7233 1.97994H38.1732Z"
+              />
+            </svg>
+          </a>
 
-        <!-- Navbar & Hero End -->
+          <nav class="main-nav d-none d-md-block">
+            <ul class="nav-list">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="index.html#about" class="nav-link">Chi sono</a></li>
+              <li>
+                <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+              </li>
+              <li>
+                <a href="index.html#contact" class="nav-link">Contatti</a>
+              </li>
+            </ul>
+          </nav>
 
-
-
-<!--Swipe-->
-<div class="mt-lg-1 container-xxl py-5" id="Progetto">
-    <div class="container py-5 px-lg-5">
-    <div class="text-center wow fadeInUp " data-wow-delay="0.1s">
-        <h5 class="text-primary-gradient fw-medium">UI/UX Design</h5>
-        <h1 class="mb-5">Il Progetto</h1>
-
-        <div id="carouselExampleInterval" class="carousel  carousel-dark slide slide wow fadeInUp" >
-            <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="10000">
-                <img src="Img/slbt1.png" class="d-block w-100" alt="ciao">
-              </div>
-              <div class="carousel-item" data-bs-interval="2000">
-                <img src="Img/slbt2.png" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item" data-bs-interval="2000">
-                <img src="Img/slbt3.png" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item" data-bs-interval="2000">
-                <img src="Img/slbt4.png" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item" data-bs-interval="2000">
-                <img src="Img/slbt5.png" class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+          <div class="menu-toggle d-md-none">
+            <div class="menu-toggle-bars"></div>
           </div>
-</div>
-</div>
-
-
-<!--Swipe-->
-
-
-
-
-
-        <!-- Process Start -->
-        <div class="container-xxl py-5">
-            <div class="container py-5 px-lg-5">
-                <div class="text-center pb-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <h5 class="text-primary-gradient fw-medium">How It Works</h5>
-                    <h1 class="mb-5">3 Easy Steps</h1>
-                </div>
-                <div class="row gy-5 gx-4 justify-content-center">
-                    <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="position-relative bg-light rounded pt-5 pb-4 px-4">
-                            <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
-                                <i class="fa fa-address-card fa-3x text-white"></i>
-                            </div>
-                            <h5 class="mt-4 mb-3">Inserisci la pianta</h5>
-                            <p class="mb-0">Inserisci la pianta che hai appena acqusitato e prenditene cura.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="position-relative bg-light rounded pt-5 pb-4 px-4">
-                            <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
-                                <i class="fa fa-cog fa-3x text-white"></i>
-                            </div>
-                            <h5 class="mt-4 mb-3">Monitora</h5>
-                            <p class="mb-0">Monitora la pianta attraverso i consigli degli esperti.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="position-relative bg-light rounded pt-5 pb-4 px-4">
-                            <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
-                                <i class="fa fa-check fa-3x text-white"></i>
-                            </div>
-                            <h5 class="mt-4 mb-3">Condividi</h5>
-                            <p class="mb-0">Entra in contatto con gli appasionati di botanica.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-        <!-- Process Start -->
+      </div>
+    </header>
 
-
-        <!-- Download Start -->
-        <div class="container-xxl py-5" id="Prototipo">
-            <div class="container py-5 px-lg-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6">
-                        <img class="img-fluid wow fadeInUp" data-wow-delay="0.1s" src="Img/gbt.png">
-                    </div>
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <h1 class="mb-4">Il progetto completo</h1>
-
-                        <div class="row g-4">
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
-                                <a href="https://docs.google.com/document/d/1GLsAxFqVzbsULLPqZkDemdhnU70I5V2U/edit?usp=sharing&ouid=108685707695211004080&rtpof=true&sd=true" target="_blank" class="d-flex bg-secondary-gradient rounded py-3 px-4">
-                                    <i class="fab fa-google-drive fa-3x text-white flex-shrink-0"></i>
-                                    <div class="ms-3">
-                                        <p class="text-white mb-0">Sviluppo</p>
-                                        <h5 class="text-white mb-0">Progetto</h5>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
-                                <a href="https://www.figma.com/file/YONdYLsWEYLVaKole51sjo/Botanicare?type=design&node-id=0%3A1&mode=design&t=jWl96x3w1QNd48oS-1"  target="_blank" class="d-flex bg-secondary-gradient rounded py-3 px-4">
-                                    <i class="fab fa-figma fa-3x text-white flex-shrink-0"></i>
-                                    <div class="ms-3">
-                                        <p class="text-white mb-0">Prototipo</p>
-                                        <h5 class="text-white mb-0">Figma</h5>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <div class="container h-100">
+        <div class="mobile-menu-header">
+          <div class="logo">
+            <svg
+              class="logo-svg"
+              width="65"
+              height="39"
+              viewBox="0 0 75 49"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="logo-path-1"
+                d="M18.2946 33.2629H29.3823L28.4319 31.4414H16.8691L10.1373 46.0929H3.0095L22.8881 1.97994H31.1246L50.924 46.0929H43.4794L28.4319 11.4836L27.3231 14.1763L42.2122 48.3105H54.1711L32.5502 0H21.6209L0 48.3105H11.642L18.2946 33.2629Z"
+              />
+              <path
+                class="logo-path-2"
+                d="M38.1732 1.97994L37.2228 0H75L66.4467 10.4541H44.1922L47.9937 19.1658H69.6938L60.9029 29.0655H50.132L49.5776 27.0855H60.1109L65.5755 20.9873H46.6473L41.1035 8.39493H65.5755L70.7233 1.97994H38.1732Z"
+              />
+            </svg>
+          </div>
+          <button class="close-menu">
+            <i class="fas fa-times"></i>
+          </button>
         </div>
-        <!-- Download End -->
 
+        <nav class="mobile-nav">
+          <ul class="mobile-nav-list">
+            <li><a href="index.html" class="mobile-link">Home</a></li>
+            <li><a href="index.html#about" class="mobile-link">Chi sono</a></li>
+            <li>
+              <a href="index.html#portfolio" class="mobile-link">Portfolio</a>
+            </li>
+            <li>
+              <a href="index.html#contact" class="mobile-link">Contatti</a>
+            </li>
+          </ul>
+        </nav>
 
-
-
-
-
-
-<!-- Footer -->
-<footer>
-    <div class="top-footer">
-        <p>Andrea Feliziani</p>
+        <div class="mobile-social">
+          <a
+            href="https://www.linkedin.com/in/andrea-feliziani/"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a
+            href="https://github.com/Felix2897"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/andrea_feliziani/"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="middle-footer">
-        <ul class="footer-menu">
-            <li class="footer_menu_list">
-                <a href="index.html">Home</a>
-            </li>
-            <li class="footer_menu_list">
-                <a href="index.html#about">About</a>
-            </li>
-            <li class="footer_menu_list">
-                <a href="index.html#portfolio1">Portfolio</a>
-            </li>
-            <li class="footer_menu_list">
-                <a href="index.html#contact">Contatti</a>
-            </li>
-        </ul>
-    </div>
-    <div class="footer-social-icons">
-        <a style="color: black;" href="https://www.instagram.com/andrea_feliziani/" target="_blank"><div class="icon"><i class="fab fa-instagram"></i></div></a>
-        <a style="color: black;" href="https://www.linkedin.com/in/andrea-feliziani/" target="_blank"><div class="icon"><i class="fab fa-linkedin-in"></i></div></a>
-        <a style="color: black;" href="https://github.com/Felix2897" target="_blank"><div class="icon"><i class="fab fa-github"></i></div></a>
-    </div>
-     <div class="bottom-footer">
-         <p>Copyright &copy; <a href="index.html" style="text-decoration: none;">Andrea Feliziani</a> - All rights reserved</p>
-     </div>
-</footer>
 
+    <section class="project-hero">
+      <div class="hero-background">
+        <div class="hero-gradient"></div>
+        <div class="hero-shape hero-shape-1"></div>
+        <div class="hero-shape hero-shape-2"></div>
+      </div>
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Colonna di testo (sinistra) -->
+          <div class="col-lg-6 order-lg-1 order-2">
+            <div class="hero-content">
+              <span class="portfolio-category mb-3">UI/UX Design</span>
+              <h1 class="hero-title">
+                Botani
+                <span class="gradient-text">care</span>
+              </h1>
+              <p class="hero-description">
+                L'amore per le piante con un semplice tocco. App per la cura
+                delle piante con consigli personalizzati, monitoraggio e
+                community di appassionati.
+              </p>
+              <div class="hero-buttons">
+                <a href="#progetto" class="btn btn-primary">
+                  <span>Esplora il Progetto</span>
+                  <i class="fas fa-arrow-down"></i>
+                </a>
+                <!-- <a
+                  href="https://www.figma.com/file/YONdYLsWEYLVaKole51sjo/Botanicare"
+                  target="_blank"
+                  class="btn btn-outline"
+                >
+                  <span>Prototipo Figma</span>
+                  <i class="fab fa-figma"></i>
+                </a> -->
+              </div>
+            </div>
+          </div>
 
-<!-- Footer -->
+          <!-- Colonna immagine (destra) -->
+          <div
+            class="col-lg-6 order-lg-2 order-1 d-none d-lg-flex justify-content-center"
+          >
+            <div class="hero-image-wrapper">
+              <div class="carousel-container">
+                <div class="carousel-images">
+                  <img
+                    src="Img/bot1.png"
+                    alt="Botanicare Screenshot"
+                    class="project-main-image active"
+                  />
+                  <img
+                    src="Img/bot2.png"
+                    alt="Botanicare Screenshot"
+                    class="project-main-image"
+                  />
+                  <img
+                    src="Img/bot3.png"
+                    alt="Botanicare Screenshot"
+                    class="project-main-image"
+                  />
+                  <img
+                    src="Img/bot4.png"
+                    alt="Botanicare Screenshot"
+                    class="project-main-image"
+                  />
+                  <img
+                    src="Img/bot5.png"
+                    alt="Botanicare Screenshot"
+                    class="project-main-image"
+                  />
+                </div>
+                <div class="carousel-dots">
+                  <span class="dot active" data-index="0"></span>
+                  <span class="dot" data-index="1"></span>
+                  <span class="dot" data-index="2"></span>
+                  <span class="dot" data-index="3"></span>
+                  <span class="dot" data-index="4"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator d-none d-md-flex">
+        <div class="scroll-mouse">
+          <div class="scroll-dot"></div>
+        </div>
+        <span>Scroll</span>
+      </div>
+    </section>
 
+    <!-- Project Gallery Section -->
+    <section id="progetto" class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="badge-custom">Showcase</div>
+          <h2 class="section-title">Il Progetto</h2>
+        </div>
 
+        <div class="project-gallery">
+          <!-- Carousel per Desktop -->
+          <div class="glass-card gallery-container d-none d-md-block">
+            <div
+              id="projectCarousel"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="Img/slbt1.png"
+                    class="d-block w-100 carousel-image"
+                    alt="Botanicare Screenshot 1"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="Img/slbt2.png"
+                    class="d-block w-100 carousel-image"
+                    alt="Botanicare Screenshot 2"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="Img/slbt3.png"
+                    class="d-block w-100 carousel-image"
+                    alt="Botanicare Screenshot 3"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="Img/slbt4.png"
+                    class="d-block w-100 carousel-image"
+                    alt="Botanicare Screenshot 4"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="Img/slbt5.png"
+                    class="d-block w-100 carousel-image"
+                    alt="Botanicare Screenshot 5"
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#projectCarousel"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#projectCarousel"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#projectCarousel"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#projectCarousel"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#projectCarousel"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#projectCarousel"
+                  data-bs-slide-to="3"
+                  aria-label="Slide 4"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#projectCarousel"
+                  data-bs-slide-to="4"
+                  aria-label="Slide 5"
+                ></button>
+              </div>
+            </div>
+          </div>
 
+          <!-- Galleria Verticale per Mobile -->
+          <div class="glass-card gallery-container d-md-none">
+            <div class="vertical-gallery">
+              <div class="gallery-item">
+                <img
+                  src="Img/slbt1.png"
+                  class="img-fluid gallery-image"
+                  alt="Botanicare Screenshot 1"
+                />
+              </div>
+              <div class="gallery-item">
+                <img
+                  src="Img/slbt2.png"
+                  class="img-fluid gallery-image"
+                  alt="Botanicare Screenshot 2"
+                />
+              </div>
+              <div class="gallery-item">
+                <img
+                  src="Img/slbt3.png"
+                  class="img-fluid gallery-image"
+                  alt="Botanicare Screenshot 3"
+                />
+              </div>
+              <div class="gallery-item">
+                <img
+                  src="Img/slbt4.png"
+                  class="img-fluid gallery-image"
+                  alt="Botanicare Screenshot 4"
+                />
+              </div>
+              <div class="gallery-item">
+                <img
+                  src="Img/slbt5.png"
+                  class="img-fluid gallery-image"
+                  alt="Botanicare Screenshot 5"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- Features Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="badge-custom">Come Funziona</div>
+          <h2 class="section-title">3 Semplici Passi</h2>
+        </div>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-</body>
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="glass-card tool-card text-center">
+              <div class="tool-icon">
+                <i class="fas fa-seedling"></i>
+              </div>
+              <h3 class="tool-title">Inserisci la pianta</h3>
+              <p class="tool-description">
+                Inserisci la pianta che hai appena acquistato e inizia a
+                prendertene cura con i nostri consigli personalizzati.
+              </p>
+            </div>
+          </div>
 
+          <div class="col-lg-4">
+            <div class="glass-card tool-card text-center">
+              <div class="tool-icon tool-icon-secondary">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3 class="tool-title">Monitora</h3>
+              <p class="tool-description">
+                Monitora la crescita e la salute della tua pianta attraverso i
+                consigli degli esperti e le notifiche personalizzate.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="glass-card tool-card text-center">
+              <div class="tool-icon tool-icon-accent">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3 class="tool-title">Condividi</h3>
+              <p class="tool-description">
+                Entra in contatto con altri appassionati di botanica, condividi
+                i tuoi progressi e scopri nuove varietà.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Resources Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="badge-custom">Risorse</div>
+          <h2 class="section-title">Il Progetto Completo</h2>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="glass-card resources-glass-card">
+              <div class="resources-content text-center">
+                <h3 class="mb-4">Esplora tutti i dettagli</h3>
+                <p class="mb-4">
+                  Accedi alla documentazione completa del progetto e visita il
+                  prototipo Figma per esplorare tutte le funzionalità
+                  implementate.
+                </p>
+
+                <div class="row g-3 justify-content-center">
+                  <div class="col-sm-6 col-md-4">
+                    <a
+                      href="https://docs.google.com/document/d/1GLsAxFqVzbsULLPqZkDemdhnU70I5V2U/edit?usp=sharing&ouid=108685707695211004080&rtpof=true&sd=true"
+                      target="_blank"
+                      class="btn btn-primary w-100 d-flex align-items-center justify-content-center"
+                    >
+                      <i class="fab fa-google-drive me-2"></i>
+                      <span>Documentazione</span>
+                    </a>
+                  </div>
+                  <!--
+                  <div class="col-sm-6 col-md-4">
+                    <a
+                      href="https://www.figma.com/file/YONdYLsWEYLVaKole51sjo/Botanicare?type=design&node-id=0%3A1&mode=design&t=jWl96x3w1QNd48oS-1"
+                      target="_blank"
+                      class="btn btn-outline w-100 d-flex align-items-center justify-content-center"
+                    >
+                      <i class="fab fa-figma me-2"></i>
+                      <span>Prototipo</span>
+                    </a>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <div class="logo">
+              <svg
+                class="logo-svg"
+                width="65"
+                height="39"
+                viewBox="0 0 75 49"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="logo-path-1"
+                  d="M18.2946 33.2629H29.3823L28.4319 31.4414H16.8691L10.1373 46.0929H3.0095L22.8881 1.97994H31.1246L50.924 46.0929H43.4794L28.4319 11.4836L27.3231 14.1763L42.2122 48.3105H54.1711L32.5502 0H21.6209L0 48.3105H11.642L18.2946 33.2629Z"
+                />
+                <path
+                  class="logo-path-2"
+                  d="M38.1732 1.97994L37.2228 0H75L66.4467 10.4541H44.1922L47.9937 19.1658H69.6938L60.9029 29.0655H50.132L49.5776 27.0855H60.1109L65.5755 20.9873H46.6473L41.1035 8.39493H65.5755L70.7233 1.97994H38.1732Z"
+                />
+              </svg>
+            </div>
+            <p class="footer-name">Andrea Feliziani</p>
+          </div>
+
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">Chi sono</a>
+            <a href="index.html#portfolio">Portfolio</a>
+            <a href="index.html#contact">Contatti</a>
+          </div>
+
+          <div class="footer-social">
+            <a
+              href="https://www.linkedin.com/in/andrea-feliziani/"
+              target="_blank"
+              class="social-icon"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a
+              href="https://github.com/Felix2897"
+              target="_blank"
+              class="social-icon"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/andrea_feliziani/"
+              target="_blank"
+              class="social-icon"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-copyright">
+          <p>&copy; 2025 Andrea Feliziani. Tutti i diritti riservati.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/botanicare-script.js"></script>
+  </body>
 </html>
