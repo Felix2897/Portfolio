@@ -208,20 +208,6 @@ valueDisplays.forEach((valueDisplay) => {
   }, duration);
 });
 
-// Form submission
-const form = document.querySelector(".contact-form");
-
-if (form) {
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    // Qui puoi aggiungere la logica per inviare il form
-    // Per ora mostriamo solo un alert
-    alert("Messaggio inviato con successo!");
-    form.reset();
-  });
-}
-
 // Parallax effect for floating elements
 document.addEventListener("mousemove", (e) => {
   const moveX = (e.clientX - window.innerWidth / 2) / 25;
