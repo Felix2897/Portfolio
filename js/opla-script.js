@@ -244,4 +244,39 @@ document.addEventListener("DOMContentLoaded", () => {
     card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
     observer.observe(card);
   });
+
+  // Add glow effect to the title - Similar to Botanicare
+  const gradientText = document.querySelector(".gradient-text");
+  if (gradientText) {
+    setInterval(() => {
+      gradientText.style.textShadow = `
+        0 0 5px rgba(112, 141, 129, 0.8),
+        0 0 10px rgba(112, 141, 129, 0.6),
+        0 0 15px rgba(112, 141, 129, 0.4),
+        0 0 20px rgba(112, 141, 129, 0.2)
+      `;
+
+      setTimeout(() => {
+        gradientText.style.textShadow = "0 0 30px rgba(112, 141, 129, 0.5)";
+      }, 100);
+    }, 2000);
+  }
+
+  // Customize carousel indicators to match Oplà colors
+  const carouselIndicators = document.querySelectorAll(
+    ".carousel-indicators button"
+  );
+  carouselIndicators.forEach((indicator) => {
+    indicator.addEventListener("mouseenter", () => {
+      if (!indicator.classList.contains("active")) {
+        indicator.style.backgroundColor = "rgba(112, 141, 129, 0.5)";
+      }
+    });
+
+    indicator.addEventListener("mouseleave", () => {
+      if (!indicator.classList.contains("active")) {
+        indicator.style.backgroundColor = "rgba(255, 255, 255, 0.3)";
+      }
+    });
+  });
 });
