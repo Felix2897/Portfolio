@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const Typed = window.Typed; // Declare Typed variable
   if (typeof Typed !== "undefined") {
     const typed = new Typed("#typed-text", {
-      strings: ["UI/UX Designer", "Front-end Developer", "Web Designer"],
+      strings: ["UI/UX Designer", "Web Designer"],
       typeSpeed: 80,
       backSpeed: 50,
       backDelay: 1500,
