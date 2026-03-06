@@ -21,6 +21,16 @@ function ScrollToTop() {
 }
 
 export default function App() {
+  useEffect(() => {
+    // Add initial-load class on first mount
+    document.body.classList.add("initial-load");
+    // Remove it after the loader animation is done (~2.5s to be safe)
+    const timer = setTimeout(() => {
+      document.body.classList.remove("initial-load");
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <Loader />

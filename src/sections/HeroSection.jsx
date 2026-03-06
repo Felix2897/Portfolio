@@ -12,11 +12,21 @@ import {
 import SocialLinks from "../components/SocialLinks";
 import { useLanguage } from "../i18n/LanguageContext";
 
-export default function HeroSection() {
+export default function HeroSection({ onFilterChange }) {
   const typedRef = useRef(null);
   const scrollRef = useRef(null);
   const [init, setInit] = useState(false);
   const { t, lang } = useLanguage();
+
+  const handleFilterClick = (filter) => {
+    if (onFilterChange) {
+      onFilterChange(filter);
+      const portfolioSection = document.getElementById("portfolio");
+      if (portfolioSection) {
+        portfolioSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -201,29 +211,33 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              {/* Floating Element 1 - UI/UX Design */}
-              <div className="absolute -top-6 -right-6 glass-card p-4 rounded-xl flex items-center gap-4 z-20 animate-float shadow-xl border border-[var(--color-border-glass)] bg-[#151525]/80 backdrop-blur-xl">
-                <div className="w-12 h-12 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl">
-                  <FaPalette />
-                </div>
-                <div>
-                  <h4 className="font-bold text-text-main text-sm">
-                    {t("hero.cardDesign")}
-                  </h4>
-                  <p className="text-text-muted text-xs">Figma, Adobe XD</p>
-                </div>
-              </div>
-
-              {/* Floating Element 2 - Frontend */}
-              <div className="absolute -bottom-8 -left-8 glass-card p-4 rounded-xl flex items-center gap-4 z-20 animate-float-delayed shadow-xl border border-[var(--color-border-glass)] bg-[#151525]/80 backdrop-blur-xl">
-                <div className="w-12 h-12 rounded-full bg-pink-500/20 text-pink-400 flex items-center justify-center text-xl">
+              {/* Floating Element 1 - Frontend */}
+              <div
+                className="absolute -top-6 -right-6 glass-card p-4 rounded-xl flex items-center gap-4 z-20 animate-float shadow-xl border border-[var(--color-border-glass)] bg-[#151525]/80 backdrop-blur-xl cursor-pointer hover:scale-110 active:scale-95 transition-all"
+                onClick={() => handleFilterClick("front-end")}
+              >
+                <div className="w-[46px] h-[46px] rounded-full bg-pink-500/20 text-pink-400 flex items-center justify-center text-xl">
                   <FaCode />
                 </div>
                 <div>
-                  <h4 className="font-bold text-text-main text-sm">
+                  <h4 className="font-bold text-text-main text-sm whitespace-nowrap">
                     {t("hero.cardDev")}
                   </h4>
-                  <p className="text-text-muted text-xs">React, Tailwind</p>
+                </div>
+              </div>
+
+              {/* Floating Element 2 - UI/UX Design */}
+              <div
+                className="absolute -bottom-8 -left-8 glass-card p-4 rounded-xl flex items-center gap-4 z-20 animate-float-delayed shadow-xl border border-[var(--color-border-glass)] bg-[#151525]/80 backdrop-blur-xl cursor-pointer hover:scale-110 active:scale-95 transition-all"
+                onClick={() => handleFilterClick("ui/ux")}
+              >
+                <div className="w-[46px] h-[46px] rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl">
+                  <FaPalette />
+                </div>
+                <div>
+                  <h4 className="font-bold text-text-main text-sm whitespace-nowrap">
+                    {t("hero.cardDesign")}
+                  </h4>
                 </div>
               </div>
             </div>
@@ -240,7 +254,8 @@ export default function HeroSection() {
           const end = target.getBoundingClientRect().top + start - 90;
           const duration = 900;
           let startTime = null;
-          const ease = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+          const ease = (t) =>
+            t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
           const step = (timestamp) => {
             if (!startTime) startTime = timestamp;
             const progress = Math.min((timestamp - startTime) / duration, 1);

@@ -4,8 +4,7 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 import SectionHeader from "../components/SectionHeader";
 import { useLanguage } from "../i18n/LanguageContext";
 
-export default function PortfolioSection() {
-  const [activeFilter, setActiveFilter] = useState("all");
+export default function PortfolioSection({ activeFilter, onFilterChange }) {
   const cardRefs = useRef([]);
   const { t } = useLanguage();
 
@@ -105,7 +104,7 @@ export default function PortfolioSection() {
             <button
               key={value}
               className={`filter-btn ${activeFilter === value ? "active" : ""}`}
-              onClick={() => setActiveFilter(value)}
+              onClick={() => onFilterChange(value)}
             >
               {label}
             </button>

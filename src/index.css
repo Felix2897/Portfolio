@@ -80,7 +80,7 @@ img {
   border-radius: 1rem;
   border: 1px solid var(--color-border-glass);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
+  /* padding removed to allow Tailwind p-* classes */
   transition: all 0.3s ease;
 }
 
@@ -268,20 +268,37 @@ img {
   animation: fadeInUp 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-/* Delays sincronizzati col loader (2s) */
+/* Delays predefiniti (brevi per navigazione interna) */
 .animate-delay-100 {
-  animation-delay: 2s;
+  animation-delay: 0.1s;
 }
 .animate-delay-200 {
-  animation-delay: 2.15s;
+  animation-delay: 0.2s;
 }
 .animate-delay-300 {
-  animation-delay: 2.3s;
+  animation-delay: 0.3s;
 }
 .animate-delay-400 {
-  animation-delay: 2.45s;
+  animation-delay: 0.4s;
 }
 .animate-delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* Delays sincronizzati col loader (solo al primo caricamento) */
+.initial-load .animate-delay-100 {
+  animation-delay: 2s;
+}
+.initial-load .animate-delay-200 {
+  animation-delay: 2.15s;
+}
+.initial-load .animate-delay-300 {
+  animation-delay: 2.3s;
+}
+.initial-load .animate-delay-400 {
+  animation-delay: 2.45s;
+}
+.initial-load .animate-delay-500 {
   animation-delay: 2.6s;
 }
 
