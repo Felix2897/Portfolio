@@ -121,19 +121,21 @@ export default function Header() {
                 </button>
 
                 {langOpen && (
-                  <div className="absolute top-full right-0 mt-2 p-2 glass-card min-w-[120px] animate-fadeInUp">
-                    <button
-                      onClick={() => selectLang("en")}
-                      className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors flex items-center gap-2 ${lang === "en" ? "bg-indigo-500/20 text-indigo-400" : "text-text-muted hover:bg-white/5"}`}
-                    >
-                      <span>🇬🇧</span> English
-                    </button>
-                    <button
-                      onClick={() => selectLang("it")}
-                      className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors flex items-center gap-2 ${lang === "it" ? "bg-indigo-500/20 text-indigo-400" : "text-text-muted hover:bg-white/5"}`}
-                    >
-                      <span>🇮🇹</span> Italiano
-                    </button>
+                  <div className="absolute top-full right-0 mt-2 p-2 glass-card min-w-[120px] animate-fadeInUp flex flex-col gap-1">
+                    {[
+                      { code: "it", flag: "🇮🇹", label: "Italiano" },
+                      { code: "en", flag: "🇬🇧", label: "English" },
+                    ]
+                      .sort((a) => (a.code === lang ? -1 : 1))
+                      .map(({ code, flag, label }) => (
+                        <button
+                          key={code}
+                          onClick={() => selectLang(code)}
+                          className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors flex items-center gap-2 ${lang === code ? "bg-indigo-500/20 text-indigo-400" : "text-text-muted hover:bg-white/5"}`}
+                        >
+                          <span>{flag}</span> {label}
+                        </button>
+                      ))}
                   </div>
                 )}
               </div>
@@ -150,18 +152,20 @@ export default function Header() {
                 <FaChevronDown className="text-[10px]" />
                 {langOpen && (
                   <div className="absolute top-full right-0 mt-2 p-2 glass-card min-w-[100px] z-50">
-                    <button
-                      onClick={() => selectLang("en")}
-                      className="w-full text-left px-3 py-2 text-sm text-white"
-                    >
-                      🇬🇧 EN
-                    </button>
-                    <button
-                      onClick={() => selectLang("it")}
-                      className="w-full text-left px-3 py-2 text-sm text-white"
-                    >
-                      🇮🇹 IT
-                    </button>
+                    {[
+                      { code: "it", flag: "🇮🇹", label: "IT" },
+                      { code: "en", flag: "🇬🇧", label: "EN" },
+                    ]
+                      .sort((a) => (a.code === lang ? -1 : 1))
+                      .map(({ code, flag, label }) => (
+                        <button
+                          key={code}
+                          onClick={() => selectLang(code)}
+                          className={`w-full text-left px-3 py-2 text-sm ${lang === code ? "text-indigo-400" : "text-white"}`}
+                        >
+                          {flag} {label}
+                        </button>
+                      ))}
                   </div>
                 )}
               </button>
