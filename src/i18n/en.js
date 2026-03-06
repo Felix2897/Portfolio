@@ -24,9 +24,9 @@ export default {
   about: {
     badge: "About Me",
     title: "About Me",
-    bio1: "I'm a UI/UX Designer and Front-end Developer with a solid technical background acquired at the Technical Institute in Computer Science. I further refined my skills through a Bachelor's degree in Product Design in Ascoli Piceno, integrating my technical background with a broader perspective on design.",
-    bio2: "My academic journey continued with a Master's degree in Theory and Technology of Communication at the University of Milano-Bicocca, where I deepened communication principles and developed practical skills in Front-end and UX/UI Design.",
-    bio3: "Today I work as a UI/UX Designer and Front-end Developer: I analyze user needs, design intuitive solutions, and transform them into functional interfaces, balancing functionality, usability, and aesthetics.",
+    bio1: "I'm a <strong>UI/UX Designer</strong> and <strong>Front-end Developer</strong> with a background that bridges computer science and design. After graduating from a Technical Institute in Computer Science, I earned my Bachelor's degree in Product Design in Ascoli Piceno. I then completed a Master's degree in Theory and Technology of Communication at the University of Milano-Bicocca, developing a deeper interest in <strong>UX/UI design</strong> and <strong>front-end development</strong>.",
+    bio2: "Today I work primarily as a <strong>UI/UX Designer</strong>. I focus on understanding <strong>user needs</strong>, designing clear and easy-to-use interfaces, and guiding the process from concept to digital product. My work is centered on <strong>UX and UI</strong>, while my <strong>front-end</strong> skills help me translate designs into functional interfaces and maintain consistency between design and development.",
+    bio3: "",
     downloadCv: "Download CV",
     designTitle: "UI/UX Designer",
     devTitle: "Front-end Developer",

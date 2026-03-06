@@ -24,9 +24,9 @@ export default {
   about: {
     badge: "Chi sono",
     title: "About Me",
-    bio1: "Sono un UI/UX designer e sviluppatore Front-end con una solida base tecnica acquisita presso l'Istituto Tecnico in Informatica. Ho ulteriormente affinato le mie competenze attraverso la laurea triennale in Design del Prodotto ad Ascoli Piceno, integrando il mio background tecnico con una prospettiva più ampia sulla progettazione.",
-    bio2: "Il mio percorso accademico è proseguito con la laurea magistrale in Teoria e Tecnologia della Comunicazione presso l'Università degli Studi di Milano-Bicocca dove ho approfondito i principi di comunicazione e ho sviluppato competenze pratiche nel Front-end e nell'UX/UI Design.",
-    bio3: "Oggi lavoro come UI/UX Designer e Front-end Developer: analizzo le esigenze degli utenti, progetto soluzioni intuitive e le trasformo in interfacce funzionanti, bilanciando funzionalità, usabilità ed estetica.",
+    bio1: "Sono un <strong>UI/UX Designer</strong> e <strong>Front-end Developer</strong> con un percorso di studi tra informatica e design. Dopo il diploma all'Istituto Tecnico in Informatica, ho conseguito la laurea triennale in Design del Prodotto ad Ascoli Piceno. In seguito ho proseguito con la laurea magistrale in Teoria e Tecnologia della Comunicazione all'Università degli Studi di Milano-Bicocca, avvicinandomi al mondo dell'<strong>UX/UI design</strong> e del <strong>front-end</strong>.",
+    bio2: "Oggi lavoro principalmente come <strong>UI/UX Designer</strong>. Mi occupo di capire le <strong>esigenze degli utenti</strong>, progettare interfacce chiare e semplici da usare e seguire il processo che porta dall'idea al prodotto digitale. Il mio lavoro è concentrato soprattutto su <strong>UX e UI</strong>, mentre il <strong>front-end</strong> mi aiuta a tradurre i progetti in interfacce funzionanti e a mantenere coerenza tra design e sviluppo.",
+    bio3: "",
     downloadCv: "Download CV",
     designTitle: "UI/UX Designer",
     devTitle: "Front-end Developer",

@@ -233,7 +233,23 @@ export default function HeroSection() {
 
       <div
         ref={scrollRef}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[var(--color-text-muted)] opacity-100 transition-opacity duration-300 hidden md:flex animate-fadeInUp animate-delay-500"
+        onClick={() => {
+          const target = document.getElementById("about");
+          if (!target) return;
+          const start = window.scrollY;
+          const end = target.getBoundingClientRect().top + start - 90;
+          const duration = 900;
+          let startTime = null;
+          const ease = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+          const step = (timestamp) => {
+            if (!startTime) startTime = timestamp;
+            const progress = Math.min((timestamp - startTime) / duration, 1);
+            window.scrollTo(0, start + (end - start) * ease(progress));
+            if (progress < 1) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+        }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[var(--color-text-muted)] opacity-100 transition-opacity duration-300 hidden md:flex animate-fadeInUp animate-delay-500 cursor-pointer hover:text-white"
       >
         <span className="text-sm font-medium tracking-wide uppercase">
           Scroll
