@@ -13,7 +13,7 @@ export default function SerenityPage() {
       >
         <div className="absolute inset-0 -z-10">
           <img
-            src="/Img/index-header.png"
+            src="./Img/index-header.png"
             alt="Serenity Background"
             className="w-full h-full object-cover"
           />
@@ -62,7 +62,7 @@ export default function SerenityPage() {
             </div>
             <div>
               <img
-                src="/Img/heroimg.png"
+                src="./Img/heroimg.png"
                 alt="Serenity Dream Travels"
                 className="w-full rounded-xl"
               />

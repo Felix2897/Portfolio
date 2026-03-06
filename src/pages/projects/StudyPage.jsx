@@ -14,18 +14,18 @@ import SectionHeader from "../../components/SectionHeader";
 import { useLanguage } from "../../i18n/LanguageContext";
 
 const heroImages = [
-  "/Img/Home Launch.png",
-  "/Img/home-fin.png",
-  "/Img/Calendario 1.png",
-  "/Img/newsfide.png",
-  "/Img/Home Amici.png",
+  "./Img/Home Launch.png",
+  "./Img/home-fin.png",
+  "./Img/Calendario 1.png",
+  "./Img/newsfide.png",
+  "./Img/Home Amici.png",
 ];
 const galleryImages = [
-  "/Img/1.1.png",
-  "/Img/2.png",
-  "/Img/3.1.png",
-  "/Img/4.png",
-  "/Img/5.png",
+  "./Img/1.1.png",
+  "./Img/2.png",
+  "./Img/3.1.png",
+  "./Img/4.png",
+  "./Img/5.png",
 ];
 
 export default function StudyPage() {

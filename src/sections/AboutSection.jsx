@@ -45,7 +45,7 @@ export default function AboutSection() {
             <div className="glass-card text-center">
               <p className="text-[var(--color-text-muted)] mb-6" dangerouslySetInnerHTML={{ __html: t("about.bio1") }} />
               <p className="text-[var(--color-text-muted)] mb-8" dangerouslySetInnerHTML={{ __html: t("about.bio2") }} />
-              <a href={lang === "it" ? "/CV.pdf" : "/Andrea_Feliziani_CV.pdf"} download className="btn btn-outline">
+              <a href={lang === "it" ? "./CV.pdf" : "./Andrea_Feliziani_CV.pdf"} download className="btn btn-outline">
                 <span>{t("about.downloadCv")}</span>
                 <FaDownload />
               </a>

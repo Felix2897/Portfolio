@@ -4,9 +4,9 @@ import SectionHeader from "../../components/SectionHeader";
 import { useLanguage } from "../../i18n/LanguageContext";
 
 const galleryImages = [
-  "/Img/SECUREITS1.png",
-  "/Img/SECUREITS2.png",
-  "/Img/SECUREITS3.png",
+  "./Img/SECUREITS1.png",
+  "./Img/SECUREITS2.png",
+  "./Img/SECUREITS3.png",
 ];
 
 export default function SecurePage() {

@@ -5,18 +5,18 @@ import SectionHeader from "../../components/SectionHeader";
 import { useLanguage } from "../../i18n/LanguageContext";
 
 const heroImages = [
-  "/Img/bot1.png",
-  "/Img/bot2.png",
-  "/Img/bot3.png",
-  "/Img/bot4.png",
-  "/Img/bot5.png",
+  "./Img/bot1.png",
+  "./Img/bot2.png",
+  "./Img/bot3.png",
+  "./Img/bot4.png",
+  "./Img/bot5.png",
 ];
 const galleryImages = [
-  "/Img/slbt1.png",
-  "/Img/slbt2.png",
-  "/Img/slbt3.png",
-  "/Img/slbt4.png",
-  "/Img/slbt5.png",
+  "./Img/slbt1.png",
+  "./Img/slbt2.png",
+  "./Img/slbt3.png",
+  "./Img/slbt4.png",
+  "./Img/slbt5.png",
 ];
 
 export default function BotanicarePage() {

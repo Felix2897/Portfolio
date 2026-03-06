@@ -11,10 +11,10 @@ import SectionHeader from "../../components/SectionHeader";
 import { useLanguage } from "../../i18n/LanguageContext";
 
 const galleryImages = [
-  "/Img/1OP.png",
-  "/Img/30P.png",
-  "/Img/4OP.png",
-  "/Img/5OP.png",
+  "./Img/1OP.png",
+  "./Img/30P.png",
+  "./Img/4OP.png",
+  "./Img/5OP.png",
 ];
 
 export default function OplaPage() {

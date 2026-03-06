@@ -153,7 +153,7 @@ export default function HeroSection() {
               </a>
 
               <a
-                href={lang === "it" ? "/CV.pdf" : "/Andrea_Feliziani_CV.pdf"}
+                href={lang === "it" ? "./CV.pdf" : "./Andrea_Feliziani_CV.pdf"}
                 download
                 className="btn btn-outline group"
               >
@@ -183,7 +183,7 @@ export default function HeroSection() {
                 <div className="w-full h-full rounded-xl overflow-hidden relative">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
                   <img
-                    src="/assets/images/Andrea.jpeg"
+                    src="./assets/images/Andrea.jpeg"
                     alt="Andrea Feliziani"
                     className="w-full h-full object-cover"
                   />

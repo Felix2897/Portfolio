@@ -11,11 +11,11 @@ import SectionHeader from "../../components/SectionHeader";
 import { useLanguage } from "../../i18n/LanguageContext";
 
 const galleryImages = [
-  "/Img/svr1.png",
-  "/Img/svr2.png",
-  "/Img/svr3.png",
-  "/Img/svr4.png",
-  "/Img/svr5.png",
+  "./Img/svr1.png",
+  "./Img/svr2.png",
+  "./Img/svr3.png",
+  "./Img/svr4.png",
+  "./Img/svr5.png",
 ];
 
 export default function ValeriPage() {
@@ -215,7 +215,7 @@ export default function ValeriPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="flex justify-center">
               <img
-                src="/Img/iow.png"
+                src="./Img/iow.png"
                 alt="Valeri Franco Prototipo"
                 className="max-h-[500px] w-auto object-contain rounded-2xl"
                 style={{ boxShadow: "0 20px 60px rgba(0,0,0,0.3)" }}
