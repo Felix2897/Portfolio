@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaTimes, FaChevronDown } from "react-icons/fa";
 import Logo from "./Logo";
 import SocialLinks from "./SocialLinks";
@@ -10,6 +10,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const location = useLocation();
+  const navigate = useNavigate();
   const isHome = location.pathname === "/";
   const { lang, setLang, t } = useLanguage();
   const [langOpen, setLangOpen] = useState(false);
@@ -44,14 +45,18 @@ export default function Header() {
   }, [isHome]);
 
   const handleNavClick = (e, href) => {
-    if (isHome && href.startsWith("/#")) {
-      e.preventDefault();
-      const id = href.replace("/#", "");
+    e.preventDefault();
+    const id = href.replace("/#", "");
+    
+    if (isHome) {
       const el = document.getElementById(id);
       if (el) {
         window.scrollTo({ top: el.offsetTop - 100, behavior: "smooth" });
       }
+    } else {
+      navigate("/", { state: { scrollTo: id } });
     }
+    
     setMobileOpen(false);
     document.body.style.overflow = "auto";
   };
