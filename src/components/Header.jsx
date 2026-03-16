@@ -40,6 +40,10 @@ export default function Header() {
       });
       if (current) setActiveSection(current);
     };
+    
+    // Evaluate immediately in case we just navigated back to the home page
+    onScroll();
+    
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, [isHome]);
