@@ -61,7 +61,7 @@ export default function AboutSection() {
               <div
                 className="w-12 h-12 rounded-full flex items-center justify-center text-xl mb-4"
                 style={{
-                  backgroundColor: "rgba(99,102,241,0.1)",
+                  backgroundColor: "rgba(232,160,32,0.1)",
                   color: "var(--color-primary)",
                 }}
               >
@@ -86,7 +86,7 @@ export default function AboutSection() {
               <div
                 className="w-12 h-12 rounded-full flex items-center justify-center text-xl mb-4"
                 style={{
-                  backgroundColor: "rgba(236,72,153,0.1)",
+                  backgroundColor: "rgba(10,173,173,0.1)",
                   color: "var(--color-secondary)",
                 }}
               >

@@ -140,7 +140,7 @@ export default function Header() {
                         <button
                           key={code}
                           onClick={() => selectLang(code)}
-                          className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors flex items-center gap-2 ${lang === code ? "bg-indigo-500/20 text-indigo-400" : "text-text-muted hover:bg-white/5"}`}
+                          className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors flex items-center gap-2 ${lang === code ? "bg-amber-500/15 text-amber-400" : "text-text-muted hover:bg-white/5"}`}
                         >
                           <span>{flag}</span> {label}
                         </button>
@@ -170,7 +170,7 @@ export default function Header() {
                         <button
                           key={code}
                           onClick={() => selectLang(code)}
-                          className={`w-full text-left px-3 py-2 text-sm ${lang === code ? "text-indigo-400" : "text-white"}`}
+                          className={`w-full text-left px-3 py-2 text-sm ${lang === code ? "text-amber-400" : "text-white"}`}
                         >
                           {flag} {label}
                         </button>
