@@ -201,7 +201,7 @@ export default function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.2, repeat: Infinity, repeatType: "reverse", repeatDelay: 1.5 }}
       >
-        <span className="text-[10px] uppercase tracking-[0.3em] text-(--color-text-muted) font-bold">Scroll</span>
+        <span className="hidden md:block text-[10px] uppercase tracking-[0.3em] text-(--color-text-muted) font-bold">Scroll</span>
         <div className="w-px h-[50px] bg-linear-to-b from-(--color-accent)/80 to-transparent" />
       </motion.div>
     </section>
