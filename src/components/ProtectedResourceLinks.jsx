@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { useLanguage } from "../i18n/LanguageContext";
 
-export default function ProtectedResourceLinks({ storageKey, resources }) {
+export default function ProtectedResourceLinks({ storageKey, resources, showStatus = true }) {
   const [email, setEmail] = useState("");
   const [savedEmail, setSavedEmail] = useState("");
   const [emailError, setEmailError] = useState("");
@@ -181,7 +181,7 @@ export default function ProtectedResourceLinks({ storageKey, resources }) {
         ))}
       </div>
 
-      {savedEmail ? (
+      {showStatus && savedEmail ? (
         <div className="project-access-unlocked">
           <p className="project-access-success">
             {t("project.accessGranted")} <strong>{savedEmail}</strong>

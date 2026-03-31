@@ -13,6 +13,7 @@ import ProtectedResourceLinks from "../../components/ProtectedResourceLinks";
 import ProjectCarousel from "../../components/ProjectCarousel";
 import SectionHeader from "../../components/SectionHeader";
 import { useLanguage } from "../../i18n/LanguageContext";
+import { smoothScrollTo } from "../../utils/smoothScroll";
 
 const heroImages = [
   "./Img/Home Launch.png",
@@ -105,22 +106,22 @@ export default function StudyPage() {
                   className="btn btn-primary"
                   onClick={(e) => {
                     e.preventDefault();
-                    const el = document.getElementById("progetto");
-                    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: "smooth" });
+                    smoothScrollTo("progetto");
                   }}
                 >
                   <span>{t("project.exploreProject")}</span>
                   <FaArrowDown />
                 </a>
-                <a
-                  href="https://www.figma.com/file/aFuqVzfzqnWwpiySgWqtbt/StudyWard"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-outline"
-                >
-                  <span>{t("project.figmaPrototype")}</span>
-                  <FaFigma />
-                </a>
+                <ProtectedResourceLinks
+                  storageKey="studyward-docs-email"
+                  showStatus={false}
+                  resources={[{
+                    href: "https://www.figma.com/file/aFuqVzfzqnWwpiySgWqtbt/StudyWard",
+                    label: t("project.figmaPrototype"),
+                    icon: FaFigma,
+                    variant: "outline",
+                  }]}
+                />
               </div>
             </div>
             <div className="lg:order-2 hidden lg:flex justify-center">

@@ -1,5 +1,6 @@
 import { FaGithub, FaFigma } from "react-icons/fa";
 import { useLanguage } from "../../i18n/LanguageContext";
+import ProtectedResourceLinks from "../../components/ProtectedResourceLinks";
 
 export default function SerenityPage() {
   const { t } = useLanguage();
@@ -49,15 +50,16 @@ export default function SerenityPage() {
                   <FaGithub />
                   <span>{t("serenity.viewCode")}</span>
                 </a>
-                <a
-                  href="https://www.figma.com/design/vhOrXFzzq1HHIXdvcFTPiq/Serenity-Dream-Travels?node-id=1-4621&t=sNRDiZgupL5Tp4j4-1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-outline"
-                >
-                  <FaFigma />
-                  <span>Figma</span>
-                </a>
+                <ProtectedResourceLinks
+                  storageKey="serenity-docs-email"
+                  showStatus={false}
+                  resources={[{
+                    href: "https://www.figma.com/design/vhOrXFzzq1HHIXdvcFTPiq/Serenity-Dream-Travels?node-id=1-4621&t=sNRDiZgupL5Tp4j4-1",
+                    label: "Figma",
+                    icon: FaFigma,
+                    variant: "outline",
+                  }]}
+                />
               </div>
             </div>
             <div>

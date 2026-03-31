@@ -10,6 +10,7 @@ import ProtectedResourceLinks from "../../components/ProtectedResourceLinks";
 import ProjectCarousel from "../../components/ProjectCarousel";
 import SectionHeader from "../../components/SectionHeader";
 import { useLanguage } from "../../i18n/LanguageContext";
+import { smoothScrollTo } from "../../utils/smoothScroll";
 
 const galleryImages = [
   "./Img/svr1.png",
@@ -77,8 +78,7 @@ export default function ValeriPage() {
                 className="btn btn-primary"
                 onClick={(e) => {
                   e.preventDefault();
-                  const el = document.getElementById("progetto");
-                  if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: "smooth" });
+                  smoothScrollTo("progetto");
                 }}
               >
                 <span>{t("project.exploreProject")}</span>
@@ -89,9 +89,7 @@ export default function ValeriPage() {
                 className="btn btn-outline"
                 onClick={(e) => {
                   e.preventDefault();
-                  document
-                    .getElementById("prototipo")
-                    ?.scrollIntoView({ behavior: "smooth" });
+                  smoothScrollTo("prototipo");
                 }}
               >
                 <span>{t("project.prototype")}</span>

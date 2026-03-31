@@ -2,6 +2,7 @@ import { FaArrowDown, FaShieldAlt, FaChartBar, FaLock } from "react-icons/fa";
 import ProjectCarousel from "../../components/ProjectCarousel";
 import SectionHeader from "../../components/SectionHeader";
 import { useLanguage } from "../../i18n/LanguageContext";
+import { smoothScrollTo } from "../../utils/smoothScroll";
 
 const galleryImages = [
   "./Img/SECUREITS1.png",
@@ -65,8 +66,7 @@ export default function SecurePage() {
               className="btn btn-primary"
               onClick={(e) => {
                 e.preventDefault();
-                const el = document.getElementById("progetto");
-                if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: "smooth" });
+                smoothScrollTo("progetto");
               }}
             >
               <span>{t("project.exploreProject")}</span>

@@ -10,6 +10,7 @@ import ProtectedResourceLinks from "../../components/ProtectedResourceLinks";
 import ProjectCarousel from "../../components/ProjectCarousel";
 import SectionHeader from "../../components/SectionHeader";
 import { useLanguage } from "../../i18n/LanguageContext";
+import { smoothScrollTo } from "../../utils/smoothScroll";
 
 const galleryImages = [
   "./Img/1OP.png",
@@ -73,22 +74,22 @@ export default function OplaPage() {
                 className="btn btn-primary"
                 onClick={(e) => {
                   e.preventDefault();
-                  const el = document.getElementById("progetto");
-                  if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: "smooth" });
+                  smoothScrollTo("progetto");
                 }}
               >
                 <span>{t("project.exploreProject")}</span>
                 <FaArrowDown />
               </a>
-              <a
-                href="https://www.figma.com/design/wgungAOOwITkQCFbK7Z5Cv/Opl%C3%A0?node-id=0-1&t=3uz4hmTuMgD7CoLy-1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-outline"
-              >
-                <span>{t("project.figmaPrototype")}</span>
-                <FaFigma />
-              </a>
+              <ProtectedResourceLinks
+                storageKey="opla-docs-email"
+                showStatus={false}
+                resources={[{
+                  href: "https://www.figma.com/design/wgungAOOwITkQCFbK7Z5Cv/Opl%C3%A0?node-id=0-1&t=3uz4hmTuMgD7CoLy-1",
+                  label: t("project.figmaPrototype"),
+                  icon: FaFigma,
+                  variant: "outline",
+                }]}
+              />
             </div>
           </div>
         </div>
