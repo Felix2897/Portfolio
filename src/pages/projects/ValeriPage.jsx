@@ -77,9 +77,8 @@ export default function ValeriPage() {
                 className="btn btn-primary"
                 onClick={(e) => {
                   e.preventDefault();
-                  document
-                    .getElementById("progetto")
-                    ?.scrollIntoView({ behavior: "smooth" });
+                  const el = document.getElementById("progetto");
+                  if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: "smooth" });
                 }}
               >
                 <span>{t("project.exploreProject")}</span>

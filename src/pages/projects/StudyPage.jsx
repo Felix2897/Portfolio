@@ -84,8 +84,8 @@ export default function StudyPage() {
           />
         </div>
         <div className="max-w-7xl mx-auto px-4 md:px-6 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
+          <div className="max-w-3xl mx-auto text-center lg:max-w-none lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center lg:text-left">
+            <div>
               <div className="portfolio-category mb-4">
                 {t("study.category")}
               </div>
@@ -99,15 +99,14 @@ export default function StudyPage() {
               <p className="text-lg text-[var(--color-text-muted)] mb-8">
                 {t("study.heroDesc")}
               </p>
-              <div className="flex gap-4 flex-wrap">
+              <div className="flex gap-4 flex-wrap justify-center lg:justify-start">
                 <a
                   href="#progetto"
                   className="btn btn-primary"
                   onClick={(e) => {
                     e.preventDefault();
-                    document
-                      .getElementById("progetto")
-                      ?.scrollIntoView({ behavior: "smooth" });
+                    const el = document.getElementById("progetto");
+                    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: "smooth" });
                   }}
                 >
                   <span>{t("project.exploreProject")}</span>
@@ -124,7 +123,7 @@ export default function StudyPage() {
                 </a>
               </div>
             </div>
-            <div className="order-1 lg:order-2 hidden lg:flex justify-center">
+            <div className="lg:order-2 hidden lg:flex justify-center">
               <ProjectCarousel
                 images={heroImages}
                 altBase="StudyWard"

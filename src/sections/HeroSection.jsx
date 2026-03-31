@@ -1,10 +1,6 @@
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
-import {
-  FaMapMarkerAlt,
-  FaArrowRight,
-  FaDownload,
-} from "react-icons/fa";
+import { FaMapMarkerAlt, FaArrowRight, FaDownload } from "react-icons/fa";
 import SocialLinks from "../components/SocialLinks";
 import { useLanguage } from "../i18n/LanguageContext";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -51,17 +47,19 @@ export default function HeroSection() {
   const opacityScroll = useTransform(scrollY, [0, 200], [1, 0]);
 
   return (
-    <section id="home" className="hero-section relative w-full overflow-hidden flex items-center justify-center min-h-screen">
+    <section
+      id="home"
+      className="hero-section relative w-full overflow-hidden flex items-center justify-center min-h-screen"
+    >
       {/* Dynamic Background glowing orbs */}
       <div className="hero-ambient-glow orb-1" />
       <div className="hero-ambient-glow orb-2" />
       <div className="hero-dot-grid" aria-hidden="true" />
 
       <div className="container relative z-10 px-4 md:px-6 max-w-7xl mx-auto flex flex-col items-center justify-center h-full w-full">
-        <div className="relative w-full flex flex-col lg:flex-row items-center justify-between mt-24 lg:mt-0">
-          
+        <div className="relative w-full flex flex-col lg:flex-row items-center justify-between mt-10 lg:mt-0">
           {/* ── Center/Back: HUGE Name Text ── */}
-          <motion.div 
+          <motion.div
             style={{ y: yText }}
             className="absolute top-[5%] lg:top-[12%] left-0 w-full flex justify-center lg:justify-start z-0 select-none pointer-events-none"
             initial={{ opacity: 0, scale: 0.9, y: 30 }}
@@ -69,13 +67,13 @@ export default function HeroSection() {
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           >
             <h1 className="text-[clamp(5rem,15vw,16rem)] font-extrabold tracking-tighter leading-none text-transparent bg-clip-text bg-linear-to-b from-(--color-text) to-transparent opacity-10 dark:opacity-[0.04] whitespace-nowrap overflow-hidden">
-              {t("hero.name").split(' ')[0].toUpperCase()}
+              {t("hero.name").split(" ")[0].toUpperCase()}
             </h1>
           </motion.div>
 
           {/* ── Left: Text Content ── */}
           <div className="w-full lg:w-[55%] z-20 flex flex-col items-center lg:items-start text-center lg:text-left pt-10 lg:pt-0">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -85,7 +83,7 @@ export default function HeroSection() {
               Available for work
             </motion.div>
 
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -94,15 +92,22 @@ export default function HeroSection() {
               {t("hero.name")}
             </motion.h1>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl md:text-3xl font-medium text-(--color-accent) mb-8 flex items-center justify-center lg:justify-start gap-4"
             >
-              <span className="hero-role-bracket font-mono text-2xl">{'<'}</span>
-              <span ref={typedRef} className="hero-role-typed text-(--color-text-main) font-display tracking-wide" />
-              <span className="hero-role-bracket font-mono text-2xl">{'/>'}</span>
+              <span className="hero-role-bracket font-mono text-2xl">
+                {"<"}
+              </span>
+              <span
+                ref={typedRef}
+                className="hero-role-typed text-(--color-text-main) font-display tracking-wide"
+              />
+              <span className="hero-role-bracket font-mono text-2xl">
+                {"/>"}
+              </span>
             </motion.div>
 
             <motion.div
@@ -120,13 +125,16 @@ export default function HeroSection() {
             </motion.div>
 
             {/* CTAs */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
               className="flex flex-wrap gap-5 justify-center lg:justify-start mb-12"
             >
-              <a href="#contact" className="btn btn-primary group relative overflow-hidden px-8 py-4 text-base backdrop-blur-sm">
+              <a
+                href="#contact"
+                className="btn btn-primary group relative overflow-hidden px-8 py-4 text-base backdrop-blur-sm"
+              >
                 <span className="relative z-10 flex items-center gap-3">
                   {t("hero.cta")}
                   <FaArrowRight className="transition-transform group-hover:translate-x-1.5" />
@@ -146,7 +154,7 @@ export default function HeroSection() {
             </motion.div>
 
             {/* Bottom info */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.8 }}
@@ -154,7 +162,9 @@ export default function HeroSection() {
             >
               <div className="hero-location flex items-center gap-3 text-sm text-(--color-text-muted) font-medium">
                 <FaMapMarkerAlt className="text-(--color-accent) text-lg" />
-                <span className="tracking-wide uppercase text-xs">{t("hero.location")}</span>
+                <span className="tracking-wide uppercase text-xs">
+                  {t("hero.location")}
+                </span>
               </div>
               <div className="h-8 w-px bg-(--color-border)/80" />
               <SocialLinks className="gap-3" />
@@ -184,7 +194,6 @@ export default function HeroSection() {
               </div>
             </motion.div>
           </div>
-
         </div>
       </div>
 
@@ -199,9 +208,17 @@ export default function HeroSection() {
         onKeyDown={(e) => e.key === "Enter" && scrollToAbout()}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1.2, repeat: Infinity, repeatType: "reverse", repeatDelay: 1.5 }}
+        transition={{
+          duration: 0.8,
+          delay: 1.2,
+          repeat: Infinity,
+          repeatType: "reverse",
+          repeatDelay: 1.5,
+        }}
       >
-        <span className="hidden md:block text-[10px] uppercase tracking-[0.3em] text-(--color-text-muted) font-bold">Scroll</span>
+        <span className="hidden md:block text-[10px] uppercase tracking-[0.3em] text-(--color-text-muted) font-bold">
+          Scroll
+        </span>
         <div className="w-px h-[50px] bg-linear-to-b from-(--color-accent)/80 to-transparent" />
       </motion.div>
     </section>
