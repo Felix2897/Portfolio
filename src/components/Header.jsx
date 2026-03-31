@@ -4,6 +4,7 @@ import { FaTimes, FaChevronDown } from "react-icons/fa";
 import Logo from "./Logo";
 import SocialLinks from "./SocialLinks";
 import { useLanguage } from "../i18n/LanguageContext";
+import { useTheme } from "../hooks/useTheme";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -14,6 +15,7 @@ export default function Header() {
   const isHome = location.pathname === "/";
   const { lang, setLang, t } = useLanguage();
   const [langOpen, setLangOpen] = useState(false);
+  const { isDark, toggleTheme } = useTheme();
 
   const navItems = [
     { label: t("nav.home"), href: "/#home" },
@@ -148,6 +150,17 @@ export default function Header() {
                   </div>
                 )}
               </div>
+
+              <button
+                className="lang-toggle"
+                onClick={toggleTheme}
+                role="switch"
+                aria-checked={isDark}
+                aria-label={isDark ? "Attiva modalità chiara" : "Attiva modalità scura"}
+              >
+                {isDark ? "🌙" : "☀️"}
+                <span>{isDark ? "Dark" : "Light"}</span>
+              </button>
             </nav>
 
             {/* Mobile Toggle */}
@@ -177,6 +190,15 @@ export default function Header() {
                       ))}
                   </div>
                 )}
+              </button>
+              <button
+                className="lang-toggle lang-toggle-sm"
+                onClick={toggleTheme}
+                role="switch"
+                aria-checked={isDark}
+                aria-label={isDark ? "Attiva modalità chiara" : "Attiva modalità scura"}
+              >
+                {isDark ? "🌙" : "☀️"}
               </button>
               <button
                 className="w-8 h-8 flex items-center justify-center"
@@ -224,6 +246,20 @@ export default function Header() {
         </nav>
 
         <SocialLinks className="mt-8" />
+
+        <div className="flex items-center justify-between mt-6 pt-6" style={{ borderTop: "1px solid var(--color-border)" }}>
+          <span style={{ fontSize: "0.875rem", color: "var(--color-muted)" }}>Tema</span>
+          <button
+            className="lang-toggle"
+            onClick={toggleTheme}
+            role="switch"
+            aria-checked={isDark}
+            aria-label={isDark ? "Attiva modalità chiara" : "Attiva modalità scura"}
+          >
+            {isDark ? "🌙" : "☀️"}
+            <span>{isDark ? "Dark" : "Light"}</span>
+          </button>
+        </div>
       </div>
     </>
   );
