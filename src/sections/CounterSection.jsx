@@ -6,9 +6,8 @@ function AnimatedCounter({ target, started }) {
 
   useEffect(() => {
     if (!started) return;
-    const duration = 2000;
-    const steps = target;
-    const interval = duration / steps;
+    const maxDuration = 2000;
+    const interval = Math.min(60, maxDuration / target);
     let current = 0;
     const timer = setInterval(() => {
       current += 1;
@@ -63,7 +62,9 @@ export default function CounterSection() {
                   <AnimatedCounter target={value} started={started} />
                 )}
               </div>
-              <div className="text-[var(--color-text-muted)]">{label}</div>
+              <div className="text-(--color-text-muted) font-medium">
+                {label}
+              </div>
             </div>
           ))}
         </div>

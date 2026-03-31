@@ -1,0 +1,211 @@
+<h2>Design completo — da approvare</h2>
+<p class="subtitle">Preview del sistema colori e dei componenti principali della home in dark e light mode</p>
+
+<div class="section">
+  <h3>1. Token colore</h3>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem;">
+
+    <!-- Dark -->
+    <div>
+      <div class="label" style="margin-bottom:0.75rem;">DARK MODE</div>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;">
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <div style="width:40px;height:40px;border-radius:8px;background:#141210;border:1px solid #333;flex-shrink:0;"></div>
+          <div><div style="font-size:0.8rem;font-weight:600;">--color-bg</div><div style="font-size:0.7rem;color:#888;">#141210 — sfondo pagina</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <div style="width:40px;height:40px;border-radius:8px;background:#221e1a;border:1px solid #333;flex-shrink:0;"></div>
+          <div><div style="font-size:0.8rem;font-weight:600;">--color-surface</div><div style="font-size:0.7rem;color:#888;">#221e1a — card, header</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <div style="width:40px;height:40px;border-radius:8px;background:#2e2820;border:1px solid #333;flex-shrink:0;"></div>
+          <div><div style="font-size:0.8rem;font-weight:600;">--color-border</div><div style="font-size:0.7rem;color:#888;">#2e2820 — bordi sottili</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <div style="width:40px;height:40px;border-radius:8px;background:#f2ede6;flex-shrink:0;"></div>
+          <div><div style="font-size:0.8rem;font-weight:600;">--color-text</div><div style="font-size:0.7rem;color:#888;">#f2ede6 — testo primario</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <div style="width:40px;height:40px;border-radius:8px;background:#8a7a68;flex-shrink:0;"></div>
+          <div><div style="font-size:0.8rem;font-weight:600;">--color-muted</div><div style="font-size:0.7rem;color:#888;">#8a7a68 — testo secondario</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <div style="width:40px;height:40px;border-radius:8px;background:#E8A020;flex-shrink:0;"></div>
+          <div><div style="font-size:0.8rem;font-weight:600;">--color-accent</div><div style="font-size:0.7rem;color:#888;">#E8A020 — oro (invariato)</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Light -->
+    <div>
+      <div class="label" style="margin-bottom:0.75rem;">LIGHT MODE</div>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;">
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <div style="width:40px;height:40px;border-radius:8px;background:#f7f2ea;border:1px solid #ccc;flex-shrink:0;"></div>
+          <div><div style="font-size:0.8rem;font-weight:600;">--color-bg</div><div style="font-size:0.7rem;color:#888;">#f7f2ea — sfondo pagina</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <div style="width:40px;height:40px;border-radius:8px;background:#ede5d8;border:1px solid #ccc;flex-shrink:0;"></div>
+          <div><div style="font-size:0.8rem;font-weight:600;">--color-surface</div><div style="font-size:0.7rem;color:#888;">#ede5d8 — card, header</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <div style="width:40px;height:40px;border-radius:8px;background:#d8cfc4;border:1px solid #ccc;flex-shrink:0;"></div>
+          <div><div style="font-size:0.8rem;font-weight:600;">--color-border</div><div style="font-size:0.7rem;color:#888;">#d8cfc4 — bordi sottili</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <div style="width:40px;height:40px;border-radius:8px;background:#1a1510;flex-shrink:0;"></div>
+          <div><div style="font-size:0.8rem;font-weight:600;">--color-text</div><div style="font-size:0.7rem;color:#888;">#1a1510 — testo primario</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <div style="width:40px;height:40px;border-radius:8px;background:#8a7a68;flex-shrink:0;"></div>
+          <div><div style="font-size:0.8rem;font-weight:600;">--color-muted</div><div style="font-size:0.7rem;color:#888;">#8a7a68 — testo secondario</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <div style="width:40px;height:40px;border-radius:8px;background:#E8A020;flex-shrink:0;"></div>
+          <div><div style="font-size:0.8rem;font-weight:600;">--color-accent</div><div style="font-size:0.7rem;color:#888;">#E8A020 — oro (invariato)</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>2. Hero Section — preview dark + light</h3>
+  <div class="split" style="gap:1.5rem;margin-top:1rem;">
+
+    <!-- Dark hero -->
+    <div class="mockup">
+      <div class="mockup-header">Dark mode</div>
+      <div class="mockup-body" style="background:#141210;padding:2rem;border-radius:0 0 8px 8px;min-height:280px;position:relative;overflow:hidden;">
+        <!-- dot grid -->
+        <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(232,160,32,0.06) 1px, transparent 1px);background-size:28px 28px;mask-image:radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 100%);pointer-events:none;"></div>
+        <div style="position:relative;z-index:1;">
+          <div style="display:inline-flex;align-items:center;gap:6px;padding:0.3rem 0.8rem;border-radius:2rem;border:1px solid rgba(232,160,32,0.2);background:rgba(232,160,32,0.06);margin-bottom:1.2rem;">
+            <div style="width:5px;height:5px;border-radius:50%;background:#E8A020;"></div>
+            <div style="font-size:0.6rem;color:#E8A020;text-transform:uppercase;letter-spacing:0.1em;font-weight:600;">Available for work</div>
+          </div>
+          <div style="font-size:1.8rem;font-weight:700;color:#f2ede6;line-height:1.1;margin-bottom:0.4rem;">Andrea Feliziani</div>
+          <div style="font-size:0.85rem;color:#8a7a68;margin-bottom:1rem;">/ UI Designer & Developer</div>
+          <div style="font-size:0.75rem;color:#6a5e52;margin-bottom:1.25rem;max-width:280px;line-height:1.6;">Portfolio di design e sviluppo front-end. Creo interfacce pulite e funzionali.</div>
+          <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
+            <div style="background:#E8A020;color:#141210;font-size:0.65rem;padding:0.4rem 0.9rem;border-radius:5px;font-weight:700;display:inline-flex;align-items:center;gap:4px;">Get in touch <span>→</span></div>
+            <div style="border:1px solid #2e2820;color:#8a7a68;font-size:0.65rem;padding:0.4rem 0.9rem;border-radius:5px;display:inline-flex;align-items:center;gap:4px;">Download CV ↓</div>
+          </div>
+          <div style="margin-top:1.25rem;display:flex;align-items:center;gap:0.75rem;">
+            <span style="font-size:0.65rem;color:#6a5e52;">📍 Milano, Italia</span>
+            <div style="width:1px;height:12px;background:#2e2820;"></div>
+            <div style="display:flex;gap:6px;">
+              <div style="width:22px;height:22px;border-radius:50%;background:#221e1a;border:1px solid #2e2820;"></div>
+              <div style="width:22px;height:22px;border-radius:50%;background:#221e1a;border:1px solid #2e2820;"></div>
+              <div style="width:22px;height:22px;border-radius:50%;background:#221e1a;border:1px solid #2e2820;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Light hero -->
+    <div class="mockup">
+      <div class="mockup-header">Light mode</div>
+      <div class="mockup-body" style="background:#f7f2ea;padding:2rem;border-radius:0 0 8px 8px;min-height:280px;position:relative;overflow:hidden;">
+        <!-- dot grid -->
+        <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(232,160,32,0.12) 1px, transparent 1px);background-size:28px 28px;mask-image:radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 100%);pointer-events:none;"></div>
+        <div style="position:relative;z-index:1;">
+          <div style="display:inline-flex;align-items:center;gap:6px;padding:0.3rem 0.8rem;border-radius:2rem;border:1px solid rgba(232,160,32,0.3);background:rgba(232,160,32,0.08);margin-bottom:1.2rem;">
+            <div style="width:5px;height:5px;border-radius:50%;background:#E8A020;"></div>
+            <div style="font-size:0.6rem;color:#c07a10;text-transform:uppercase;letter-spacing:0.1em;font-weight:600;">Available for work</div>
+          </div>
+          <div style="font-size:1.8rem;font-weight:700;color:#1a1510;line-height:1.1;margin-bottom:0.4rem;">Andrea Feliziani</div>
+          <div style="font-size:0.85rem;color:#8a7a68;margin-bottom:1rem;">/ UI Designer & Developer</div>
+          <div style="font-size:0.75rem;color:#a09080;margin-bottom:1.25rem;max-width:280px;line-height:1.6;">Portfolio di design e sviluppo front-end. Creo interfacce pulite e funzionali.</div>
+          <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
+            <div style="background:#E8A020;color:#1a1510;font-size:0.65rem;padding:0.4rem 0.9rem;border-radius:5px;font-weight:700;display:inline-flex;align-items:center;gap:4px;">Get in touch <span>→</span></div>
+            <div style="border:1px solid #d8cfc4;color:#8a7a68;font-size:0.65rem;padding:0.4rem 0.9rem;border-radius:5px;display:inline-flex;align-items:center;gap:4px;">Download CV ↓</div>
+          </div>
+          <div style="margin-top:1.25rem;display:flex;align-items:center;gap:0.75rem;">
+            <span style="font-size:0.65rem;color:#a09080;">📍 Milano, Italia</span>
+            <div style="width:1px;height:12px;background:#d8cfc4;"></div>
+            <div style="display:flex;gap:6px;">
+              <div style="width:22px;height:22px;border-radius:50%;background:#ede5d8;border:1px solid #d8cfc4;"></div>
+              <div style="width:22px;height:22px;border-radius:50%;background:#ede5d8;border:1px solid #d8cfc4;"></div>
+              <div style="width:22px;height:22px;border-radius:50%;background:#ede5d8;border:1px solid #d8cfc4;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>3. Componenti — card, badge, bottoni</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem;">
+
+    <div style="background:#141210;border-radius:10px;padding:1.25rem;">
+      <div class="label" style="margin-bottom:1rem;color:#555;">DARK</div>
+      <!-- glass card -->
+      <div style="background:#221e1a;border:1px solid #2e2820;border-radius:10px;padding:1rem;margin-bottom:0.75rem;">
+        <div style="font-size:0.75rem;font-weight:600;color:#f2ede6;margin-bottom:0.3rem;">Titolo card</div>
+        <div style="font-size:0.65rem;color:#8a7a68;">Descrizione contenuto della card</div>
+      </div>
+      <!-- badge -->
+      <div style="display:inline-flex;align-items:center;padding:0.25rem 0.75rem;border-radius:2rem;background:rgba(232,160,32,0.08);border:1px solid rgba(232,160,32,0.2);color:#E8A020;font-size:0.6rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.75rem;">UI/UX</div>
+      <!-- buttons -->
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+        <div style="background:#E8A020;color:#141210;font-size:0.65rem;padding:0.35rem 0.8rem;border-radius:5px;font-weight:700;">Primary</div>
+        <div style="border:1px solid #2e2820;color:#8a7a68;font-size:0.65rem;padding:0.35rem 0.8rem;border-radius:5px;">Outline</div>
+      </div>
+    </div>
+
+    <div style="background:#f7f2ea;border-radius:10px;padding:1.25rem;border:1px solid #e5ddd0;">
+      <div class="label" style="margin-bottom:1rem;color:#aaa;">LIGHT</div>
+      <!-- glass card -->
+      <div style="background:#ede5d8;border:1px solid #d8cfc4;border-radius:10px;padding:1rem;margin-bottom:0.75rem;">
+        <div style="font-size:0.75rem;font-weight:600;color:#1a1510;margin-bottom:0.3rem;">Titolo card</div>
+        <div style="font-size:0.65rem;color:#8a7a68;">Descrizione contenuto della card</div>
+      </div>
+      <!-- badge -->
+      <div style="display:inline-flex;align-items:center;padding:0.25rem 0.75rem;border-radius:2rem;background:rgba(232,160,32,0.1);border:1px solid rgba(232,160,32,0.3);color:#c07a10;font-size:0.6rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.75rem;">UI/UX</div>
+      <!-- buttons -->
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+        <div style="background:#E8A020;color:#1a1510;font-size:0.65rem;padding:0.35rem 0.8rem;border-radius:5px;font-weight:700;">Primary</div>
+        <div style="border:1px solid #d8cfc4;color:#8a7a68;font-size:0.65rem;padding:0.35rem 0.8rem;border-radius:5px;">Outline</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>4. Toggle dark/light nell'header</h3>
+  <p style="font-size:0.85rem;color:#888;margin-bottom:0.75rem;">Un'icona luna/sole accanto alla lingua nell'header. Nessuna animazione complessa — semplice swap di icona + transizione CSS su <code>color</code> e <code>background-color</code>.</p>
+  <div style="display:flex;gap:1rem;align-items:center;">
+    <div style="display:flex;align-items:center;gap:8px;background:#221e1a;padding:0.4rem 0.8rem;border-radius:2rem;border:1px solid #2e2820;">
+      <span style="font-size:0.75rem;color:#8a7a68;">IT</span>
+      <div style="width:1px;height:12px;background:#2e2820;"></div>
+      <span style="font-size:0.75rem;color:#8a7a68;">EN</span>
+      <div style="width:1px;height:12px;background:#2e2820;"></div>
+      <span style="font-size:0.85rem;">☀️</span>
+    </div>
+    <span style="font-size:0.75rem;color:#666;">→ click → </span>
+    <div style="display:flex;align-items:center;gap:8px;background:#ede5d8;padding:0.4rem 0.8rem;border-radius:2rem;border:1px solid #d8cfc4;">
+      <span style="font-size:0.75rem;color:#8a7a68;">IT</span>
+      <div style="width:1px;height:12px;background:#d8cfc4;"></div>
+      <span style="font-size:0.75rem;color:#8a7a68;">EN</span>
+      <div style="width:1px;height:12px;background:#d8cfc4;"></div>
+      <span style="font-size:0.85rem;">🌙</span>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="background:rgba(232,160,32,0.05);border:1px solid rgba(232,160,32,0.15);border-radius:10px;padding:1.25rem;">
+  <h3 style="margin-bottom:0.5rem;">Cosa NON cambia</h3>
+  <ul style="font-size:0.82rem;color:#888;line-height:1.8;margin:0;padding-left:1.25rem;">
+    <li>Font: Space Grotesk + Archivo (invariati)</li>
+    <li>Layout e struttura dell'hero (grid, chips, scroll cue)</li>
+    <li>Dot grid (adattato — puntini più caldi e meno intensi)</li>
+    <li>Animazioni fadeInUp, float (invariate)</li>
+    <li>Bottone oro: sfondo piatto #E8A020 — nessun gradiente</li>
+    <li>Pagine progetto: aggiornate con gli stessi token</li>
+  </ul>
+</div>

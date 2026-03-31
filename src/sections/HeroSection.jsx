@@ -129,11 +129,13 @@ export default function HeroSection({ onFilterChange }) {
           {/* ── Right: Portrait ── */}
           <div className="lg:col-span-5 hidden lg:flex justify-center animate-fadeInUp animate-delay-500">
             <div className="hero-image-frame">
-              <img
-                src="./assets/images/Andrea.jpeg"
-                alt="Andrea Feliziani"
-                className="hero-portrait"
-              />
+              <div className="hero-portrait-shell">
+                <img
+                  src="./assets/images/Andrea.jpeg"
+                  alt="Andrea Feliziani"
+                  className="hero-portrait"
+                />
+              </div>
 
               {/* Frontend chip */}
               <button

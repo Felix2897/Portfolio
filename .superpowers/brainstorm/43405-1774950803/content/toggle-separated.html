@@ -1,0 +1,121 @@
+<h2>Toggle separati — come posizionarli nell'header?</h2>
+<p class="subtitle">Lingua e dark/light mode come controlli indipendenti. Scegli il layout che preferisci.</p>
+
+<div class="cards">
+
+  <!-- A: entrambi inline a destra -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:1.5rem;background:#141210;border-radius:8px 8px 0 0;">
+      <div style="font-size:0.65rem;color:#555;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;">DARK MODE</div>
+      <div style="background:#221e1a;border-radius:8px;padding:0.6rem 1rem;display:flex;align-items:center;justify-content:space-between;border:1px solid #2e2820;">
+        <div style="font-size:0.75rem;font-weight:700;color:#f2ede6;">Andrea Feliziani</div>
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <div style="display:flex;align-items:center;gap:4px;cursor:pointer;">
+            <span style="font-size:0.7rem;color:#8a7a68;font-weight:600;">IT</span>
+            <span style="font-size:0.6rem;color:#2e2820;">|</span>
+            <span style="font-size:0.7rem;color:#E8A020;font-weight:600;">EN</span>
+          </div>
+          <div style="width:1px;height:14px;background:#2e2820;"></div>
+          <div style="width:28px;height:16px;border-radius:8px;background:#E8A020;position:relative;cursor:pointer;">
+            <div style="width:12px;height:12px;border-radius:50%;background:#141210;position:absolute;top:2px;right:2px;"></div>
+          </div>
+        </div>
+      </div>
+      <div style="font-size:0.65rem;color:#555;text-transform:uppercase;letter-spacing:0.1em;margin:0.75rem 0;">LIGHT MODE</div>
+      <div style="background:#ede5d8;border-radius:8px;padding:0.6rem 1rem;display:flex;align-items:center;justify-content:space-between;border:1px solid #d8cfc4;">
+        <div style="font-size:0.75rem;font-weight:700;color:#1a1510;">Andrea Feliziani</div>
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <div style="display:flex;align-items:center;gap:4px;cursor:pointer;">
+            <span style="font-size:0.7rem;color:#8a7a68;font-weight:600;">IT</span>
+            <span style="font-size:0.6rem;color:#d8cfc4;">|</span>
+            <span style="font-size:0.7rem;color:#E8A020;font-weight:600;">EN</span>
+          </div>
+          <div style="width:1px;height:14px;background:#d8cfc4;"></div>
+          <div style="width:28px;height:16px;border-radius:8px;background:#d8cfc4;position:relative;cursor:pointer;">
+            <div style="width:12px;height:12px;border-radius:50%;background:#8a7a68;position:absolute;top:2px;left:2px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Inline a destra</h3>
+      <p>Lingua come testo (IT | EN), dark mode come toggle pill separato accanto. Compatto, tutto allineato a destra dell'header.</p>
+    </div>
+  </div>
+
+  <!-- B: icone -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:1.5rem;background:#141210;border-radius:8px 8px 0 0;">
+      <div style="font-size:0.65rem;color:#555;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;">DARK MODE</div>
+      <div style="background:#221e1a;border-radius:8px;padding:0.6rem 1rem;display:flex;align-items:center;justify-content:space-between;border:1px solid #2e2820;">
+        <div style="font-size:0.75rem;font-weight:700;color:#f2ede6;">Andrea Feliziani</div>
+        <div style="display:flex;align-items:center;gap:0.6rem;">
+          <div style="width:30px;height:30px;border-radius:50%;background:#2e2820;border:1px solid #3a3228;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+            <span style="font-size:0.75rem;color:#8a7a68;font-weight:700;">IT</span>
+          </div>
+          <div style="width:30px;height:30px;border-radius:50%;background:#E8A020;border:1px solid #E8A020;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+            <span style="font-size:0.85rem;">☀️</span>
+          </div>
+        </div>
+      </div>
+      <div style="font-size:0.65rem;color:#555;text-transform:uppercase;letter-spacing:0.1em;margin:0.75rem 0;">LIGHT MODE</div>
+      <div style="background:#ede5d8;border-radius:8px;padding:0.6rem 1rem;display:flex;align-items:center;justify-content:space-between;border:1px solid #d8cfc4;">
+        <div style="font-size:0.75rem;font-weight:700;color:#1a1510;">Andrea Feliziani</div>
+        <div style="display:flex;align-items:center;gap:0.6rem;">
+          <div style="width:30px;height:30px;border-radius:50%;background:#d8cfc4;border:1px solid #c8bfb4;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+            <span style="font-size:0.75rem;color:#8a7a68;font-weight:700;">IT</span>
+          </div>
+          <div style="width:30px;height:30px;border-radius:50%;background:#d8cfc4;border:1px solid #c8bfb4;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+            <span style="font-size:0.85rem;">🌙</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Due bottoni circolari</h3>
+      <p>Lingua e tema come due icon-button circolari affiancati. Il bottone attivo si evidenzia con il colore oro. Pulito, simmetrico.</p>
+    </div>
+  </div>
+
+  <!-- C: separati con divider -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:1.5rem;background:#141210;border-radius:8px 8px 0 0;">
+      <div style="font-size:0.65rem;color:#555;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;">DARK MODE</div>
+      <div style="background:#221e1a;border-radius:8px;padding:0.6rem 1rem;display:flex;align-items:center;justify-content:space-between;border:1px solid #2e2820;">
+        <div style="font-size:0.75rem;font-weight:700;color:#f2ede6;">Andrea Feliziani</div>
+        <div style="display:flex;align-items:center;gap:0.5rem;">
+          <!-- nav links -->
+          <span style="font-size:0.65rem;color:#8a7a68;">About</span>
+          <span style="font-size:0.65rem;color:#8a7a68;">Work</span>
+          <span style="font-size:0.65rem;color:#8a7a68;">Contact</span>
+          <div style="width:1px;height:14px;background:#2e2820;margin:0 0.25rem;"></div>
+          <!-- lingua -->
+          <span style="font-size:0.68rem;color:#E8A020;font-weight:700;cursor:pointer;">EN</span>
+          <!-- theme -->
+          <div style="width:26px;height:26px;border-radius:6px;background:#2e2820;border:1px solid #3a3228;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+            <span style="font-size:0.8rem;">☀️</span>
+          </div>
+        </div>
+      </div>
+      <div style="font-size:0.65rem;color:#555;text-transform:uppercase;letter-spacing:0.1em;margin:0.75rem 0;">LIGHT MODE</div>
+      <div style="background:#ede5d8;border-radius:8px;padding:0.6rem 1rem;display:flex;align-items:center;justify-content:space-between;border:1px solid #d8cfc4;">
+        <div style="font-size:0.75rem;font-weight:700;color:#1a1510;">Andrea Feliziani</div>
+        <div style="display:flex;align-items:center;gap:0.5rem;">
+          <span style="font-size:0.65rem;color:#8a7a68;">About</span>
+          <span style="font-size:0.65rem;color:#8a7a68;">Work</span>
+          <span style="font-size:0.65rem;color:#8a7a68;">Contact</span>
+          <div style="width:1px;height:14px;background:#d8cfc4;margin:0 0.25rem;"></div>
+          <span style="font-size:0.68rem;color:#E8A020;font-weight:700;cursor:pointer;">IT</span>
+          <div style="width:26px;height:26px;border-radius:6px;background:#d8cfc4;border:1px solid #c8bfb4;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+            <span style="font-size:0.8rem;">🌙</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Lingua testo + icona tema quadrata</h3>
+      <p>La lingua rimane come testo (IT/EN) in linea con i link nav. Il tema è un icon-button rettangolare separato, a destra di tutto. Integrato nella barra di navigazione.</p>
+    </div>
+  </div>
+
+</div>

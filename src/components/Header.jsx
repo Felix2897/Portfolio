@@ -132,7 +132,7 @@ export default function Header() {
                 </button>
 
                 {langOpen && (
-                  <div className="absolute top-full right-0 mt-2 p-2 glass-card min-w-[120px] animate-fadeInUp flex flex-col gap-1">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 p-2 glass-card min-w-[140px] animate-fadeInUp flex flex-col gap-1 z-50">
                     {[
                       { code: "it", flag: "🇮🇹", label: "Italiano" },
                       { code: "en", flag: "🇬🇧", label: "English" },
@@ -142,9 +142,14 @@ export default function Header() {
                         <button
                           key={code}
                           onClick={() => selectLang(code)}
-                          className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors flex items-center gap-2 ${lang === code ? "bg-amber-500/15 text-amber-400" : "text-text-muted hover:bg-white/5"}`}
+                          className={`w-full text-left px-3 py-2.5 rounded-lg text-sm transition-all duration-200 flex items-center gap-3 cursor-pointer ${
+                            lang === code
+                              ? "bg-amber-500/15 text-amber-600 dark:text-amber-400 font-semibold"
+                              : "text-(--color-text-muted) hover:bg-amber-500/10 hover:text-(--color-text-main)"
+                          }`}
                         >
-                          <span>{flag}</span> {label}
+                          <span className="text-base">{flag}</span>
+                          <span>{label}</span>
                         </button>
                       ))}
                   </div>
@@ -173,19 +178,23 @@ export default function Header() {
                 {lang === "en" ? "🇬🇧" : "🇮🇹"}
                 <FaChevronDown className="text-[10px]" />
                 {langOpen && (
-                  <div className="absolute top-full right-0 mt-2 p-2 glass-card min-w-[100px] z-50">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 p-2 glass-card min-w-[120px] z-50 flex flex-col gap-1 animate-fadeInUp">
                     {[
-                      { code: "it", flag: "🇮🇹", label: "IT" },
-                      { code: "en", flag: "🇬🇧", label: "EN" },
+                      { code: "it", flag: "🇮🇹", label: "Italiano" },
+                      { code: "en", flag: "🇬🇧", label: "English" },
                     ]
                       .sort((a) => (a.code === lang ? -1 : 1))
                       .map(({ code, flag, label }) => (
                         <button
                           key={code}
                           onClick={() => selectLang(code)}
-                          className={`w-full text-left px-3 py-2 text-sm ${lang === code ? "text-amber-400" : "text-white"}`}
+                          className={`w-full text-left px-3 py-2.5 rounded-lg text-sm flex items-center gap-2 transition-all ${
+                            lang === code 
+                              ? "bg-amber-500/15 text-amber-600 dark:text-amber-400 font-semibold" 
+                              : "text-(--color-text-main) hover:bg-amber-500/10"
+                          }`}
                         >
-                          {flag} {label}
+                          <span>{flag}</span> {label}
                         </button>
                       ))}
                   </div>

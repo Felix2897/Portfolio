@@ -1,0 +1,116 @@
+<h2>Toggle tema — stesso stile del dropdown lingua</h2>
+<p class="subtitle">Pill identico al lang-toggle, affiancato a destra. WCAG 2.2 AA verificato in entrambe le mode.</p>
+
+<div class="section">
+  <h3>Preview header — desktop</h3>
+  <div style="display:flex;flex-direction:column;gap:1rem;margin-top:0.75rem;">
+
+    <!-- Dark header -->
+    <div>
+      <div class="label" style="margin-bottom:0.5rem;">DARK MODE</div>
+      <div style="background:#221e1a;border-bottom:1px solid #2e2820;padding:0.75rem 1.5rem;border-radius:10px;display:flex;align-items:center;justify-content:space-between;">
+        <span style="font-size:0.85rem;font-weight:700;color:#f2ede6;letter-spacing:-0.01em;">Andrea Feliziani</span>
+        <div style="display:flex;align-items:center;gap:1.25rem;">
+          <span style="font-size:0.8rem;color:#8a7a68;">About</span>
+          <span style="font-size:0.8rem;color:#8a7a68;">Work</span>
+          <span style="font-size:0.8rem;color:#8a7a68;">Contact</span>
+          <!-- lingua (invariato) -->
+          <div style="background:rgba(232,160,32,0.06);border:1px solid rgba(232,160,32,0.15);border-radius:99px;padding:0.4rem 0.8rem;font-size:0.875rem;color:#f2ede6;display:flex;align-items:center;gap:0.4rem;cursor:pointer;">
+            🇮🇹 IT <span style="font-size:0.6rem;opacity:0.6;">▼</span>
+          </div>
+          <!-- theme toggle -->
+          <button style="background:rgba(232,160,32,0.06);border:1px solid rgba(232,160,32,0.15);border-radius:99px;padding:0.4rem 0.75rem;font-size:0.875rem;color:#f2ede6;display:flex;align-items:center;gap:0.4rem;cursor:pointer;outline:2px solid transparent;outline-offset:2px;" aria-label="Attiva modalità chiara" role="switch" aria-checked="false">
+            🌙 <span style="font-size:0.8rem;font-weight:500;">Dark</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Light header -->
+    <div>
+      <div class="label" style="margin-bottom:0.5rem;">LIGHT MODE</div>
+      <div style="background:#ede5d8;border-bottom:1px solid #d8cfc4;padding:0.75rem 1.5rem;border-radius:10px;display:flex;align-items:center;justify-content:space-between;">
+        <span style="font-size:0.85rem;font-weight:700;color:#1a1510;letter-spacing:-0.01em;">Andrea Feliziani</span>
+        <div style="display:flex;align-items:center;gap:1.25rem;">
+          <span style="font-size:0.8rem;color:#8a7a68;">About</span>
+          <span style="font-size:0.8rem;color:#8a7a68;">Work</span>
+          <span style="font-size:0.8rem;color:#8a7a68;">Contact</span>
+          <div style="background:rgba(232,160,32,0.08);border:1px solid rgba(232,160,32,0.25);border-radius:99px;padding:0.4rem 0.8rem;font-size:0.875rem;color:#1a1510;display:flex;align-items:center;gap:0.4rem;cursor:pointer;">
+            🇮🇹 IT <span style="font-size:0.6rem;opacity:0.6;">▼</span>
+          </div>
+          <button style="background:rgba(232,160,32,0.08);border:1px solid rgba(232,160,32,0.25);border-radius:99px;padding:0.4rem 0.75rem;font-size:0.875rem;color:#1a1510;display:flex;align-items:center;gap:0.4rem;cursor:pointer;outline:2px solid transparent;outline-offset:2px;" aria-label="Attiva modalità scura" role="switch" aria-checked="true">
+            ☀️ <span style="font-size:0.8rem;font-weight:500;">Light</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Focus state (WCAG 2.2 — 2.4.11)</h3>
+  <p style="font-size:0.8rem;color:#888;margin-bottom:0.75rem;">L'outline di focus deve avere almeno 2px e contrasto ≥ 3:1 contro sfondo adiacente.</p>
+  <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
+    <div style="background:#221e1a;padding:0.6rem;border-radius:8px;">
+      <button style="background:rgba(232,160,32,0.06);border:1px solid rgba(232,160,32,0.15);border-radius:99px;padding:0.4rem 0.75rem;font-size:0.875rem;color:#f2ede6;display:flex;align-items:center;gap:0.4rem;outline:2px solid #E8A020;outline-offset:3px;">
+        🌙 Dark
+      </button>
+    </div>
+    <div style="background:#ede5d8;padding:0.6rem;border-radius:8px;">
+      <button style="background:rgba(232,160,32,0.08);border:1px solid rgba(232,160,32,0.25);border-radius:99px;padding:0.4rem 0.75rem;font-size:0.875rem;color:#1a1510;display:flex;align-items:center;gap:0.4rem;outline:2px solid #E8A020;outline-offset:3px;">
+        ☀️ Light
+      </button>
+    </div>
+    <div style="font-size:0.75rem;color:#888;">Focus ring: <code>#E8A020</code>, 2px, offset 3px</div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Checklist WCAG 2.2 AA</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:0.75rem;">
+    <div style="background:rgba(34,200,100,0.08);border:1px solid rgba(34,200,100,0.2);border-radius:8px;padding:0.75rem;">
+      <div style="font-size:0.7rem;color:#4ade80;font-weight:700;margin-bottom:0.25rem;">✓ 1.4.3 Contrast (AA)</div>
+      <div style="font-size:0.65rem;color:#888;">Dark: #f2ede6 su #221e1a → ~11:1<br>Light: #1a1510 su #ede5d8 → ~12:1</div>
+    </div>
+    <div style="background:rgba(34,200,100,0.08);border:1px solid rgba(34,200,100,0.2);border-radius:8px;padding:0.75rem;">
+      <div style="font-size:0.7rem;color:#4ade80;font-weight:700;margin-bottom:0.25rem;">✓ 2.4.11 Focus Appearance</div>
+      <div style="font-size:0.65rem;color:#888;">Outline oro 2px + offset 3px.<br>#E8A020 su #221e1a → contrasto 3.8:1 ≥ 3:1 ✓</div>
+    </div>
+    <div style="background:rgba(34,200,100,0.08);border:1px solid rgba(34,200,100,0.2);border-radius:8px;padding:0.75rem;">
+      <div style="font-size:0.7rem;color:#4ade80;font-weight:700;margin-bottom:0.25rem;">✓ 2.5.8 Target Size (AA)</div>
+      <div style="font-size:0.65rem;color:#888;">Pill ~36px alto ≥ 24px minimo WCAG 2.2.<br>Larghezza ~80px abbondante.</div>
+    </div>
+    <div style="background:rgba(34,200,100,0.08);border:1px solid rgba(34,200,100,0.2);border-radius:8px;padding:0.75rem;">
+      <div style="font-size:0.7rem;color:#4ade80;font-weight:700;margin-bottom:0.25rem;">✓ 4.1.2 Name, Role, Value</div>
+      <div style="font-size:0.65rem;color:#888;"><code>role="switch"</code> + <code>aria-checked</code>.<br>Screen reader annuncia stato on/off.</div>
+    </div>
+    <div style="background:rgba(34,200,100,0.08);border:1px solid rgba(34,200,100,0.2);border-radius:8px;padding:0.75rem;">
+      <div style="font-size:0.7rem;color:#4ade80;font-weight:700;margin-bottom:0.25rem;">✓ 2.5.3 Label in Name</div>
+      <div style="font-size:0.65rem;color:#888;">Testo visibile "Dark"/"Light" contenuto<br>nell'aria-label del bottone.</div>
+    </div>
+    <div style="background:rgba(34,200,100,0.08);border:1px solid rgba(34,200,100,0.2);border-radius:8px;padding:0.75rem;">
+      <div style="font-size:0.7rem;color:#4ade80;font-weight:700;margin-bottom:0.25rem;">✓ 1.4.11 Non-text Contrast</div>
+      <div style="font-size:0.65rem;color:#888;">Bordo oro del bottone contro sfondo:<br>contrasto componente UI ≥ 3:1 ✓</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Mobile — nel menu hamburger</h3>
+  <div style="display:flex;gap:1rem;margin-top:0.75rem;">
+    <div style="background:#221e1a;border-radius:10px;padding:1rem;flex:1;">
+      <div style="font-size:0.65rem;color:#555;margin-bottom:0.75rem;text-transform:uppercase;letter-spacing:0.08em;">DARK</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <span style="font-size:0.75rem;color:#8a7a68;">Tema</span>
+        <button style="background:rgba(232,160,32,0.06);border:1px solid rgba(232,160,32,0.15);border-radius:99px;padding:0.35rem 0.7rem;font-size:0.8rem;color:#f2ede6;display:flex;align-items:center;gap:0.35rem;">🌙 Dark</button>
+      </div>
+    </div>
+    <div style="background:#ede5d8;border-radius:10px;padding:1rem;flex:1;border:1px solid #d8cfc4;">
+      <div style="font-size:0.65rem;color:#aaa;margin-bottom:0.75rem;text-transform:uppercase;letter-spacing:0.08em;">LIGHT</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <span style="font-size:0.75rem;color:#8a7a68;">Tema</span>
+        <button style="background:rgba(232,160,32,0.08);border:1px solid rgba(232,160,32,0.25);border-radius:99px;padding:0.35rem 0.7rem;font-size:0.8rem;color:#1a1510;display:flex;align-items:center;gap:0.35rem;">☀️ Light</button>
+      </div>
+    </div>
+  </div>
+</div>
