@@ -173,6 +173,7 @@ body {
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   padding: 0.75rem 1.625rem;
   border-radius: 0.625rem;
@@ -1614,8 +1615,14 @@ body {
 }
 
 @media (max-width: 640px) {
+  .project-access-modal-backdrop {
+    align-items: flex-start;
+    padding-top: max(2rem, env(safe-area-inset-top, 2rem));
+  }
+
   .project-access-modal {
     padding: 1.25rem;
+    margin-top: 1.5rem;
   }
 
   .project-access-form {
