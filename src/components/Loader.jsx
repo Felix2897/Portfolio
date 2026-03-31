@@ -1,18 +1,21 @@
 import { useState, useEffect } from "react";
 import Logo from "./Logo";
 
-export default function Loader() {
+export default function Loader({ onComplete }) {
   const [hidden, setHidden] = useState(false);
   const [gone, setGone] = useState(false);
 
   useEffect(() => {
     const t1 = setTimeout(() => setHidden(true), 1500);
-    const t2 = setTimeout(() => setGone(true), 2000);
+    const t2 = setTimeout(() => {
+      setGone(true);
+      onComplete?.();
+    }, 2000);
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
     };
-  }, []);
+  }, [onComplete]);
 
   if (gone) return null;
 

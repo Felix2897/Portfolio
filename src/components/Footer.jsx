@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Logo from "./Logo";
 import SocialLinks from "./SocialLinks";
 import { useLanguage } from "../i18n/LanguageContext";
 
 export default function Footer() {
   const { t } = useLanguage();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === "/";
 
   const footerLinks = [
     { label: t("nav.home"), href: "/#home" },
@@ -12,6 +15,20 @@ export default function Footer() {
     { label: t("nav.portfolio"), href: "/#portfolio" },
     { label: t("nav.contact"), href: "/#contact" },
   ];
+
+  const handleFooterNavClick = (e, href) => {
+    e.preventDefault();
+    const id = href.replace("/#", "");
+
+    if (isHome) {
+      const el = document.getElementById(id);
+      if (el) {
+        window.scrollTo({ top: el.offsetTop - 100, behavior: "smooth" });
+      }
+    } else {
+      navigate("/", { state: { scrollTo: id } });
+    }
+  };
 
   return (
     <footer className="footer">
@@ -35,6 +52,7 @@ export default function Footer() {
                 key={href}
                 href={href}
                 className="text-[var(--color-text-muted)] hover:text-[var(--color-text-main)] text-sm"
+                onClick={(e) => handleFooterNavClick(e, href)}
               >
                 {label}
               </a>

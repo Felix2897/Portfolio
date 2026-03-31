@@ -12,7 +12,8 @@ export default {
     greeting: "Ciao, sono",
     name: "Andrea Feliziani",
     typedStrings: ["UI/UX Designer", "Front-end Developer"],
-    subtitle: "Creo esperienze digitali che uniscono design e tecnologia",
+    approachLabel: "Approccio",
+    subtitle: "Progetto esperienze digitali accessibili attorno ai bisogni reali degli utenti.",
     cta: "Contattami",
     downloadCv: "Download CV",
     location: "Milano, Italia",
@@ -52,7 +53,7 @@ export default {
     bachelors: {
       title: "Laurea Triennale",
       subtitle: "Unicam Camerino",
-      text: "Disegno Industriale e Ambientale",
+      text: "Product Design",
     },
     diploma: {
       title: "Diploma",
@@ -69,7 +70,8 @@ export default {
     filterDesign: "UI/UX Design",
     filterFrontend: "Front-end",
     viewProject: "Visualizza",
-    docNote: "Documentazione disponibile solo in italiano — versione inglese in sviluppo",
+    docNote:
+      "Documentazione disponibile solo in italiano — versione inglese in sviluppo",
     projects: {
       study: {
         description:

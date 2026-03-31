@@ -545,6 +545,58 @@ img {
   }
 }
 
+/* Hero Ambient Glow */
+.hero-ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: 0;
+  opacity: 0.15;
+  animation: pulse-glow 10s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+[data-theme="light"] .hero-ambient-glow {
+  opacity: 0.25;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .hero-ambient-glow {
+    opacity: 0.25;
+  }
+}
+
+.hero-ambient-glow.orb-1 {
+  top: 5%;
+  left: -5%;
+  width: 50vw;
+  height: 50vw;
+  background: var(--color-accent);
+  max-width: 600px;
+  max-height: 600px;
+}
+
+.hero-ambient-glow.orb-2 {
+  bottom: -5%;
+  right: -5%;
+  width: 40vw;
+  height: 40vw;
+  background: var(--color-accent);
+  animation-delay: -5s;
+  max-width: 500px;
+  max-height: 500px;
+}
+
+@keyframes pulse-glow {
+  0% {
+    transform: scale(0.8) translate(0, 0);
+    opacity: 0.08;
+  }
+  100% {
+    transform: scale(1.1) translate(30px, -40px);
+    opacity: 0.18;
+  }
+}
+
 /* Hero available badge */
 .hero-available-badge {
   display: inline-flex;
@@ -621,6 +673,33 @@ img {
   margin-bottom: 2.5rem;
 }
 
+.hero-bio-panel {
+  width: 100%;
+  max-width: 38rem;
+}
+
+.hero-bio-frame {
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+  padding-left: 0;
+}
+
+.hero-bio-accent {
+  width: 3px;
+  border-radius: 999px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, rgba(232, 160, 32, 0.95), rgba(232, 160, 32, 0.18));
+  box-shadow: 0 0 18px rgba(232, 160, 32, 0.22);
+}
+
+.hero-bio-frame .hero-bio {
+  margin-bottom: 0;
+  max-width: none;
+  position: relative;
+  z-index: 1;
+}
+
 /* Hero CTA row */
 .hero-ctas {
   display: flex;
@@ -649,6 +728,28 @@ img {
 .hero-location svg {
   color: var(--color-primary);
   font-size: 0.8rem;
+}
+
+[data-theme="light"] .hero-bio-frame {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .hero-bio-frame {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-bio-frame {
+    padding: 0;
+    gap: 0.85rem;
+    text-align: left;
+  }
 }
 
 .hero-row-divider {

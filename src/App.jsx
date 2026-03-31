@@ -24,6 +24,7 @@ function ScrollToTop() {
 export default function App() {
   const { lang } = useLanguage();
   const [fading, setFading] = useState(false);
+  const [bootReady, setBootReady] = useState(false);
   const isFirst = useRef(true);
 
   useEffect(() => {
@@ -43,23 +44,27 @@ export default function App() {
 
   return (
     <>
-      <Loader />
+      <Loader onComplete={() => setBootReady(true)} />
       <ScrollToTop />
       <Header />
 
       <div style={{ opacity: fading ? 0 : 1, transition: "opacity 0.22s ease" }}>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/projects/botanicare" element={<BotanicarePage />} />
-        <Route path="/projects/opla" element={<OplaPage />} />
-        <Route path="/projects/serenity" element={<SerenityPage />} />
-        <Route path="/projects/study" element={<StudyPage />} />
-        <Route path="/projects/valeri" element={<ValeriPage />} />
-        <Route path="/projects/secure-it" element={<SecurePage />} />
-      </Routes>
+      {bootReady && (
+        <>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/projects/botanicare" element={<BotanicarePage />} />
+            <Route path="/projects/opla" element={<OplaPage />} />
+            <Route path="/projects/serenity" element={<SerenityPage />} />
+            <Route path="/projects/study" element={<StudyPage />} />
+            <Route path="/projects/valeri" element={<ValeriPage />} />
+            <Route path="/projects/secure-it" element={<SecurePage />} />
+          </Routes>
 
-      <Footer />
-      <BackToTop />
+          <Footer />
+          <BackToTop />
+        </>
+      )}
       </div>
     </>
   );
