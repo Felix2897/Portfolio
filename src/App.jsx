@@ -2,7 +2,6 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import Header from "./components/Header";
 import { useLanguage } from "./i18n/LanguageContext";
-import { useTheme } from "./hooks/useTheme";
 import Footer from "./components/Footer";
 import Loader from "./components/Loader";
 import BackToTop from "./components/BackToTop";
@@ -23,7 +22,6 @@ function ScrollToTop() {
 }
 
 export default function App() {
-  useTheme();
   const { lang } = useLanguage();
   const [fading, setFading] = useState(false);
   const isFirst = useRef(true);

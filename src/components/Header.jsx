@@ -206,9 +206,9 @@ export default function Header() {
                 aria-label="Menu"
               >
                 <div className="space-y-1.5">
-                  <div className="w-5 h-0.5 bg-white"></div>
-                  <div className="w-5 h-0.5 bg-white"></div>
-                  <div className="w-5 h-0.5 bg-white"></div>
+                  <div className="w-5 h-0.5" style={{ backgroundColor: "var(--color-text)" }}></div>
+                  <div className="w-5 h-0.5" style={{ backgroundColor: "var(--color-text)" }}></div>
+                  <div className="w-5 h-0.5" style={{ backgroundColor: "var(--color-text)" }}></div>
                 </div>
               </button>
             </div>
