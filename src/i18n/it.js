@@ -12,8 +12,8 @@ export default {
     greeting: "Ciao, sono",
     name: "Andrea Feliziani",
     typedStrings: ["UI/UX Designer", "Front-end Developer"],
-    approachLabel: "Approccio",
-    subtitle: "Progetto esperienze digitali accessibili attorno ai bisogni reali degli utenti.",
+    subtitle:
+      "Progetto esperienze digitali accessibili attorno ai bisogni reali degli utenti.",
     cta: "Contattami",
     downloadCv: "Download CV",
     location: "Milano, Italia",
@@ -25,8 +25,8 @@ export default {
   about: {
     badge: "Chi sono",
     title: "About Me",
-    bio1: "Sono un <strong>UI/UX Designer</strong> e <strong>Front-end Developer</strong> con un percorso di studi tra informatica e design. Dopo il diploma all'Istituto Tecnico in Informatica, ho conseguito la laurea triennale in Design del Prodotto ad Ascoli Piceno. In seguito ho proseguito con la laurea magistrale in Teoria e Tecnologia della Comunicazione all'Università degli Studi di Milano-Bicocca, avvicinandomi al mondo dell'<strong>UX/UI design</strong> e del <strong>front-end</strong>.",
-    bio2: "Oggi lavoro principalmente come <strong>UI/UX Designer</strong>. Mi occupo di capire le <strong>esigenze degli utenti</strong>, progettare interfacce chiare e semplici da usare e seguire il processo che porta dall'idea al prodotto digitale. Il mio lavoro è concentrato soprattutto su <strong>UX e UI</strong>, mentre il <strong>front-end</strong> mi aiuta a tradurre i progetti in interfacce funzionanti e a mantenere coerenza tra design e sviluppo.",
+    bio1: "Ho una formazione tra informatica e design, con una laurea triennale in Design del Prodotto e una magistrale in Teoria e Tecnologia della Comunicazione.",
+    bio2: "Lavoro come <strong>UI/UX Designer</strong> in <strong>Aton IT</strong>, dove progetto esperienze digitali chiare, <strong>accessibili</strong> e costruite attorno ai bisogni reali degli utenti. Oggi mi concentro su <strong>ricerca utente</strong>, architettura dell'informazione, flussi e interfacce semplici da usare, con grande attenzione a <strong>accessibilità</strong>, coerenza e qualita dell'esperienza.",
     bio3: "",
     downloadCv: "Download CV",
     designTitle: "UI/UX Designer",
@@ -134,6 +134,15 @@ export default {
       "Accedi alla documentazione completa del progetto e visita il prototipo Figma per esplorare tutte le funzionalità implementate.",
     langNote:
       "La documentazione è disponibile solo in italiano — la versione in inglese è attualmente in sviluppo.",
+    emailGateTitle: "Inserisci la tua email per continuare",
+    emailGateDescription:
+      "Per accedere alla documentazione e alle risorse del progetto, inserisci un indirizzo email valido.",
+    emailPlaceholder: "La tua email",
+    unlockAccess: "Sblocca accesso",
+    emailInvalid: "Inserisci un indirizzo email valido.",
+    accessGranted: "Accesso abilitato per",
+    changeEmail: "Usa un'altra email",
+    closeModal: "Chiudi modale",
   },
 
   // Botanicare
@@ -212,7 +221,7 @@ export default {
     heroTitle2: "Travels",
     heroDesc:
       "Sito web per un'agenzia di viaggi di lusso. Design incentrato sull'esperienza utente con mappe interattive e gallerie immersive.",
-    viewCode: "Codice Sorgente",
+    viewCode: "GitHub",
   },
 
   // Valeri
@@ -252,6 +261,6 @@ export default {
     feature3Desc:
       "Progettazione di funzionalità di protezione dati con feedback visivo chiaro e funzionale.",
     steps: "3 Funzionalità Chiave",
-    viewCode: "Codice Sorgente",
+    viewCode: "GitHub",
   },
 };

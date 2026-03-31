@@ -1,8 +1,6 @@
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import {
-  FaPalette,
-  FaCode,
   FaMapMarkerAlt,
   FaArrowRight,
   FaDownload,
@@ -11,20 +9,10 @@ import SocialLinks from "../components/SocialLinks";
 import { useLanguage } from "../i18n/LanguageContext";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-export default function HeroSection({ onFilterChange }) {
+export default function HeroSection() {
   const typedRef = useRef(null);
   const { t, lang } = useLanguage();
   const { scrollY } = useScroll();
-
-  const handleFilterClick = (filter) => {
-    if (onFilterChange) {
-      onFilterChange(filter);
-      const portfolioSection = document.getElementById("portfolio");
-      if (portfolioSection) {
-        portfolioSection.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  };
 
   useEffect(() => {
     const typed = new Typed(typedRef.current, {
@@ -112,9 +100,9 @@ export default function HeroSection({ onFilterChange }) {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl md:text-3xl font-medium text-(--color-accent) mb-8 flex items-center justify-center lg:justify-start gap-4"
             >
-              <span className="text-(--color-border) opacity-60 font-mono text-2xl">{'<'}</span>
+              <span className="hero-role-bracket font-mono text-2xl">{'<'}</span>
               <span ref={typedRef} className="hero-role-typed text-(--color-text-main) font-display tracking-wide" />
-              <span className="text-(--color-border) opacity-60 font-mono text-2xl">{'/>'}</span>
+              <span className="hero-role-bracket font-mono text-2xl">{'/>'}</span>
             </motion.div>
 
             <motion.div
@@ -173,56 +161,27 @@ export default function HeroSection({ onFilterChange }) {
             </motion.div>
           </div>
 
-          {/* ── Right: Transparent Portrait with Floating Chips ── */}
-          <div className="w-full lg:w-[45%] relative mt-20 lg:mt-0 flex justify-center z-10 min-h-[500px] lg:min-h-[700px]">
+          {/* ── Right: Portrait ── */}
+          <div className="hidden lg:flex w-full lg:w-[45%] relative mt-20 lg:mt-0 justify-center z-10 min-h-[500px] lg:min-h-[700px]">
             <motion.div
               style={{ y: yImage }}
               initial={{ opacity: 0, scale: 0.85, filter: "blur(12px)" }}
               animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
               transition={{ duration: 1.4, delay: 0.1, ease: "easeOut" }}
-              className="relative w-full max-w-[500px] flex items-end justify-center"
+              className="relative w-full max-w-[560px] flex items-end justify-center"
             >
-              {/* Gradient backdrop removed since we are now using a framed JPEG instead of a transparent PNG */}
-              
-              <div className="relative w-[85%] lg:w-[95%] rounded-4xl overflow-hidden border border-(--color-border)/40 shadow-[0_28px_72px_rgba(0,0,0,0.4)] z-0 transform translate-y-[2%]">
-                <img
-                  src="./assets/images/Andrea.jpeg"
-                  alt="Andrea Feliziani"
-                  className="w-full aspect-4/5 object-cover object-top origin-top scale-[1.03] transform-gpu hover:scale-[1.08] transition-transform duration-700"
-                />
+              <div className="hero-portrait-glow" aria-hidden="true" />
+
+              <div className="hero-portrait-stage">
+                <div className="hero-portrait-rim" aria-hidden="true" />
+                <div className="relative w-full rounded-[2rem] overflow-hidden border border-(--color-border)/40 shadow-[0_28px_72px_rgba(0,0,0,0.4)] z-10 transform translate-y-[2%]">
+                  <img
+                    src="./assets/images/Andrea.jpeg"
+                    alt="Andrea Feliziani"
+                    className="w-full aspect-4/5 object-cover object-top origin-top scale-[1.03] transform-gpu hover:scale-[1.08] transition-transform duration-700"
+                  />
+                </div>
               </div>
-
-              {/* Frontend Floating Chip */}
-              <motion.button
-                initial={{ opacity: 0, x: 50, y: -20 }}
-                animate={{ opacity: 1, x: 0, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8, type: "spring", stiffness: 80 }}
-                whileHover={{ scale: 1.05, y: -5, boxShadow: "0 20px 40px -10px rgba(232, 160, 32, 0.3)" }}
-                className="absolute top-[20%] right-[-5%] lg:right-[-15%] hero-chip z-20 flex items-center gap-3 bg-(--color-surface)/80 backdrop-blur-xl border border-(--color-border)/60 px-5 py-4 rounded-2xl shadow-2xl cursor-pointer"
-                onClick={() => handleFilterClick("front-end")}
-                aria-label={t("hero.cardDev")}
-              >
-                <div className="hero-chip-icon bg-(--color-accent)/10 text-(--color-accent) p-2.5 rounded-xl border border-(--color-accent)/20">
-                  <FaCode size={20} />
-                </div>
-                <span className="font-semibold text-[0.95rem] tracking-wide text-(--color-text)">{t("hero.cardDev")}</span>
-              </motion.button>
-
-              {/* Design Floating Chip */}
-              <motion.button
-                initial={{ opacity: 0, x: -50, y: 40 }}
-                animate={{ opacity: 1, x: 0, y: 0 }}
-                transition={{ duration: 0.8, delay: 1, type: "spring", stiffness: 80 }}
-                whileHover={{ scale: 1.05, y: -5, boxShadow: "0 20px 40px -10px rgba(10, 173, 173, 0.3)" }}
-                className="absolute bottom-[25%] left-[-5%] lg:left-[-15%] hero-chip z-20 flex items-center gap-3 bg-(--color-surface)/80 backdrop-blur-xl border border-(--color-border)/60 px-5 py-4 rounded-2xl shadow-2xl cursor-pointer"
-                onClick={() => handleFilterClick("ui/ux")}
-                aria-label={t("hero.cardDesign")}
-              >
-                <div className="hero-chip-icon-teal bg-teal-500/10 text-teal-400 p-2.5 rounded-xl border border-teal-500/20">
-                  <FaPalette size={20} />
-                </div>
-                <span className="font-semibold text-[0.95rem] tracking-wide text-(--color-text)">{t("hero.cardDesign")}</span>
-              </motion.button>
             </motion.div>
           </div>
 

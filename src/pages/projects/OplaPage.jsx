@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   FaArrowDown,
   FaUsers,
@@ -7,6 +6,8 @@ import {
   FaGoogleDrive,
   FaFigma,
 } from "react-icons/fa";
+import ProtectedResourceLinks from "../../components/ProtectedResourceLinks";
+import ProjectCarousel from "../../components/ProjectCarousel";
 import SectionHeader from "../../components/SectionHeader";
 import { useLanguage } from "../../i18n/LanguageContext";
 
@@ -18,7 +19,6 @@ const galleryImages = [
 ];
 
 export default function OplaPage() {
-  const [slide, setSlide] = useState(0);
   const { t } = useLanguage();
 
   const features = [
@@ -128,54 +128,13 @@ export default function OplaPage() {
           />
           <div className="hidden md:block">
             <div className="glass-card p-4">
-              <div
-                className="relative overflow-hidden rounded-lg"
-                style={{ height: "600px" }}
-              >
-                {galleryImages.map((src, i) => (
-                  <img
-                    key={src}
-                    src={src}
-                    alt={`Oplà Screenshot ${i + 1}`}
-                    className="absolute inset-0 w-full h-full object-contain transition-opacity duration-500"
-                    style={{ opacity: i === slide ? 1 : 0 }}
-                  />
-                ))}
-              </div>
-              <div className="flex justify-center gap-3 mt-4">
-                <button
-                  className="w-10 h-10 rounded-full border border-[var(--color-border-glass)] bg-transparent text-white cursor-pointer"
-                  onClick={() =>
-                    setSlide(
-                      (p) =>
-                        (p - 1 + galleryImages.length) % galleryImages.length,
-                    )
-                  }
-                >
-                  ‹
-                </button>
-                {galleryImages.map((_, i) => (
-                  <button
-                    key={i}
-                    className={`w-3 h-3 rounded-full border-none cursor-pointer ${i === slide ? "opacity-100" : "opacity-40"}`}
-                    style={{
-                      background:
-                        i === slide
-                          ? "linear-gradient(135deg, var(--color-primary), var(--color-secondary))"
-                          : "var(--color-text-muted)",
-                    }}
-                    onClick={() => setSlide(i)}
-                  />
-                ))}
-                <button
-                  className="w-10 h-10 rounded-full border border-[var(--color-border-glass)] bg-transparent text-white cursor-pointer"
-                  onClick={() =>
-                    setSlide((p) => (p + 1) % galleryImages.length)
-                  }
-                >
-                  ›
-                </button>
-              </div>
+              <ProjectCarousel
+                images={galleryImages}
+                altBase="Opla screenshot"
+                className="w-full"
+                viewportClassName="h-[600px] rounded-lg"
+                imageClassName="object-contain"
+              />
             </div>
           </div>
           <div className="md:hidden glass-card p-4">
@@ -214,26 +173,23 @@ export default function OplaPage() {
               <p className="project-lang-note mb-6">
                 {t("project.langNote")}
               </p>
-              <div className="flex justify-center gap-4 flex-wrap">
-                <a
-                  href="https://docs.google.com/document/d/1Y05qAFmekffLc11swJ8Uw4LxkBbp6iFZ9ER68kSX7cI/edit?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary"
-                >
-                  <FaGoogleDrive />
-                  <span>{t("opla.report")}</span>
-                </a>
-                <a
-                  href="https://www.figma.com/design/wgungAOOwITkQCFbK7Z5Cv/Opl%C3%A0?node-id=1-13446&t=nGwsaucv3XxoR9lA-1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-outline"
-                >
-                  <FaFigma />
-                  <span>{t("project.prototype")}</span>
-                </a>
-              </div>
+              <ProtectedResourceLinks
+                storageKey="opla-docs-email"
+                resources={[
+                  {
+                    href: "https://docs.google.com/document/d/1Y05qAFmekffLc11swJ8Uw4LxkBbp6iFZ9ER68kSX7cI/edit?usp=sharing",
+                    label: t("opla.report"),
+                    icon: FaGoogleDrive,
+                    variant: "primary",
+                  },
+                  {
+                    href: "https://www.figma.com/design/wgungAOOwITkQCFbK7Z5Cv/Opl%C3%A0?node-id=1-13446&t=nGwsaucv3XxoR9lA-1",
+                    label: t("project.prototype"),
+                    icon: FaFigma,
+                    variant: "outline",
+                  },
+                ]}
+              />
             </div>
           </div>
         </div>

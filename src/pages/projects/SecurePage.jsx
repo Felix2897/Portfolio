@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { FaArrowDown, FaShieldAlt, FaChartBar, FaLock } from "react-icons/fa";
+import ProjectCarousel from "../../components/ProjectCarousel";
 import SectionHeader from "../../components/SectionHeader";
 import { useLanguage } from "../../i18n/LanguageContext";
 
@@ -10,7 +10,6 @@ const galleryImages = [
 ];
 
 export default function SecurePage() {
-  const [slide, setSlide] = useState(0);
   const { t } = useLanguage();
 
   const features = [
@@ -111,54 +110,13 @@ export default function SecurePage() {
           />
           <div className="hidden md:block">
             <div className="glass-card p-4">
-              <div
-                className="relative overflow-hidden rounded-lg"
-                style={{ height: "600px" }}
-              >
-                {galleryImages.map((src, i) => (
-                  <img
-                    key={src}
-                    src={src}
-                    alt={`Secure it ${i + 1}`}
-                    className="absolute inset-0 w-full h-full object-contain transition-opacity duration-500"
-                    style={{ opacity: i === slide ? 1 : 0 }}
-                  />
-                ))}
-              </div>
-              <div className="flex justify-center gap-3 mt-4">
-                <button
-                  className="w-10 h-10 rounded-full border border-[var(--color-border-glass)] bg-transparent text-white cursor-pointer"
-                  onClick={() =>
-                    setSlide(
-                      (p) =>
-                        (p - 1 + galleryImages.length) % galleryImages.length,
-                    )
-                  }
-                >
-                  ‹
-                </button>
-                {galleryImages.map((_, i) => (
-                  <button
-                    key={i}
-                    className={`w-3 h-3 rounded-full border-none cursor-pointer ${i === slide ? "opacity-100" : "opacity-40"}`}
-                    style={{
-                      background:
-                        i === slide
-                          ? "linear-gradient(135deg, var(--color-primary), var(--color-secondary))"
-                          : "var(--color-text-muted)",
-                    }}
-                    onClick={() => setSlide(i)}
-                  />
-                ))}
-                <button
-                  className="w-10 h-10 rounded-full border border-[var(--color-border-glass)] bg-transparent text-white cursor-pointer"
-                  onClick={() =>
-                    setSlide((p) => (p + 1) % galleryImages.length)
-                  }
-                >
-                  ›
-                </button>
-              </div>
+              <ProjectCarousel
+                images={galleryImages}
+                altBase="Secure it screenshot"
+                className="w-full"
+                viewportClassName="h-[600px] rounded-lg"
+                imageClassName="object-contain"
+              />
             </div>
           </div>
           <div className="md:hidden glass-card p-4">

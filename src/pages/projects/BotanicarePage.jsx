@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
 import { FaArrowDown, FaSeedling, FaChartLine, FaUsers } from "react-icons/fa";
 import { FaGoogleDrive } from "react-icons/fa";
+import ProtectedResourceLinks from "../../components/ProtectedResourceLinks";
+import ProjectCarousel from "../../components/ProjectCarousel";
 import SectionHeader from "../../components/SectionHeader";
 import { useLanguage } from "../../i18n/LanguageContext";
 
@@ -20,8 +21,6 @@ const galleryImages = [
 ];
 
 export default function BotanicarePage() {
-  const [activeSlide, setActiveSlide] = useState(0);
-  const [gallerySlide, setGallerySlide] = useState(0);
   const { t } = useLanguage();
 
   const features = [
@@ -44,14 +43,6 @@ export default function BotanicarePage() {
       colorClass: "tool-icon-accent",
     },
   ];
-
-  // Auto-play hero carousel
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % heroImages.length);
-    }, 3000);
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <>
@@ -119,27 +110,14 @@ export default function BotanicarePage() {
             </div>
 
             <div className="order-1 lg:order-2 hidden lg:flex justify-center">
-              <div className="carousel-container">
-                <div className="carousel-images">
-                  {heroImages.map((src, i) => (
-                    <img
-                      key={src}
-                      src={src}
-                      alt={`Botanicare ${i + 1}`}
-                      className={`project-main-image ${i === activeSlide ? "active" : ""}`}
-                    />
-                  ))}
-                </div>
-                <div className="carousel-dots">
-                  {heroImages.map((_, i) => (
-                    <span
-                      key={i}
-                      className={`dot ${i === activeSlide ? "active" : ""}`}
-                      onClick={() => setActiveSlide(i)}
-                    />
-                  ))}
-                </div>
-              </div>
+              <ProjectCarousel
+                images={heroImages}
+                altBase="Botanicare"
+                autoplayMs={3000}
+                className="max-w-[500px]"
+                viewportClassName="h-[550px]"
+                imageClassName="object-contain"
+              />
             </div>
           </div>
         </div>
@@ -163,55 +141,13 @@ export default function BotanicarePage() {
           {/* Desktop Carousel */}
           <div className="hidden md:block">
             <div className="glass-card p-4">
-              <div
-                className="relative overflow-hidden rounded-lg"
-                style={{ height: "600px" }}
-              >
-                {galleryImages.map((src, i) => (
-                  <img
-                    key={src}
-                    src={src}
-                    alt={`Botanicare Screenshot ${i + 1}`}
-                    className="absolute inset-0 w-full h-full object-contain transition-opacity duration-500"
-                    style={{ opacity: i === gallerySlide ? 1 : 0 }}
-                  />
-                ))}
-              </div>
-              <div className="flex justify-center gap-3 mt-4">
-                <button
-                  className="w-10 h-10 rounded-full border border-[var(--color-border-glass)] bg-transparent text-white cursor-pointer hover:border-[var(--color-primary)]"
-                  onClick={() =>
-                    setGallerySlide(
-                      (prev) =>
-                        (prev - 1 + galleryImages.length) %
-                        galleryImages.length,
-                    )
-                  }
-                >
-                  ‹
-                </button>
-                {galleryImages.map((_, i) => (
-                  <button
-                    key={i}
-                    className={`w-3 h-3 rounded-full border-none cursor-pointer ${i === gallerySlide ? "opacity-100" : "opacity-40"}`}
-                    style={{
-                      background:
-                        i === gallerySlide
-                          ? "linear-gradient(135deg, var(--color-primary), var(--color-secondary))"
-                          : "var(--color-text-muted)",
-                    }}
-                    onClick={() => setGallerySlide(i)}
-                  />
-                ))}
-                <button
-                  className="w-10 h-10 rounded-full border border-[var(--color-border-glass)] bg-transparent text-white cursor-pointer hover:border-[var(--color-primary)]"
-                  onClick={() =>
-                    setGallerySlide((prev) => (prev + 1) % galleryImages.length)
-                  }
-                >
-                  ›
-                </button>
-              </div>
+              <ProjectCarousel
+                images={galleryImages}
+                altBase="Botanicare screenshot"
+                className="w-full"
+                viewportClassName="h-[600px] rounded-lg"
+                imageClassName="object-contain"
+              />
             </div>
           </div>
 
@@ -279,15 +215,17 @@ export default function BotanicarePage() {
               <p className="project-lang-note mb-6">
                 {t("project.langNote")}
               </p>
-              <a
-                href="https://docs.google.com/document/d/1GLsAxFqVzbsULLPqZkDemdhnU70I5V2U/edit?usp=sharing&ouid=108685707695211004080&rtpof=true&sd=true"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary"
-              >
-                <FaGoogleDrive />
-                <span>{t("project.documentation")}</span>
-              </a>
+              <ProtectedResourceLinks
+                storageKey="botanicare-docs-email"
+                resources={[
+                  {
+                    href: "https://docs.google.com/document/d/1GLsAxFqVzbsULLPqZkDemdhnU70I5V2U/edit?usp=sharing&ouid=108685707695211004080&rtpof=true&sd=true",
+                    label: t("project.documentation"),
+                    icon: FaGoogleDrive,
+                    variant: "primary",
+                  },
+                ]}
+              />
             </div>
           </div>
         </div>

@@ -12,7 +12,6 @@ export default {
     greeting: "Hi, I'm",
     name: "Andrea Feliziani",
     typedStrings: ["UI/UX Designer", "Front-end Developer"],
-    approachLabel: "Approach",
     subtitle: "I design accessible digital experiences around real user needs.",
     cta: "Get in Touch",
     downloadCv: "Download CV",
@@ -25,8 +24,8 @@ export default {
   about: {
     badge: "About Me",
     title: "About Me",
-    bio1: "I'm a <strong>UI/UX Designer</strong> and <strong>Front-end Developer</strong> with a background that bridges computer science and design. After graduating from a Technical Institute in Computer Science, I earned my Bachelor's degree in Product Design in Ascoli Piceno. I then completed a Master's degree in Theory and Technology of Communication at the University of Milano-Bicocca, developing a deeper interest in <strong>UX/UI design</strong> and <strong>front-end development</strong>.",
-    bio2: "Today I work primarily as a <strong>UI/UX Designer</strong>. I focus on understanding <strong>user needs</strong>, designing clear and easy-to-use interfaces, and guiding the process from concept to digital product. My work is centered on <strong>UX and UI</strong>, while my <strong>front-end</strong> skills help me translate designs into functional interfaces and maintain consistency between design and development.",
+    bio1: "My background combines computer science and design, with a Bachelor's degree in Product Design and a Master's degree in Theory and Technology of Communication.",
+    bio2: "I work as a <strong>UI/UX Designer</strong> at <strong>Aton IT</strong>, where I design digital experiences that are clear, <strong>accessible</strong>, and shaped around real user needs. Today I focus on <strong>user research</strong>, information architecture, flows, and interfaces that feel simple to use, with strong attention to <strong>accessibility</strong>, consistency, and overall experience quality.",
     bio3: "",
     downloadCv: "Download CV",
     designTitle: "UI/UX Designer",
@@ -132,6 +131,15 @@ export default {
       "Access the complete project documentation and visit the Figma prototype to explore all implemented features.",
     langNote:
       "Documentation is available in Italian only — the English version is currently in progress.",
+    emailGateTitle: "Enter your email to continue",
+    emailGateDescription:
+      "To access the documentation and project resources, enter a valid email address.",
+    emailPlaceholder: "Your email",
+    unlockAccess: "Unlock access",
+    emailInvalid: "Please enter a valid email address.",
+    accessGranted: "Access enabled for",
+    changeEmail: "Use another email",
+    closeModal: "Close modal",
   },
 
   // Botanicare

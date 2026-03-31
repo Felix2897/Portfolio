@@ -8,11 +8,11 @@ export default function EducationSection() {
 
   const items = [
     {
-      period: "2022 - 2024",
-      title: t("education.masters.title"),
-      subtitle: t("education.masters.subtitle"),
-      text: t("education.masters.text"),
-      badgeClass: "",
+      period: "2012 - 2017",
+      title: t("education.diploma.title"),
+      subtitle: t("education.diploma.subtitle"),
+      text: t("education.diploma.text"),
+      badgeClass: "timeline-badge-accent",
     },
     {
       period: "2018 - 2021",
@@ -22,11 +22,11 @@ export default function EducationSection() {
       badgeClass: "timeline-badge-secondary",
     },
     {
-      period: "2012 - 2017",
-      title: t("education.diploma.title"),
-      subtitle: t("education.diploma.subtitle"),
-      text: t("education.diploma.text"),
-      badgeClass: "timeline-badge-accent",
+      period: "2022 - 2024",
+      title: t("education.masters.title"),
+      subtitle: t("education.masters.subtitle"),
+      text: t("education.masters.text"),
+      badgeClass: "",
     },
   ];
 
@@ -58,8 +58,9 @@ export default function EducationSection() {
           {items.map((item, i) => (
             <div
               key={item.period}
-              className="timeline-item"
+              className={`timeline-item ${i % 2 === 0 ? "timeline-item-left" : "timeline-item-right"}`}
               ref={(el) => (itemRefs.current[i] = el)}
+              style={{ transitionDelay: `${i * 140}ms` }}
             >
               <div className="timeline-dot"></div>
               <div className="glass-card">
