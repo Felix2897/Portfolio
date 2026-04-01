@@ -13,7 +13,7 @@ export default {
     name: "Andrea Feliziani",
     typedStrings: ["UI/UX Designer", "Front-end Developer"],
     subtitle:
-      "Progetto esperienze digitali accessibili attorno ai bisogni reali degli utenti.",
+      "Progetto esperienze digitali e accessibili attorno ai bisogni reali degli utenti.",
     cta: "Contattami",
     downloadCv: "Download CV",
     location: "Milano, Italia",
@@ -25,8 +25,8 @@ export default {
   about: {
     badge: "Chi sono",
     title: "About Me",
-    bio1: "Ho una formazione tra informatica e design, con una laurea triennale in Design del Prodotto e una magistrale in Teoria e Tecnologia della Comunicazione.",
-    bio2: "Lavoro come <strong>UI/UX Designer</strong> in <strong>Aton IT</strong>, dove progetto esperienze digitali chiare, <strong>accessibili</strong> e costruite attorno ai bisogni reali degli utenti. Oggi mi concentro su <strong>ricerca utente</strong>, architettura dell'informazione, flussi e interfacce semplici da usare, con grande attenzione a <strong>accessibilità</strong>, coerenza e qualita dell'esperienza.",
+    bio1: "Ho una formazione tra informatica e design, con una <strong>laurea triennale</strong> in Design del Prodotto e una <strong>magistrale</strong> in Teoria e Tecnologia della Comunicazione.",
+    bio2: "Lavoro come <strong>UI/UX Designer</strong> in <strong>Aton IT</strong>, dove progetto esperienze digitali chiare, accessibili e costruite attorno ai bisogni reali degli utenti. Oggi mi concentro su <strong>ricerca utente</strong>, architettura dell'informazione, flussi e interfacce semplici da usare, con grande attenzione a <strong>accessibilità</strong>, coerenza e qualità dell'esperienza. Integro questo approccio con competenze di <strong>front-end</strong>, che mi permettono di collegare progettazione e realizzazione dell'interfaccia.",
     bio3: "",
     downloadCv: "Download CV",
     designTitle: "UI/UX Designer",

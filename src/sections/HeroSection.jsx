@@ -23,8 +23,8 @@ export default function HeroSection() {
     return () => typed.destroy();
   }, [t]);
 
-  const scrollToAbout = () => {
-    const target = document.getElementById("about");
+  const scrollToSection = (sectionId) => {
+    const target = document.getElementById(sectionId);
     if (!target) return;
     const start = window.scrollY;
     const end = target.getBoundingClientRect().top + start - 90;
@@ -39,6 +39,15 @@ export default function HeroSection() {
       if (progress < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
+  };
+
+  const scrollToAbout = () => {
+    scrollToSection("about");
+  };
+
+  const handleContactClick = (event) => {
+    event.preventDefault();
+    scrollToSection("contact");
   };
 
   // Parallax effects
@@ -134,6 +143,7 @@ export default function HeroSection() {
               <a
                 href="#contact"
                 className="btn btn-primary group relative overflow-hidden px-8 py-4 text-base backdrop-blur-sm"
+                onClick={handleContactClick}
               >
                 <span className="relative z-10 flex items-center gap-3">
                   {t("hero.cta")}

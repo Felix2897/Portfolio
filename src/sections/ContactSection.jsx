@@ -1,12 +1,25 @@
 import { useEffect, useRef, useState } from "react";
-import { FaEnvelope, FaPhone, FaPaperPlane } from "react-icons/fa";
+import {
+  FaCheckCircle,
+  FaEnvelope,
+  FaExclamationCircle,
+  FaPhone,
+  FaPaperPlane,
+  FaTimes,
+} from "react-icons/fa";
 import SectionHeader from "../components/SectionHeader";
 import SocialLinks from "../components/SocialLinks";
 import { useLanguage } from "../i18n/LanguageContext";
 
 export default function ContactSection() {
   const cardRefs = useRef([]);
+  const popupTimeoutRef = useRef(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [popup, setPopup] = useState({
+    open: false,
+    type: "success",
+    message: "",
+  });
   const { t, lang } = useLanguage();
   const web3FormsAccessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
@@ -28,11 +41,40 @@ export default function ContactSection() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    return () => {
+      if (popupTimeoutRef.current) {
+        clearTimeout(popupTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const showPopup = (type, message) => {
+    if (popupTimeoutRef.current) {
+      clearTimeout(popupTimeoutRef.current);
+    }
+
+    setPopup({ open: true, type, message });
+
+    popupTimeoutRef.current = setTimeout(() => {
+      setPopup((current) => ({ ...current, open: false }));
+    }, 4500);
+  };
+
+  const closePopup = () => {
+    if (popupTimeoutRef.current) {
+      clearTimeout(popupTimeoutRef.current);
+    }
+
+    setPopup((current) => ({ ...current, open: false }));
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (!web3FormsAccessKey) {
-      alert(
+      showPopup(
+        "error",
         lang === "it"
           ? "Configura VITE_WEB3FORMS_ACCESS_KEY per attivare il form contatti."
           : "Set VITE_WEB3FORMS_ACCESS_KEY to enable the contact form.",
@@ -61,13 +103,15 @@ export default function ContactSection() {
       }
 
       form.reset();
-      alert(
+      showPopup(
+        "success",
         lang === "it"
           ? "Messaggio inviato correttamente."
           : "Message sent successfully.",
       );
     } catch (error) {
-      alert(
+      showPopup(
+        "error",
         lang === "it"
           ? "Invio non riuscito. Riprova tra poco."
           : "Message could not be sent. Please try again shortly.",
@@ -197,6 +241,38 @@ export default function ContactSection() {
           </div>
         </div>
       </div>
+
+      {popup.open && (
+        <div
+          className={`contact-popup contact-popup-${popup.type}`}
+          role="status"
+          aria-live="polite"
+        >
+          <div className="contact-popup-icon" aria-hidden="true">
+            {popup.type === "success" ? <FaCheckCircle /> : <FaExclamationCircle />}
+          </div>
+          <div className="contact-popup-copy">
+            <p className="contact-popup-title">
+              {popup.type === "success"
+                ? lang === "it"
+                  ? "Messaggio inviato"
+                  : "Message sent"
+                : lang === "it"
+                  ? "Invio non riuscito"
+                  : "Sending failed"}
+            </p>
+            <p className="contact-popup-text">{popup.message}</p>
+          </div>
+          <button
+            type="button"
+            className="contact-popup-close"
+            onClick={closePopup}
+            aria-label={lang === "it" ? "Chiudi messaggio" : "Close message"}
+          >
+            <FaTimes />
+          </button>
+        </div>
+      )}
     </section>
   );
 }

@@ -24,8 +24,8 @@ export default {
   about: {
     badge: "About Me",
     title: "About Me",
-    bio1: "My background combines computer science and design, with a Bachelor's degree in Product Design and a Master's degree in Theory and Technology of Communication.",
-    bio2: "I work as a <strong>UI/UX Designer</strong> at <strong>Aton IT</strong>, where I design digital experiences that are clear, <strong>accessible</strong>, and shaped around real user needs. Today I focus on <strong>user research</strong>, information architecture, flows, and interfaces that feel simple to use, with strong attention to <strong>accessibility</strong>, consistency, and overall experience quality.",
+    bio1: "My background combines computer science and design, with a <strong>Bachelor's degree</strong> in Product Design and a <strong>Master's degree</strong> in Theory and Technology of Communication.",
+    bio2: "I work as a <strong>UI/UX Designer</strong> at <strong>Aton IT</strong>, where I design digital experiences that are clear, accessible, and shaped around real user needs. Today I focus on <strong>user research</strong>, information architecture, flows, and interfaces that feel simple to use, with strong attention to <strong>accessibility</strong>, consistency, and overall experience quality. I complement this approach with <strong>front-end</strong> skills that help me connect design and interface implementation.",
     bio3: "",
     downloadCv: "Download CV",
     designTitle: "UI/UX Designer",

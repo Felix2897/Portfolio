@@ -23,8 +23,11 @@ export default function Header() {
     { label: t("nav.portfolio"), href: "/#portfolio" },
     { label: t("nav.contact"), href: "/#contact" },
   ];
+  const sectionToNavSection = {
+    education: "about",
+  };
   const currentNavSection = isHome
-    ? activeSection
+    ? sectionToNavSection[activeSection] || activeSection
     : location.pathname.startsWith("/projects/")
       ? "portfolio"
       : "";

@@ -1682,6 +1682,123 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.contact-popup {
+  position: fixed;
+  right: 1.5rem;
+  top: 1.5rem;
+  z-index: 1200;
+  width: min(24rem, calc(100vw - 2rem));
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 1rem 1rem 1rem 1.05rem;
+  border-radius: 1.15rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(15, 15, 20, 0.9);
+  overflow: hidden;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.26),
+    0 0 0 1px rgba(255, 255, 255, 0.03);
+  animation: fadeInUp 0.35s ease;
+}
+
+.contact-popup-success {
+  border-color: rgba(10, 173, 173, 0.24);
+}
+
+.contact-popup-error {
+  border-color: rgba(255, 140, 127, 0.28);
+}
+
+.contact-popup-icon {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+.contact-popup-success .contact-popup-icon {
+  background: rgba(10, 173, 173, 0.14);
+  color: var(--color-secondary);
+}
+
+.contact-popup-error .contact-popup-icon {
+  background: rgba(255, 140, 127, 0.14);
+  color: #ff8c7f;
+}
+
+.contact-popup-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-popup-title {
+  margin: 0 0 0.22rem;
+  color: var(--color-text-main);
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+.contact-popup-text {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.contact-popup-close {
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.contact-popup-close:hover,
+.contact-popup-close:focus-visible {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-main);
+  outline: none;
+  transform: scale(1.04);
+}
+
+[data-theme="light"] .contact-popup {
+  background: #fffaf3;
+  border-color: rgba(138, 98, 0, 0.16);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: 0 20px 40px rgba(138, 98, 0, 0.14);
+}
+
+[data-theme="light"] .contact-popup-close {
+  background: rgba(39, 31, 20, 0.05);
+}
+
+@media (max-width: 640px) {
+  .contact-popup {
+    right: 1rem;
+    left: 1rem;
+    top: 1rem;
+    width: auto;
+  }
+}
+
 /* === Footer === */
 .footer {
   padding: 3rem 0 1.5rem;
