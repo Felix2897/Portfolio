@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaEnvelope, FaPhone, FaPaperPlane } from "react-icons/fa";
 import SectionHeader from "../components/SectionHeader";
 import SocialLinks from "../components/SocialLinks";
@@ -6,7 +6,9 @@ import { useLanguage } from "../i18n/LanguageContext";
 
 export default function ContactSection() {
   const cardRefs = useRef([]);
-  const { t } = useLanguage();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { t, lang } = useLanguage();
+  const web3FormsAccessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,6 +27,55 @@ export default function ContactSection() {
     });
     return () => observer.disconnect();
   }, []);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (!web3FormsAccessKey) {
+      alert(
+        lang === "it"
+          ? "Configura VITE_WEB3FORMS_ACCESS_KEY per attivare il form contatti."
+          : "Set VITE_WEB3FORMS_ACCESS_KEY to enable the contact form.",
+      );
+      return;
+    }
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    formData.append("access_key", web3FormsAccessKey);
+    formData.append("from_name", "Andrea Feliziani Portfolio");
+    formData.append("replyto", formData.get("email") || "");
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Unable to send message.");
+      }
+
+      form.reset();
+      alert(
+        lang === "it"
+          ? "Messaggio inviato correttamente."
+          : "Message sent successfully.",
+      );
+    } catch (error) {
+      alert(
+        lang === "it"
+          ? "Invio non riuscito. Riprova tra poco."
+          : "Message could not be sent. Please try again shortly.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section id="contact" className="py-20 relative">
@@ -77,11 +128,8 @@ export default function ContactSection() {
                 transition: "all 0.6s ease",
               }}
             >
-              <form
-                action="https://formsubmit.co/andrea.feliziani97@gmail.com"
-                method="POST"
-              >
-                <input type="hidden" name="_captcha" value="false" />
+              <form onSubmit={handleSubmit}>
+                <input type="checkbox" name="botcheck" className="hidden" tabIndex="-1" autoComplete="off" />
 
                 <div className="mb-6">
                   <label htmlFor="name" className="form-label block mb-2">
@@ -138,8 +186,10 @@ export default function ContactSection() {
                 <button
                   type="submit"
                   className="btn btn-primary w-full flex justify-center"
+                  disabled={isSubmitting}
+                  aria-busy={isSubmitting}
                 >
-                  <span>{t("contact.send")}</span>
+                  <span>{isSubmitting ? (lang === "it" ? "Invio..." : "Sending...") : t("contact.send")}</span>
                   <FaPaperPlane />
                 </button>
               </form>
