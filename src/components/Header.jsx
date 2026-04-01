@@ -23,6 +23,11 @@ export default function Header() {
     { label: t("nav.portfolio"), href: "/#portfolio" },
     { label: t("nav.contact"), href: "/#contact" },
   ];
+  const currentNavSection = isHome
+    ? activeSection
+    : location.pathname.startsWith("/projects/")
+      ? "portfolio"
+      : "";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 100);
@@ -32,20 +37,20 @@ export default function Header() {
 
   useEffect(() => {
     if (!isHome) return;
-    const sections = document.querySelectorAll("section[id]");
     const onScroll = () => {
+      const sections = document.querySelectorAll("section[id]");
       let current = "";
+
       sections.forEach((section) => {
         if (window.pageYOffset >= section.offsetTop - 200) {
           current = section.getAttribute("id");
         }
       });
-      if (current) setActiveSection(current);
+
+      setActiveSection(current || "home");
     };
-    
-    // Evaluate immediately in case we just navigated back to the home page
-    onScroll();
-    
+
+    requestAnimationFrame(onScroll);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, [isHome]);
@@ -103,17 +108,22 @@ export default function Header() {
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center gap-8">
               <ul className="flex list-none m-0 p-0 gap-8">
-                {navItems.map(({ label, href }) => (
-                  <li key={href}>
-                    <a
-                      href={isHome ? href : href}
-                      className={`nav-link ${isHome && activeSection === href.replace("/#", "") ? "active" : ""}`}
-                      onClick={(e) => handleNavClick(e, href)}
-                    >
-                      {label}
-                    </a>
-                  </li>
-                ))}
+                {navItems.map(({ label, href }) => {
+                  const navSection = href.replace("/#", "");
+                  const isActive = currentNavSection === navSection;
+
+                  return (
+                    <li key={href}>
+                      <a
+                        href={href}
+                        className={`nav-link ${isActive ? "active" : ""}`}
+                        onClick={(e) => handleNavClick(e, href)}
+                      >
+                        {label}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
 
               <div className="relative">
@@ -239,18 +249,27 @@ export default function Header() {
 
         <nav className="flex-1">
           <ul className="list-none p-0 m-0">
-            {navItems.map(({ label, href }) => (
-              <li key={href}>
-                <a
-                  href={isHome ? href : href}
-                  className="block text-2xl font-semibold py-4 text-text-main hover:text-primary transition-all hover:translate-x-2.5"
-                  style={{ fontFamily: "var(--font-display)" }}
-                  onClick={(e) => handleNavClick(e, href)}
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
+            {navItems.map(({ label, href }) => {
+              const navSection = href.replace("/#", "");
+              const isActive = currentNavSection === navSection;
+
+              return (
+                <li key={href}>
+                  <a
+                    href={href}
+                    className={`block text-2xl font-semibold py-4 transition-all hover:translate-x-2.5 ${
+                      isActive
+                        ? "text-primary"
+                        : "text-text-main hover:text-primary"
+                    }`}
+                    style={{ fontFamily: "var(--font-display)" }}
+                    onClick={(e) => handleNavClick(e, href)}
+                  >
+                    {label}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
