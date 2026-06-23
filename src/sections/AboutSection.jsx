@@ -7,9 +7,9 @@ const designSkills = [
   "Figma",
   "Miro",
   "Maze",
-  "Illustrator",
-  "Indesign",
-  "Lightroom",
+  "UX Research",
+  "Accessibility",
+  "Testing",
 ];
 const devSkills = ["HTML", "CSS", "Bootstrap", "JavaScript", "React"];
 
@@ -40,7 +40,7 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <SectionHeader badge={t("about.badge")} title={t("about.title")} />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           <div ref={contentRef} style={{ opacity: 0 }}>
             <div className="glass-card text-center">
               <p
@@ -64,7 +64,7 @@ export default function AboutSection() {
 
           <div
             ref={skillsRef}
-            className="flex flex-col gap-6"
+            className="flex flex-col gap-6 justify-between"
             style={{ opacity: 0 }}
           >
             <div className="glass-card">
