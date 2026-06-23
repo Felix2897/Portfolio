@@ -9,6 +9,7 @@ export default {
 
   // Hero Section
   hero: {
+    badge: "Mobile UI/UX Designer & Front-end",
     greeting: "Ciao, sono",
     name: "Andrea Feliziani",
     typedStrings: ["UI/UX Designer", "Front-end Developer"],

@@ -27,7 +27,7 @@ export default function HomePage() {
   }, [location.state, navigate, location.pathname]);
 
   return (
-    <>
+    <div className="home-page">
       <HeroSection onFilterChange={setActiveFilter} />
       <AboutSection />
       <CounterSection />
@@ -37,6 +37,6 @@ export default function HomePage() {
         onFilterChange={setActiveFilter}
       />
       <ContactSection />
-    </>
+    </div>
   );
 }

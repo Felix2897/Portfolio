@@ -86,26 +86,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="hero-available-badge bg-background/50 backdrop-blur-md mb-6"
-            >
-              <span className="hero-available-dot" aria-hidden="true" />
-              Available for work
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="font-display text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tight text-(--color-text-main) mb-6 leading-[1.1]"
-            >
-              {t("hero.name")}
-            </motion.h1>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl md:text-3xl font-medium text-(--color-accent) mb-8 flex items-center justify-center lg:justify-start gap-4"
+              className="text-xl md:text-3xl font-medium text-(--color-accent) mb-6 flex items-center justify-center lg:justify-start gap-4"
             >
               <span className="hero-role-bracket font-mono text-2xl">
                 {"<"}
@@ -118,6 +99,15 @@ export default function HeroSection() {
                 {"/>"}
               </span>
             </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="font-display text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tight text-(--color-text-main) mb-8 leading-[1.1]"
+            >
+              {t("hero.name")}
+            </motion.h1>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
