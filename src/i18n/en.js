@@ -30,7 +30,7 @@ export default {
     bio3: "",
     downloadCv: "Download CV",
     designTitle: "UI/UX Designer",
-    devTitle: "Front-end Developer",
+    devTitle: "Front-end/Mobile Developer",
   },
 
   // Counter Section
@@ -70,7 +70,8 @@ export default {
     filterDesign: "UI/UX Design",
     filterFrontend: "Front-end",
     viewProject: "View",
-    docNote: "Documentation available in Italian only — English version in progress",
+    docNote:
+      "Documentation available in Italian only — English version in progress",
     projects: {
       study: {
         description:

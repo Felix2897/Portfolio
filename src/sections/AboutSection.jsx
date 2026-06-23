@@ -11,7 +11,7 @@ const designSkills = [
   "Accessibility",
   "Testing",
 ];
-const devSkills = ["HTML", "CSS", "Bootstrap", "JavaScript", "React"];
+const devSkills = ["React", "React Native", "Next.js", "Tailwind"];
 
 export default function AboutSection() {
   const contentRef = useRef(null);

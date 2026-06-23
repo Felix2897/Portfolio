@@ -31,7 +31,7 @@ export default {
     bio3: "",
     downloadCv: "Download CV",
     designTitle: "UI/UX Designer",
-    devTitle: "Front-end Developer",
+    devTitle: "Front-end & Mobile",
   },
 
   // Counter Section
