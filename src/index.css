@@ -13,7 +13,7 @@
   --color-surface:      #221e1a;
   --color-border:       #2e2820;
   --color-text:         #f2ede6;
-  --color-muted:        #8a7a68;
+  --color-muted:        #9d8c78;
   --color-accent:       #E8A020;
   --color-accent-text:  #E8A020;
 
@@ -56,7 +56,7 @@
   --color-surface:      #221e1a;
   --color-border:       #2e2820;
   --color-text:         #f2ede6;
-  --color-muted:        #8a7a68;
+  --color-muted:        #9d8c78;
   --color-accent:       #E8A020;
   --color-accent-text:  #E8A020;
 
@@ -119,6 +119,62 @@ a {
 
 img {
   max-width: 100%;
+}
+
+/* === Accessibility === */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 2000;
+  padding: 0.65rem 1.1rem;
+  background-color: var(--color-accent);
+  color: #141210;
+  font-weight: 600;
+  border-radius: 0.6rem;
+  transform: translateY(-150%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Visible keyboard focus for all interactive elements */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 3px;
 }
 
 /* === Scrollbar === */
@@ -1326,15 +1382,18 @@ body {
   pointer-events: none;
 }
 
-.portfolio-card:hover .portfolio-image::after {
+.portfolio-card:hover .portfolio-image::after,
+.portfolio-card:focus-within .portfolio-image::after {
   opacity: 1;
 }
 
-.portfolio-card:hover .portfolio-image img {
+.portfolio-card:hover .portfolio-image img,
+.portfolio-card:focus-within .portfolio-image img {
   filter: brightness(0.9);
 }
 
-.portfolio-card:hover .portfolio-overlay {
+.portfolio-card:hover .portfolio-overlay,
+.portfolio-card:focus-within .portfolio-overlay {
   opacity: 1;
   transform: translateY(0);
 }
@@ -1357,6 +1416,11 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(232, 160, 32, 0.35);
   color: #09090C;
+}
+
+.portfolio-link:focus-visible {
+  outline: 3px solid var(--color-text-main);
+  outline-offset: 3px;
 }
 
 .portfolio-info {
@@ -1817,6 +1881,17 @@ body {
   color: var(--color-text-muted);
   font-size: 0.85rem;
   margin: 0;
+}
+
+.contact-social-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.contact-social-card .contact-title {
+  margin-bottom: 0;
 }
 
 /* === Project Detail Pages === */

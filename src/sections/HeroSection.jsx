@@ -3,14 +3,19 @@ import Typed from "typed.js";
 import { FaMapMarkerAlt, FaArrowRight, FaDownload } from "react-icons/fa";
 import SocialLinks from "../components/SocialLinks";
 import { useLanguage } from "../i18n/LanguageContext";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 
 export default function HeroSection() {
   const typedRef = useRef(null);
   const { t, lang } = useLanguage();
   const { scrollY } = useScroll();
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
+    if (reduceMotion) {
+      if (typedRef.current) typedRef.current.textContent = t("hero.typedStrings.0");
+      return;
+    }
     const typed = new Typed(typedRef.current, {
       strings: [t("hero.typedStrings.0"), t("hero.typedStrings.1")],
       typeSpeed: 48,
@@ -21,7 +26,7 @@ export default function HeroSection() {
       cursorChar: "|",
     });
     return () => typed.destroy();
-  }, [t]);
+  }, [t, reduceMotion]);
 
   const scrollToSection = (sectionId) => {
     const target = document.getElementById(sectionId);
@@ -75,7 +80,10 @@ export default function HeroSection() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h1 className="text-[clamp(5rem,15vw,16rem)] font-extrabold tracking-tighter leading-none text-transparent bg-clip-text bg-linear-to-b from-(--color-text) to-transparent opacity-10 dark:opacity-[0.04] whitespace-nowrap overflow-hidden">
+            <h1
+              aria-hidden="true"
+              className="text-[clamp(5rem,15vw,16rem)] font-extrabold tracking-tighter leading-none text-transparent bg-clip-text bg-linear-to-b from-(--color-text) to-transparent opacity-10 dark:opacity-[0.04] whitespace-nowrap overflow-hidden"
+            >
               {t("hero.name").split(" ")[0].toUpperCase()}
             </h1>
           </motion.div>
@@ -88,14 +96,18 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-xl md:text-3xl font-medium text-(--color-accent) mb-6 flex items-center justify-center lg:justify-start gap-4"
             >
-              <span className="hero-role-bracket font-mono text-2xl">
+              <span className="sr-only">
+                {`${t("hero.typedStrings.0")}, ${t("hero.typedStrings.1")}`}
+              </span>
+              <span className="hero-role-bracket font-mono text-2xl" aria-hidden="true">
                 {"<"}
               </span>
               <span
                 ref={typedRef}
+                aria-hidden="true"
                 className="hero-role-typed text-(--color-text-main) font-display tracking-wide"
               />
-              <span className="hero-role-bracket font-mono text-2xl">
+              <span className="hero-role-bracket font-mono text-2xl" aria-hidden="true">
                 {"/>"}
               </span>
             </motion.div>
@@ -200,21 +212,30 @@ export default function HeroSection() {
       {/* Scroll cue */}
       <motion.div
         style={{ opacity: opacityScroll }}
-        className="hero-scroll-cue absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 cursor-pointer z-30"
+        className="hero-scroll-cue absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-3 cursor-pointer z-30"
         onClick={scrollToAbout}
         role="button"
         tabIndex={0}
-        aria-label="Scroll to about section"
-        onKeyDown={(e) => e.key === "Enter" && scrollToAbout()}
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.8,
-          delay: 1.2,
-          repeat: Infinity,
-          repeatType: "reverse",
-          repeatDelay: 1.5,
+        aria-label={lang === "it" ? "Vai alla sezione About" : "Scroll to about section"}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            scrollToAbout();
+          }
         }}
+        initial={reduceMotion ? false : { opacity: 0, y: -20 }}
+        animate={reduceMotion ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+        transition={
+          reduceMotion
+            ? { duration: 0 }
+            : {
+                duration: 0.8,
+                delay: 1.2,
+                repeat: Infinity,
+                repeatType: "reverse",
+                repeatDelay: 1.5,
+              }
+        }
       >
         <span className="hidden md:block text-[10px] uppercase tracking-[0.3em] text-(--color-text-muted) font-bold">
           Scroll

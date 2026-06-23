@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useCallback } from "react";
+import { createContext, useContext, useState, useCallback, useEffect } from "react";
 import en from "./en";
 import it from "./it";
 
@@ -16,6 +16,10 @@ export function LanguageProvider({ children }) {
       return "en";
     }
   });
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
 
   const setLang = useCallback((l) => {
     setLangState(l);

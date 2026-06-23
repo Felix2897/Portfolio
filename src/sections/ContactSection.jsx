@@ -157,7 +157,12 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <SocialLinks className="mt-6" />
+              <div className="glass-card contact-social-card">
+                <h3 className="contact-title">
+                  {lang === "it" ? "Seguimi" : "Follow me"}
+                </h3>
+                <SocialLinks />
+              </div>
             </div>
           </div>
 
@@ -173,7 +178,14 @@ export default function ContactSection() {
               }}
             >
               <form onSubmit={handleSubmit}>
-                <input type="checkbox" name="botcheck" className="hidden" tabIndex="-1" autoComplete="off" />
+                <input
+                  type="checkbox"
+                  name="botcheck"
+                  className="hidden"
+                  tabIndex="-1"
+                  autoComplete="off"
+                  aria-hidden="true"
+                />
 
                 <div className="mb-6">
                   <label htmlFor="name" className="form-label block mb-2">
@@ -185,6 +197,7 @@ export default function ContactSection() {
                     name="name"
                     className="custom-input w-full"
                     required
+                    aria-required="true"
                   />
                 </div>
 
@@ -198,6 +211,7 @@ export default function ContactSection() {
                     name="email"
                     className="custom-input w-full"
                     required
+                    aria-required="true"
                   />
                 </div>
 
@@ -211,6 +225,7 @@ export default function ContactSection() {
                     name="subject"
                     className="custom-input w-full"
                     required
+                    aria-required="true"
                   />
                 </div>
 
@@ -224,6 +239,7 @@ export default function ContactSection() {
                     rows="5"
                     className="custom-input w-full"
                     required
+                    aria-required="true"
                   ></textarea>
                 </div>
 

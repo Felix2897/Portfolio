@@ -44,11 +44,25 @@ export default function App() {
 
   return (
     <>
+      <a
+        href="#main-content"
+        className="skip-link"
+        onClick={(e) => {
+          e.preventDefault();
+          const main = document.getElementById("main-content");
+          if (main) {
+            main.focus();
+            main.scrollIntoView();
+          }
+        }}
+      >
+        {lang === "it" ? "Salta al contenuto" : "Skip to content"}
+      </a>
       <Loader onComplete={() => setBootReady(true)} />
       <ScrollToTop />
       <Header />
 
-      <div style={{ opacity: fading ? 0 : 1, transition: "opacity 0.22s ease" }}>
+      <main id="main-content" tabIndex={-1} style={{ opacity: fading ? 0 : 1, transition: "opacity 0.22s ease", outline: "none" }}>
       {bootReady && (
         <>
           <Routes>
@@ -65,7 +79,7 @@ export default function App() {
           <BackToTop />
         </>
       )}
-      </div>
+      </main>
     </>
   );
 }

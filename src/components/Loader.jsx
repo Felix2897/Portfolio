@@ -20,8 +20,8 @@ export default function Loader({ onComplete }) {
   if (gone) return null;
 
   return (
-    <div className={`loader ${hidden ? "hidden" : ""}`}>
-      <div className="flex flex-col items-center">
+    <div className={`loader ${hidden ? "hidden" : ""}`} role="status" aria-label="Loading">
+      <div className="flex flex-col items-center" aria-hidden="true">
         <div className="mb-6">
           <Logo size="lg" />
         </div>

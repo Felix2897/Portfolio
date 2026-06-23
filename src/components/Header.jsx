@@ -39,6 +39,17 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
+    if (!mobileOpen && !langOpen) return;
+    const onKey = (e) => {
+      if (e.key !== "Escape") return;
+      if (mobileOpen) closeMobile();
+      if (langOpen) setLangOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [mobileOpen, langOpen]);
+
+  useEffect(() => {
     if (!isHome) return;
     const onScroll = () => {
       const sections = document.querySelectorAll("section[id]");
@@ -109,7 +120,10 @@ export default function Header() {
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-8">
+            <nav
+              className="hidden md:flex items-center gap-8"
+              aria-label={lang === "it" ? "Navigazione principale" : "Main navigation"}
+            >
               <ul className="flex list-none m-0 p-0 gap-8">
                 {navItems.map(({ label, href }) => {
                   const navSection = href.replace("/#", "");
@@ -134,6 +148,8 @@ export default function Header() {
                   onClick={() => setLangOpen(!langOpen)}
                   className="lang-toggle"
                   aria-label="Toggle language"
+                  aria-haspopup="menu"
+                  aria-expanded={langOpen}
                   title={
                     lang === "en" ? "Passa all'italiano" : "Switch to English"
                   }
@@ -187,6 +203,8 @@ export default function Header() {
                 onClick={() => setLangOpen(!langOpen)}
                 className="lang-toggle lang-toggle-sm relative"
                 aria-label="Toggle language"
+                aria-haspopup="menu"
+                aria-expanded={langOpen}
               >
                 {lang === "en" ? "🇬🇧" : "🇮🇹"}
                 <FaChevronDown className="text-[10px]" />
@@ -225,7 +243,10 @@ export default function Header() {
               <button
                 className="w-8 h-8 flex items-center justify-center"
                 onClick={openMobile}
-                aria-label="Menu"
+                aria-label={lang === "it" ? "Apri menu" : "Open menu"}
+                aria-haspopup="dialog"
+                aria-expanded={mobileOpen}
+                aria-controls="mobile-menu"
               >
                 <div className="space-y-1.5">
                   <div className="w-5 h-0.5" style={{ backgroundColor: "var(--color-text)" }}></div>
@@ -239,18 +260,29 @@ export default function Header() {
       </header>
 
       {/* Mobile Menu */}
-      <div className={`mobile-menu ${mobileOpen ? "active" : ""}`}>
+      <div
+        id="mobile-menu"
+        className={`mobile-menu ${mobileOpen ? "active" : ""}`}
+        role="dialog"
+        aria-modal="true"
+        aria-label={lang === "it" ? "Menu di navigazione" : "Navigation menu"}
+        inert={mobileOpen ? undefined : true}
+      >
         <div className="flex justify-between items-center mb-12">
           <Logo />
           <button
             onClick={closeMobile}
             className="text-2xl text-text-muted hover:text-white bg-transparent border-none cursor-pointer"
+            aria-label={lang === "it" ? "Chiudi menu" : "Close menu"}
           >
-            <FaTimes />
+            <FaTimes aria-hidden="true" />
           </button>
         </div>
 
-        <nav className="flex-1">
+        <nav
+          className="flex-1"
+          aria-label={lang === "it" ? "Navigazione principale" : "Main navigation"}
+        >
           <ul className="list-none p-0 m-0">
             {navItems.map(({ label, href }) => {
               const navSection = href.replace("/#", "");
