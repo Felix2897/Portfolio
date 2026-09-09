@@ -76,7 +76,7 @@ export default function Header() {
     if (isHome) {
       const el = document.getElementById(id);
       if (el) {
-        window.scrollTo({ top: el.offsetTop - 100, behavior: "smooth" });
+        window.scrollTo({ top: el.offsetTop - 80, behavior: "smooth" });
       }
     } else {
       navigate("/", { state: { scrollTo: id } });
@@ -103,7 +103,7 @@ export default function Header() {
 
   return (
     <>
-      <header className={`header ${scrolled ? "scrolled" : ""}`}>
+      <header className={`header editorial-header-lite ${scrolled ? "scrolled" : ""}`}>
         <div className="px-4 md:px-6 max-w-7xl mx-auto">
           <div className="header-inner">
             <Link
@@ -186,7 +186,7 @@ export default function Header() {
               </div>
 
               <button
-                className="lang-toggle"
+                className="lang-toggle editorial-theme-toggle"
                 onClick={toggleTheme}
                 role="switch"
                 aria-checked={isDark}
@@ -232,7 +232,7 @@ export default function Header() {
                 )}
               </button>
               <button
-                className="lang-toggle lang-toggle-sm"
+                className="lang-toggle lang-toggle-sm editorial-theme-toggle"
                 onClick={toggleTheme}
                 role="switch"
                 aria-checked={isDark}

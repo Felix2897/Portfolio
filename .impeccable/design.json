@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-09T12:20:00+02:00",
+  "title": "Design System: Andrea Feliziani Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "paper-dark": { "role": "neutral", "displayName": "Night Paper", "canonical": "#181a19", "tonalRamp": ["#111312", "#181a19", "#202320", "#2a302c", "#3a403b", "#6f746d", "#a6aaa4", "#f3f1ec"] },
+      "paper-light": { "role": "neutral", "displayName": "Warm Paper", "canonical": "#f7f5f1", "tonalRamp": ["#202320", "#3a403b", "#6f746d", "#a6aaa4", "#d8d5ce", "#ebe9e3", "#f2f0eb", "#f7f5f1"] },
+      "ink-dark": { "role": "primary", "displayName": "Ink Dark", "canonical": "#f3f1ec", "tonalRamp": ["#181a19", "#2a302c", "#3a403b", "#6f746d", "#a6aaa4", "#d8d5ce", "#ebe9e3", "#f3f1ec"] },
+      "ink-light": { "role": "primary", "displayName": "Ink Light", "canonical": "#202320", "tonalRamp": ["#111312", "#202320", "#3a403b", "#6f746d", "#a6aaa4", "#d8d5ce", "#ebe9e3", "#f7f5f1"] },
+      "muted-dark": { "role": "neutral", "displayName": "Muted Dark", "canonical": "#a6aaa4", "tonalRamp": ["#181a19", "#202320", "#2a302c", "#3a403b", "#6f746d", "#8d948e", "#a6aaa4", "#d8d5ce"] },
+      "muted-light": { "role": "neutral", "displayName": "Muted Light", "canonical": "#6f746d", "tonalRamp": ["#202320", "#2a302c", "#3a403b", "#6f746d", "#8a908a", "#a6aaa4", "#d8d5ce", "#f7f5f1"] },
+      "line-dark": { "role": "neutral", "displayName": "Rule Dark", "canonical": "#3a403b", "tonalRamp": ["#181a19", "#202320", "#2a302c", "#3a403b", "#6f746d", "#8d948e", "#a6aaa4", "#d8d5ce"] },
+      "line-light": { "role": "neutral", "displayName": "Rule Light", "canonical": "#d8d5ce", "tonalRamp": ["#3a403b", "#6f746d", "#8d948e", "#a6aaa4", "#d8d5ce", "#e3e1db", "#eeece7", "#f7f5f1"] },
+      "surface-dark": { "role": "surface", "displayName": "Soft Surface Dark", "canonical": "#2a302c", "tonalRamp": ["#181a19", "#202320", "#2a302c", "#3a403b", "#536057", "#738478", "#a8b6aa", "#d8d5ce"] },
+      "surface-light": { "role": "surface", "displayName": "Soft Surface Light", "canonical": "#ebe9e3", "tonalRamp": ["#202320", "#3a403b", "#6f746d", "#a6aaa4", "#d8d5ce", "#ebe9e3", "#f2f0eb", "#f7f5f1"] },
+      "accent-dark": { "role": "accent", "displayName": "Sage Dark", "canonical": "#a8b6aa", "tonalRamp": ["#28322b", "#3e5143", "#536057", "#738478", "#8fa193", "#a8b6aa", "#c8d2c9", "#e7ece7"] },
+      "accent-light": { "role": "accent", "displayName": "Sage Light", "canonical": "#738478", "tonalRamp": ["#29372d", "#405745", "#536657", "#657a6b", "#738478", "#8fa193", "#b6c2b7", "#dce4dc"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Archivo Display", "purpose": "Strong section headlines and the hero name." },
+      "body": { "displayName": "Space Grotesk Body", "purpose": "Readable biography, project descriptions, and contact guidance." },
+      "label": { "displayName": "JetBrains Mono Label", "purpose": "Navigation, metadata, periods, filters, and interface labels." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "editorial-rise", "value": "editorialRise linear both; animation-timeline: view()", "purpose": "Reveal sections and project rows as they enter the reading flow." },
+      { "name": "hero-drift", "value": "useTransform(scrollYProgress, [0, 0.2], [0, -24px])", "purpose": "Subtle scroll drift on the framed hero portrait." },
+      { "name": "ease-editorial", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Confident, quiet movement for hover and menu transitions." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "640px" },
+      { "name": "tablet", "value": "900px" },
+      { "name": "wide", "value": "1600px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "High-contrast action for contact and form submission.",
+      "html": "<a class=\"ds-button-primary\" href=\"#contact\">GET IN TOUCH <span aria-hidden=\"true\">→</span></a>",
+      "css": ".ds-button-primary { display: inline-flex; align-items: center; gap: 0.7rem; min-height: 3rem; padding: 0.75rem 1rem; border: 0; border-radius: 0; background: var(--editorial-ink); color: var(--editorial-paper); font: 600 0.7rem var(--font-mono); letter-spacing: 0.07em; text-transform: uppercase; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Quiet secondary action for downloads and supporting paths.",
+      "html": "<a class=\"ds-button-secondary\" href=\"#\">DOWNLOAD CV <span aria-hidden=\"true\">↧</span></a>",
+      "css": ".ds-button-secondary { display: inline-flex; align-items: center; gap: 0.7rem; min-height: 3rem; padding: 0.75rem 1rem; border: 1px solid var(--editorial-line); border-radius: 0; background: transparent; color: var(--editorial-ink); font: 600 0.7rem var(--font-mono); letter-spacing: 0.07em; text-transform: uppercase; }"
+    },
+    {
+      "name": "Line Field",
+      "kind": "input",
+      "refersTo": "field-line",
+      "description": "Minimal contact field with an underline and clear focus state.",
+      "html": "<label class=\"ds-field\">EMAIL<input type=\"email\" placeholder=\"you@example.com\" /></label>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 0.45rem; color: var(--editorial-muted); font: 500 0.66rem var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; } .ds-field input { padding: 0.65rem 0; border: 0; border-bottom: 1px solid var(--editorial-line); border-radius: 0; background: transparent; color: var(--editorial-ink); font: 400 1rem var(--font-sans); }"
+    },
+    {
+      "name": "Editorial Navigation",
+      "kind": "nav",
+      "refersTo": "nav-editorial",
+      "description": "Clear text navigation with one active underline and no pill controls.",
+      "html": "<nav class=\"ds-nav\"><a class=\"active\" href=\"#home\">HOME</a><a href=\"#portfolio\">PORTFOLIO</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 2rem; } .ds-nav a { position: relative; padding: 0.35rem 0; color: var(--editorial-muted); font: 500 0.68rem var(--font-mono); letter-spacing: 0.13em; text-transform: uppercase; } .ds-nav a::after { content: \"\"; position: absolute; right: 0; bottom: 0; left: 0; height: 1px; background: var(--editorial-coral); }"
+    },
+    {
+      "name": "Hero Portrait",
+      "kind": "custom",
+      "refersTo": "hero-portrait",
+      "description": "Framed monochrome portrait with restrained editorial metadata.",
+      "html": "<figure class=\"ds-hero-portrait\"><span>01 / 01</span><img alt=\"\" /><figcaption>DESIGNER & DEVELOPER</figcaption></figure>",
+      "css": ".ds-hero-portrait { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border: 1px solid var(--editorial-line); background: var(--editorial-surface); } .ds-hero-portrait img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(0.92); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quiet Editorial Archive",
+    "overview": "The portfolio behaves like a well-edited design publication: strong typography, generous breathing room, precise rules, and real work as the visual proof. The home pairs a clear typographic introduction with a framed monochrome portrait, then moves through biography, education, projects, and contact with a steady reading rhythm. Bilingual content, light/dark themes, accessible navigation, CV downloads, contact form, and direct project routes remain part of the experience.",
+    "keyCharacteristics": ["Charcoal and warm paper form the base; muted sage is the only accent.", "Large display type creates hierarchy without oversized decorative blocks.", "One-pixel rules and open space establish the page rhythm.", "Mono labels keep metadata, filters, locations, and navigation scannable.", "Motion is quiet and purposeful, with reduced-motion fallback."],
+    "rules": [
+      { "name": "The Quiet Accent Rule", "body": "Sage is a guide, never the main event. Use it for one small decision at a time: active state, index, focus, or action.", "section": "colors" },
+      { "name": "The Two-Voice Rule", "body": "Display type carries the personality; mono labels carry the system. Neither should impersonate the other.", "section": "typography" },
+      { "name": "The Breathing Room Rule", "body": "Use measured gaps between sections so each chapter has a clear beginning and the work gets a deliberate entrance.", "section": "layout" }
+    ],
+    "dos": ["Let project imagery, titles, and descriptions carry the proof.", "Use whitespace, rules, and type scale to create hierarchy.", "Keep the accent desaturated and purposeful.", "Preserve visible focus, skip navigation, language switching, themes, and reduced motion.", "Test the hero, navigation, and long section gaps at desktop and mobile widths."],
+    "donts": ["Don't reintroduce bright red/yellow blocks, gradients, or decorative background noise.", "Don't turn every control into a rounded pill.", "Don't use a large shadow or floating card to compensate for weak hierarchy.", "Don't let metadata compete with the person, name, or work."]
+  }
+}

@@ -32,7 +32,7 @@ export default function HeroSection() {
     const target = document.getElementById(sectionId);
     if (!target) return;
     const start = window.scrollY;
-    const end = target.getBoundingClientRect().top + start - 90;
+    const end = target.getBoundingClientRect().top + start - 80;
     const duration = 900;
     let startTime = null;
     const ease = (t) =>

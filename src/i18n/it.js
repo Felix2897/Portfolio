@@ -42,6 +42,22 @@ export default {
     certifications: "Certificazioni",
   },
 
+  experience: {
+    badge: "Esperienza",
+    current: {
+      company: "Aton IT",
+      location: "Milano",
+      role: "UI/UX Designer · Front-end Developer",
+      period: "Gen 2025 — oggi",
+    },
+    previous: {
+      company: "IBS",
+      location: "Tolentino, Marche",
+      role: "UI/UX Designer · Front-end Developer",
+      period: "Dic 2023 — Lug 2024",
+    },
+  },
+
   // Education Section
   education: {
     badge: "Formazione",

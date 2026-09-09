@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import HeroSection from "../sections/HeroSection";
 import AboutSection from "../sections/AboutSection";
-import CounterSection from "../sections/CounterSection";
 import EducationSection from "../sections/EducationSection";
 import PortfolioSection from "../sections/PortfolioSection";
 import ContactSection from "../sections/ContactSection";
@@ -17,7 +16,7 @@ export default function HomePage() {
       setTimeout(() => {
         const el = document.getElementById(location.state.scrollTo);
         if (el) {
-          window.scrollTo({ top: el.offsetTop - 100, behavior: "smooth" });
+          window.scrollTo({ top: el.offsetTop - 80, behavior: "smooth" });
         }
       }, 100);
       
@@ -27,11 +26,12 @@ export default function HomePage() {
   }, [location.state, navigate, location.pathname]);
 
   return (
-    <div className="home-page">
+    <div className="home-page editorial-home">
       <HeroSection onFilterChange={setActiveFilter} />
       <AboutSection />
-      <CounterSection />
-      <EducationSection />
+      <div className="editorial-journey">
+        <EducationSection />
+      </div>
       <PortfolioSection
         activeFilter={activeFilter}
         onFilterChange={setActiveFilter}

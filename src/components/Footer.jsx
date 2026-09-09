@@ -23,7 +23,7 @@ export default function Footer() {
     if (isHome) {
       const el = document.getElementById(id);
       if (el) {
-        window.scrollTo({ top: el.offsetTop - 100, behavior: "smooth" });
+        window.scrollTo({ top: el.offsetTop - 80, behavior: "smooth" });
       }
     } else {
       navigate("/", { state: { scrollTo: id } });

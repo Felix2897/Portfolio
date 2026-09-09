@@ -1,86 +1,81 @@
 import { useEffect, useRef } from "react";
-import SectionHeader from "../components/SectionHeader";
 import { useLanguage } from "../i18n/LanguageContext";
 
 export default function EducationSection() {
-  const itemRefs = useRef([]);
+  const sectionRef = useRef(null);
   const { t } = useLanguage();
 
-  const items = [
+  const experiences = [
     {
-      period: "2012 - 2017",
-      title: t("education.diploma.title"),
-      subtitle: t("education.diploma.subtitle"),
-      text: t("education.diploma.text"),
-      badgeClass: "timeline-badge-accent",
+      company: t("experience.current.company"),
+      location: t("experience.current.location"),
+      role: t("experience.current.role"),
+      period: t("experience.current.period"),
     },
     {
-      period: "2018 - 2021",
-      title: t("education.bachelors.title"),
-      subtitle: t("education.bachelors.subtitle"),
-      text: t("education.bachelors.text"),
-      badgeClass: "timeline-badge-secondary",
-    },
-    {
-      period: "2022 - 2024",
-      title: t("education.masters.title"),
-      subtitle: t("education.masters.subtitle"),
-      text: t("education.masters.text"),
-      badgeClass: "",
+      company: t("experience.previous.company"),
+      location: t("experience.previous.location"),
+      role: t("experience.previous.role"),
+      period: t("experience.previous.period"),
     },
   ];
 
+  const items = [
+    { period: "2012 — 2017", title: t("education.diploma.title"), subtitle: t("education.diploma.subtitle"), text: t("education.diploma.text") },
+    { period: "2018 — 2021", title: t("education.bachelors.title"), subtitle: t("education.bachelors.subtitle"), text: t("education.bachelors.text") },
+    { period: "2022 — 2024", title: t("education.masters.title"), subtitle: t("education.masters.subtitle"), text: t("education.masters.text") },
+  ];
+
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add("animate");
-        });
-      },
-      { threshold: 0.2 },
+    const rows = sectionRef.current?.querySelectorAll(
+      ".editorial-journey-experience-row, .editorial-education-row",
     );
-    itemRefs.current.forEach((el) => {
-      if (el) observer.observe(el);
-    });
+    if (!rows?.length) return undefined;
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("is-revealed")),
+      { threshold: 0.15 },
+    );
+    rows.forEach((row) => observer.observe(row));
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="education" className="py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 md:px-6">
-        <SectionHeader
-          badge={t("education.badge")}
-          title={t("education.title")}
-        />
-
-        <div className="timeline-container">
-          <div className="timeline-line"></div>
-          {items.map((item, i) => (
-            <div
-              key={item.period}
-              className={`timeline-item ${i % 2 === 0 ? "timeline-item-left" : "timeline-item-right"}`}
-              ref={(el) => (itemRefs.current[i] = el)}
-              style={{ transitionDelay: `${i * 140}ms` }}
-            >
-              <div className="timeline-dot"></div>
-              <div className="glass-card">
-                <div className={`timeline-badge ${item.badgeClass}`}>
-                  {item.period}
+    <section id="education" className="editorial-section editorial-education" ref={sectionRef}>
+      <div className="editorial-shell">
+        <div className="editorial-journey-experience" aria-labelledby="experience-title">
+          <div className="editorial-journey-experience-heading">
+            <span id="experience-title" className="editorial-kicker">{t("experience.badge")}</span>
+          </div>
+          <div className="editorial-journey-experience-list">
+            {experiences.map((experience) => (
+              <div className="editorial-journey-experience-row" key={experience.company}>
+                <time>{experience.period}</time>
+                <div className="editorial-journey-experience-main">
+                  <h3>{experience.company}</h3>
+                  <p>{experience.location}</p>
                 </div>
-                <h3
-                  className="text-lg font-semibold mb-1"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  {item.title}
-                </h3>
-                <h4 className="text-sm font-medium text-[var(--color-text-muted)] mb-2">
-                  {item.subtitle}
-                </h4>
-                <p className="text-sm text-[var(--color-text-muted)] m-0">
-                  {item.text}
-                </p>
+                <span>{experience.role}</span>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="editorial-section-heading editorial-education-heading">
+          <div>
+            <span className="editorial-kicker">{t("education.badge")}</span>
+          </div>
+        </div>
+
+        <div className="editorial-education-list">
+          {items.map((item, index) => (
+            <article className="editorial-education-row" key={item.period} style={{ "--row-delay": `${index * 90}ms` }}>
+              <span className="editorial-education-period">{item.period}</span>
+              <div className="editorial-education-main">
+                <h3>{item.title}</h3>
+                <p>{item.subtitle}</p>
+              </div>
+              <span className="editorial-education-detail">{item.text}</span>
+            </article>
           ))}
         </div>
       </div>
