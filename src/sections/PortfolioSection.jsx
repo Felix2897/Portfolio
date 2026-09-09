@@ -61,7 +61,13 @@ export default function PortfolioSection({ activeFilter, onFilterChange }) {
 
         <div className="editorial-project-list">
           {visibleProjects.map((project, index) => (
-            <article className="editorial-project-row" key={project.id} style={{ "--row-delay": `${index * 70}ms` }}>
+            <Link
+              className="editorial-project-row"
+              key={project.id}
+              to={project.link}
+              aria-label={`${t("portfolio.viewProject")} ${project.title}`}
+              style={{ "--row-delay": `${index * 70}ms` }}
+            >
               <span className="editorial-project-index">{String(index + 1).padStart(2, "0")}</span>
               <div className="editorial-project-copy">
                 <div className="editorial-project-tags">
@@ -73,11 +79,11 @@ export default function PortfolioSection({ activeFilter, onFilterChange }) {
               <div className="editorial-project-preview">
                 <img src={project.image} alt={`${project.title} preview`} loading="lazy" />
               </div>
-              <Link className="editorial-project-link" to={project.link} aria-label={`${t("portfolio.viewProject")} ${project.title}`}>
+              <span className="editorial-project-link" aria-hidden="true">
                 <span>{t("portfolio.viewProject")}</span>
                 <FaArrowUpRightFromSquare aria-hidden="true" />
-              </Link>
-            </article>
+              </span>
+            </Link>
           ))}
         </div>
       </div>
