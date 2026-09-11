@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import { FaCode, FaDownload, FaPalette } from "react-icons/fa";
 import { useLanguage } from "../i18n/LanguageContext";
 
-const designSkills = ["Figma", "Miro", "Maze", "UX Research", "Accessibility", "Testing"];
 const devSkills = ["React", "React Native", "Next.js", "Tailwind"];
 
 function Reveal({ children, className = "", innerRef }) {
@@ -13,6 +12,15 @@ export default function AboutSection() {
   const contentRef = useRef(null);
   const skillsRef = useRef(null);
   const { t, lang } = useLanguage();
+
+  const designSkills = [
+    "Figma",
+    "Miro",
+    "Maze",
+    "UX Research",
+    lang === "it" ? "Accessibilità" : "Accessibility",
+    "Testing",
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -31,7 +39,6 @@ export default function AboutSection() {
             <span className="editorial-kicker">{t("about.badge")}</span>
             <h2>{t("about.title")}</h2>
           </div>
-          <p>{lang === "it" ? "Un modo di lavorare tra sistemi, empatia e interfacce." : "A way of working between systems, empathy, and interfaces."}</p>
         </div>
 
         <div className="editorial-about-grid">
