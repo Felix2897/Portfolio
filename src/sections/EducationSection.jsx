@@ -1,8 +1,7 @@
-import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { useLanguage } from "../i18n/LanguageContext";
 
 export default function EducationSection() {
-  const sectionRef = useRef(null);
   const { t } = useLanguage();
 
   const experiences = [
@@ -26,56 +25,69 @@ export default function EducationSection() {
     { period: "2022 — 2024", title: t("education.masters.title"), subtitle: t("education.masters.subtitle"), text: t("education.masters.text") },
   ];
 
-  useEffect(() => {
-    const rows = sectionRef.current?.querySelectorAll(
-      ".editorial-journey-experience-row, .editorial-education-row",
-    );
-    if (!rows?.length) return undefined;
-    const observer = new IntersectionObserver(
-      (entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("is-revealed")),
-      { threshold: 0.15 },
-    );
-    rows.forEach((row) => observer.observe(row));
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="education" className="editorial-section editorial-education" ref={sectionRef}>
+    <section id="education" className="editorial-section editorial-education">
       <div className="editorial-shell">
         <div className="editorial-journey-experience" aria-labelledby="experience-title">
-          <div className="editorial-journey-experience-heading">
+          <motion.div
+            className="editorial-journey-experience-heading"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          >
             <span id="experience-title" className="editorial-kicker">{t("experience.badge")}</span>
-          </div>
+          </motion.div>
           <div className="editorial-journey-experience-list">
-            {experiences.map((experience) => (
-              <div className="editorial-journey-experience-row" key={experience.company}>
+            {experiences.map((experience, index) => (
+              <motion.div
+                className="editorial-journey-experience-row"
+                key={experience.company}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
+              >
                 <time>{experience.period}</time>
                 <div className="editorial-journey-experience-main">
                   <h3>{experience.company}</h3>
                   <p>{experience.location}</p>
                 </div>
                 <span>{experience.role}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
 
-        <div className="editorial-section-heading editorial-education-heading">
+        <motion.div
+          className="editorial-section-heading editorial-education-heading"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div>
             <span className="editorial-kicker">{t("education.badge")}</span>
           </div>
-        </div>
+        </motion.div>
 
         <div className="editorial-education-list">
           {items.map((item, index) => (
-            <article className="editorial-education-row" key={item.period} style={{ "--row-delay": `${index * 90}ms` }}>
+            <motion.article
+              className="editorial-education-row"
+              key={item.period}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.65, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
+            >
               <span className="editorial-education-period">{item.period}</span>
               <div className="editorial-education-main">
                 <h3>{item.title}</h3>
                 <p>{item.subtitle}</p>
               </div>
               <span className="editorial-education-detail">{item.text}</span>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>

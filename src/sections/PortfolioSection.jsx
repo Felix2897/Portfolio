@@ -1,6 +1,6 @@
-import { useEffect, useRef } from "react";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { useLanguage } from "../i18n/LanguageContext";
 
 const projects = [
@@ -12,9 +12,10 @@ const projects = [
   { id: "secure", title: "Secure it with Cyber", image: "./Img/minilogo.png", categories: ["Front-End Project"], link: "/projects/secure-it", copy: "portfolio.projects.secure.description" },
 ];
 
+const MotionLink = motion.create ? motion.create(Link) : motion(Link);
+
 export default function PortfolioSection({ activeFilter, onFilterChange }) {
-  const listRef = useRef(null);
-  const { t, lang } = useLanguage();
+  const { t } = useLanguage();
 
   const filters = [
     { label: t("portfolio.filterAll"), value: "all" },
@@ -27,29 +28,29 @@ export default function PortfolioSection({ activeFilter, onFilterChange }) {
     return project.categories.some((category) => category.toLowerCase().includes(activeFilter));
   });
 
-  useEffect(() => {
-    const rows = listRef.current?.querySelectorAll(".editorial-project-row");
-    if (!rows?.length) return undefined;
-    rows.forEach((row) => row.classList.remove("is-revealed"));
-    const observer = new IntersectionObserver(
-      (entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("is-revealed")),
-      { threshold: 0.1 },
-    );
-    rows.forEach((row) => observer.observe(row));
-    return () => observer.disconnect();
-  }, [activeFilter]);
-
   return (
-    <section id="portfolio" className="editorial-section editorial-work" ref={listRef}>
+    <section id="portfolio" className="editorial-section editorial-work">
       <div className="editorial-shell">
-        <div className="editorial-work-heading">
+        <motion.div
+          className="editorial-work-heading"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div>
             <span className="editorial-kicker">{t("portfolio.badge")}</span>
             <h2>{t("portfolio.title")}</h2>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="editorial-work-tools">
+        <motion.div
+          className="editorial-work-tools"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div className="editorial-filters" role="group" aria-label={t("portfolio.title")}>
             {filters.map(({ label, value }) => (
               <button key={value} type="button" className={activeFilter === value ? "active" : ""} aria-pressed={activeFilter === value} onClick={() => onFilterChange(value)}>
@@ -57,16 +58,19 @@ export default function PortfolioSection({ activeFilter, onFilterChange }) {
               </button>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         <div className="editorial-project-list">
           {visibleProjects.map((project, index) => (
-            <Link
+            <MotionLink
               className="editorial-project-row"
               key={project.id}
               to={project.link}
               aria-label={`${t("portfolio.viewProject")} ${project.title}`}
-              style={{ "--row-delay": `${index * 70}ms` }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.65, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
             >
               <span className="editorial-project-index">{String(index + 1).padStart(2, "0")}</span>
               <div className="editorial-project-copy">
@@ -83,7 +87,7 @@ export default function PortfolioSection({ activeFilter, onFilterChange }) {
                 <span>{t("portfolio.viewProject")}</span>
                 <FaArrowUpRightFromSquare aria-hidden="true" />
               </span>
-            </Link>
+            </MotionLink>
           ))}
         </div>
       </div>

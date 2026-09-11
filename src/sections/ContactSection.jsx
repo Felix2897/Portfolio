@@ -7,6 +7,7 @@ import {
   FaPhone,
   FaTimes,
 } from "react-icons/fa";
+import { motion } from "framer-motion";
 import SocialLinks from "../components/SocialLinks";
 import { useLanguage } from "../i18n/LanguageContext";
 
@@ -61,15 +62,33 @@ export default function ContactSection() {
     <section id="contact" className="editorial-section editorial-contact">
       <div className="editorial-shell">
         <div className="editorial-contact-heading">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          >
             <span className="editorial-kicker">{t("contact.badge")}</span>
             <h2>{t("contact.title")}</h2>
-          </div>
-          <p>{lang === "it" ? "Hai un progetto in mente? Parliamone con calma." : "Have a project in mind? Let’s talk it through."}</p>
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.75, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          >
+            {lang === "it" ? "Hai un progetto in mente? Parliamone con calma." : "Have a project in mind? Let’s talk it through."}
+          </motion.p>
         </div>
 
         <div className="editorial-contact-grid">
-          <div className="editorial-contact-details">
+          <motion.div
+            className="editorial-contact-details"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.75, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          >
             <a className="editorial-contact-line" href="mailto:andrea.feliziani97@gmail.com">
               <span className="editorial-contact-icon"><FaEnvelope aria-hidden="true" /></span>
               <span><small>Email</small><strong>andrea.feliziani97@gmail.com</strong></span>
@@ -82,9 +101,16 @@ export default function ContactSection() {
               <span>{lang === "it" ? "Seguimi" : "Follow me"}</span>
               <SocialLinks />
             </div>
-          </div>
+          </motion.div>
 
-          <form className="editorial-contact-form" onSubmit={handleSubmit}>
+          <motion.form
+            className="editorial-contact-form"
+            onSubmit={handleSubmit}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.75, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+          >
             <input type="checkbox" name="botcheck" className="hidden" tabIndex="-1" autoComplete="off" aria-hidden="true" />
             <label className="editorial-form-field editorial-form-field-wide">
               <span>{t("contact.emailLabel")}</span>
@@ -106,7 +132,7 @@ export default function ContactSection() {
               <span>{isSubmitting ? (lang === "it" ? "Invio..." : "Sending...") : t("contact.send")}</span>
               <FaPaperPlane aria-hidden="true" />
             </button>
-          </form>
+          </motion.form>
         </div>
       </div>
 
