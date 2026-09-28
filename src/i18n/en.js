@@ -89,6 +89,9 @@ export default {
     docNote:
       "Documentation available in Italian only — English version in progress",
     projects: {
+      whattaflow: {
+        description: "One platform, two experiences: wearable data for researchers and participants. Designed and built end to end.",
+      },
       study: {
         description:
           "A student application that facilitates study organization and collaboration.",

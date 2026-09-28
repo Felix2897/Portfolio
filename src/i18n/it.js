@@ -90,6 +90,9 @@ export default {
     docNote:
       "Documentazione disponibile solo in italiano — versione inglese in sviluppo",
     projects: {
+      whattaflow: {
+        description: "Una piattaforma, due esperienze: dati wearable per ricercatori e partecipanti. Progettata e sviluppata end-to-end.",
+      },
       study: {
         description:
           "Applicazione per studenti che facilita l'organizzazione dello studio e la collaborazione.",

@@ -199,15 +199,17 @@ export default function Header() {
 
             {/* Mobile Toggle */}
             <div className="flex items-center gap-3 md:hidden">
-              <button
-                onClick={() => setLangOpen(!langOpen)}
-                className="lang-toggle lang-toggle-sm relative"
-                aria-label="Toggle language"
-                aria-haspopup="menu"
-                aria-expanded={langOpen}
-              >
-                {lang === "en" ? "🇬🇧" : "🇮🇹"}
-                <FaChevronDown className="text-[10px]" />
+              <div className="relative">
+                <button
+                  onClick={() => setLangOpen(!langOpen)}
+                  className="lang-toggle lang-toggle-sm"
+                  aria-label="Toggle language"
+                  aria-haspopup="menu"
+                  aria-expanded={langOpen}
+                >
+                  {lang === "en" ? "🇬🇧" : "🇮🇹"}
+                  <FaChevronDown className="text-[10px]" />
+                </button>
                 {langOpen && (
                   <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 p-2 glass-card min-w-[120px] z-50 flex flex-col gap-1 animate-fadeInUp">
                     {[
@@ -230,7 +232,7 @@ export default function Header() {
                       ))}
                   </div>
                 )}
-              </button>
+              </div>
               <button
                 className="lang-toggle lang-toggle-sm editorial-theme-toggle"
                 onClick={toggleTheme}

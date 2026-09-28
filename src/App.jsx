@@ -12,6 +12,7 @@ import SerenityPage from "./pages/projects/SerenityPage";
 import StudyPage from "./pages/projects/StudyPage";
 import ValeriPage from "./pages/projects/ValeriPage";
 import SecurePage from "./pages/projects/SecurePage";
+import WhattaflowPage from "./pages/projects/WhattaflowPage";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -73,6 +74,7 @@ export default function App() {
             <Route path="/projects/study" element={<StudyPage />} />
             <Route path="/projects/valeri" element={<ValeriPage />} />
             <Route path="/projects/secure-it" element={<SecurePage />} />
+            <Route path="/projects/whattaflow" element={<WhattaflowPage />} />
           </Routes>
 
           <Footer />
