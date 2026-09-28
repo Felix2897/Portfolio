@@ -75,8 +75,13 @@ const content = {
     ],
     aiLabel: "Il mio metodo",
     aiTitle: "Come ho integrato l’AI?",
-    aiIntro:
-      "Ho usato l’AI nella UX/UI e nello sviluppo, preparando il contesto con file Markdown e skill e scegliendo MCP e modelli per ogni task. Nel codice l’AI ha contribuito alle implementazioni: ho confrontato le proposte, guidato le iterazioni e verificato gli output, mantenendo mie le decisioni di progetto.",
+    aiIntroLead: "Ho usato l’AI lungo tutto il progetto.",
+    aiIntroUxLabel: "Nella UX/UI",
+    aiIntroUx: "l’ho usata per brainstorming, confronto tra soluzioni e audit di flussi e interfacce;",
+    aiIntroCodeLabel: "nel codice",
+    aiIntroCode: "ha supportato implementazioni e revisioni sia front-end sia back-end.",
+    aiIntroClose:
+      "Ho preparato il contesto con file Markdown e skill, scelto MCP e modelli per ogni task e guidato le iterazioni, valutando cosa integrare.",
     aiSteps: [
       [
         "Impostazione",
@@ -88,7 +93,7 @@ const content = {
       ],
       [
         "Verifica finale",
-        "Ho richiesto audit sulla logica dei percorsi, sull’usabilità e sul codice, poi valutato gli esiti.",
+        "Ho richiesto audit sulla logica dei percorsi, sull’usabilità e sul codice front-end e back-end, poi valutato gli esiti.",
       ],
     ],
     visitSite: "Visita il sito Whattaflow",
@@ -161,8 +166,13 @@ const content = {
     ],
     aiLabel: "My method",
     aiTitle: "How I integrated AI?",
-    aiIntro:
-      "I used AI across UX/UI and development, setting the context with Markdown files and skills and choosing MCP tools and models for each task. AI contributed to the implementation; I compared proposals, steered iterations, and checked the outputs, keeping project decisions in my hands.",
+    aiIntroLead: "I used AI throughout the project.",
+    aiIntroUxLabel: "In UX/UI",
+    aiIntroUx: "I used it for brainstorming, comparing solutions, and auditing flows and interfaces;",
+    aiIntroCodeLabel: "in code",
+    aiIntroCode: "it supported both front-end and back-end implementation and reviews.",
+    aiIntroClose:
+      "I set the context with Markdown files and skills, chose MCP tools and models for each task, and steered iterations while deciding what to integrate.",
     aiSteps: [
       [
         "Setup",
@@ -174,7 +184,7 @@ const content = {
       ],
       [
         "Final review",
-        "I requested audits of journey logic, usability, and code, then assessed the findings.",
+        "I requested audits of journey logic, usability, and front-end and back-end code, then assessed the findings.",
       ],
     ],
     visitSite: "Visit the Whattaflow site",
@@ -612,7 +622,12 @@ export default function WhattaflowPage() {
           </motion.div>
           <motion.div className="wf-ai-heading" {...getRevealProps(0.1, 0.2)}>
             <h2 id="wf-ai-title">{c.aiTitle}</h2>
-            <p>{c.aiIntro}</p>
+            <p>
+              {c.aiIntroLead}{" "}
+              <strong>{c.aiIntroUxLabel}</strong> {c.aiIntroUx}{" "}
+              <strong>{c.aiIntroCodeLabel}</strong> {c.aiIntroCode}{" "}
+              {c.aiIntroClose}
+            </p>
           </motion.div>
           <ol className="wf-ai-steps">
             {c.aiSteps.map(([step, description], index) => (
