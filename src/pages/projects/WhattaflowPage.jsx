@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FaArrowDown, FaArrowUpRightFromSquare } from "react-icons/fa6";
+import { FaArrowDown, FaArrowLeft, FaArrowRight, FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../i18n/LanguageContext";
@@ -7,84 +7,164 @@ import "./whattaflow.css";
 
 const content = {
   it: {
-    role: "UI/UX DESIGN · FRONT-END DEVELOPMENT",
     heroLine: "Una piattaforma per la ricerca con i wearable.",
-    heroDescription: "I ricercatori seguono le sincronizzazioni dalla dashboard; i partecipanti consultano i propri dati nel loro spazio personale.",
-    researcherPreview: "Dashboard di ricerca",
-    participantPreview: "Spazio personale dei partecipanti",
-    switchLabel: "Scegli quale esperienza mostrare",
+    heroDescription:
+      "I ricercatori seguono le sincronizzazioni dalla dashboard; i partecipanti consultano i propri dati nel loro spazio personale.",
+    previousPreview: "Mostra la vista precedente",
+    nextPreview: "Mostra la vista successiva",
+    previewNavigation: "Navigazione tra le viste della piattaforma",
     discover: "Scopri il progetto",
-    contextLabel: "Il contesto",
-    contextTitle: "I dati ci sono. Renderli utili è la sfida.",
-    context: "Whattaflow collega i dati raccolti dai dispositivi wearable al lavoro dei team di ricerca. La stessa piattaforma deve dare ai ricercatori controllo sulla raccolta e alle persone un modo chiaro per consultare i propri dati e scegliere se partecipare a uno studio.",
-    ownershipLabel: "Il mio ruolo",
-    ownership: "Ho curato UX, interfacce e sviluppo delle due applicazioni, oltre all’identità visiva e al sito che presenta la piattaforma.",
-    twoSides: "Due bisogni, due punti di vista.",
+    projectLabel: "Il progetto",
+    projectTitle: "Due esperienze, un solo studio.",
+    projectDescription:
+      "La piattaforma collega il lavoro del team di ricerca — organizzazione dello studio, continuità delle sincronizzazioni e analisi — con uno spazio personale dove chi partecipa consulta le proprie misure quotidiane.",
+    websiteLabel: "Sito web",
+    websiteNote:
+      "Hai ulteriori domande o curiosità? Ho sviluppato anche il sito web ufficiale di Whattaflow per presentare il progetto e raccogliere tutte le informazioni.",
+    websiteCta: "Visita il sito web di Whattaflow",
+    roleLabel: "Il mio ruolo",
+    roleTitleStart: "Ho seguito ogni fase del progetto.",
+    roleTitleEmphasis: "Dalla ricerca al codice.",
+    roleDescription:
+      "Ho studiato bisogni e flussi, progettato e testato le esperienze UX/UI, poi sviluppato il front-end delle due applicazioni con componenti riutilizzabili. Ho realizzato anche la documentazione ufficiale.",
+    accessibilityLabel: "Accessibilità",
+    accessibility:
+      "Ho seguito le linee guida WCAG 2.2, curando struttura semantica, navigazione da tastiera e supporto agli screen reader.",
+    twoSides: "Due percorsi UX per due compiti diversi.",
     researchers: "Ricercatori",
-    researchersIntro: "Capire se i dati arrivano, individuare le interruzioni e preparare l’analisi.",
-    researchersDecision: "La dashboard porta subito in evidenza lo stato delle sincronizzazioni e chi richiede attenzione. Prima di leggere un grafico, il team può capire se i dati su cui lavorerà sono completi.",
+    researchersIntro:
+      "Verificare la raccolta e capire se i dati sono pronti per l’analisi.",
+    researchersDecision:
+      "Ho dato priorità allo stato delle sincronizzazioni e alle persone da seguire. Grafici e report arrivano dopo, quando è chiaro cosa è stato raccolto.",
     participants: "Partecipanti",
-    participantsIntro: "Ritrovare i propri dati in uno spazio personale, senza dover conoscere il linguaggio della ricerca.",
-    participantsDecision: "La vista parte da informazioni familiari come passi, riposo e attività. La partecipazione a uno studio resta una scelta separata dall’uso personale dell’app.",
+    participantsIntro:
+      "Consultare i propri dati quotidiani senza dover capire la struttura della ricerca.",
+    participantsDecision:
+      "Ho portato in primo piano passi e obiettivo giornaliero, con riposo e attività a seguire: prima i valori immediati, poi i dettagli.",
     decisionLabel: "La scelta UX",
-    decisionsTitle: "Prima la continuità. Poi l’analisi.",
-    decisionsIntro: "Un dato wearable isolato dice poco. Per un ricercatore conta sapere anche quando manca, a chi appartiene e a quale periodo si riferisce.",
-    decision1Title: "Stato prima del dettaglio",
-    decision1: "La panoramica segnala le sincronizzazioni interrotte prima di chiedere al team di interpretare metriche o report.",
-    decision2Title: "Contesto sempre visibile",
-    decision2: "Progetto, partecipante e intervallo temporale accompagnano le viste di analisi, così ogni dato mantiene il suo riferimento.",
-    decision3Title: "Esplorazione progressiva",
-    decision3: "Dalla panoramica si passa alle metriche e poi ai report: la complessità compare quando serve.",
+    decisionsTitle: "Una domanda chiara per ogni vista.",
+    decisionsIntro:
+      "La piattaforma accompagna un percorso articolato: connessione, organizzazione dello studio, monitoraggio, analisi ed esportazione. Ho progettato la gerarchia per aiutare a capire dove ci si trova, cosa richiede attenzione e come approfondire.",
+    decision1Title: "Dove sono?",
+    decision1:
+      "Progetto, gruppo e partecipante danno un riferimento prima di leggere misure o report.",
+    decision2Title: "Cosa richiede attenzione?",
+    decision2:
+      "La dashboard mette in primo piano le sincronizzazioni e le persone da seguire, prima dei grafici.",
+    decision3Title: "Come approfondisco?",
+    decision3:
+      "Dopo aver verificato la raccolta, si passa a trend, report ed esportazione, mantenendo il contesto del progetto.",
     processLabel: "Dal design al prodotto",
-    processTitle: "Disegnato e costruito end-to-end.",
-    processIntro: "Ho portato personalmente le due esperienze dal progetto alle applicazioni funzionanti. Ho usato Figma per progettare i flussi e il sistema visivo, Maze per mettere alla prova le scelte, Next.js e Tailwind per il front-end e Supabase per il backend.",
-    siteLabel: "Anche il sito",
-    siteTitle: "Un prodotto da capire anche prima di usarlo.",
-    site: "Ho progettato e sviluppato anche il sito informativo di Whattaflow: spiega il percorso dei dati, presenta le due applicazioni e offre ai team di ricerca un punto di ingresso per richiedere una demo.",
+    processTitle: "Dai flussi testati a componenti riutilizzabili.",
+    processIntro:
+      "Ho progettato flussi e interfacce in Figma, verificato le scelte con Maze e sviluppato il front-end in Next.js. Ho usato shadcn/ui come base di componenti da personalizzare per le due applicazioni, con Tailwind CSS per mantenerli coerenti. Supabase gestisce servizi backend e dati.",
+    processToolsLabel: "Strumenti e stack",
+    processTools: [
+      ["Figma", "Flussi UX/UI e prototipi"],
+      ["Maze", "Test e verifica delle scelte"],
+      ["Next.js", "Applicazioni e componenti front-end"],
+      ["shadcn/ui", "Componenti di partenza personalizzati"],
+      ["Tailwind CSS", "Stili coerenti e riutilizzabili"],
+      ["Supabase", "Servizi backend e dati"],
+    ],
+    aiLabel: "Il mio metodo",
+    aiTitle: "Come ho integrato l’AI?",
+    aiIntro:
+      "Ho impostato il contesto prima dei task e guidato il lavoro in modo proattivo. Ho organizzato i file Markdown, scelto strumenti MCP e modelli in base alle necessità, e verificato gli output mantenendo mie le decisioni UX.",
+    aiSteps: [
+      [
+        "Contesto",
+        "File Markdown organizzati con obiettivi, struttura e regole del progetto.",
+      ],
+      ["Strumenti", "MCP e modelli scelti o cambiati in base al tipo di task."],
+      [
+        "Direzione",
+        "Task mirati, iterazioni riviste e decisioni UX sotto la mia guida.",
+      ],
+    ],
     visitSite: "Visita il sito Whattaflow",
-    closing: "Design e codice, nello stesso progetto.",
     back: "Torna ai progetti",
     screenResearcher: "Dashboard della piattaforma Ricercatori di Whattaflow",
     screenParticipant: "Dashboard della piattaforma Partecipanti di Whattaflow",
     screenReport: "Vista dei report della piattaforma Ricercatori",
   },
   en: {
-    role: "UI/UX DESIGN · FRONT-END DEVELOPMENT",
     heroLine: "One platform for research with wearable data.",
-    heroDescription: "Researchers track syncs in the dashboard; participants see their own data in a personal space.",
-    researcherPreview: "Research dashboard",
-    participantPreview: "Participant personal space",
-    switchLabel: "Choose which experience to show",
+    heroDescription:
+      "Researchers track syncs in the dashboard; participants see their own data in a personal space.",
+    previousPreview: "Show previous view",
+    nextPreview: "Show next view",
+    previewNavigation: "Navigate platform views",
     discover: "Explore the project",
-    contextLabel: "The context",
-    contextTitle: "The data exists. Making it useful is the challenge.",
-    context: "Whattaflow connects data collected by wearable devices to the work of research teams. The same platform needs to give researchers control over collection and give people a clear way to view their own data and choose whether to join a study.",
-    ownershipLabel: "My role",
-    ownership: "I worked across UX, interface design, and development for both applications, as well as the visual identity and the website introducing the platform.",
-    twoSides: "Two needs, two perspectives.",
+    projectLabel: "The project",
+    projectTitle: "Two experiences, one study.",
+    projectDescription:
+      "The platform connects research teams—organising studies, monitoring synchronisation, and analysing data—with a personal space where participants can check their everyday measurements.",
+    websiteLabel: "Website",
+    websiteNote:
+      "Have more questions or want to dive deeper? I also developed the official Whattaflow website to present the project and provide complete information.",
+    websiteCta: "Visit the Whattaflow website",
+    roleLabel: "My role",
+    roleTitleStart: "I shaped every stage of the project.",
+    roleTitleEmphasis: "From research to code.",
+    roleDescription:
+      "I studied user needs and workflows, designed and tested the UX/UI, then built the front end for both applications with reusable components. I also created the official documentation.",
+    accessibilityLabel: "Accessibility",
+    accessibility:
+      "I followed the WCAG 2.2 guidelines, with attention to semantic structure, keyboard navigation, and screen-reader support.",
+    twoSides: "Two UX paths for two different tasks.",
     researchers: "Researchers",
-    researchersIntro: "See whether data is coming in, spot interruptions, and prepare analysis.",
-    researchersDecision: "The dashboard brings synchronization status and participants needing attention into view. Before reading a chart, the team can see whether the data it will work with is complete.",
+    researchersIntro:
+      "Check data collection and see whether the data is ready for analysis.",
+    researchersDecision:
+      "I prioritised sync status and the people who need follow-up. Charts and reports come next, once the team can see what has been collected.",
     participants: "Participants",
-    participantsIntro: "Find their own data in a personal space, without learning the language of research.",
-    participantsDecision: "The view starts with familiar information such as steps, rest, and activity. Joining a study remains a separate choice from using the personal app.",
+    participantsIntro:
+      "Check everyday data without needing to understand the structure of a research study.",
+    participantsDecision:
+      "I brought steps and the daily goal forward, followed by rest and activity: familiar values first, then more detail.",
     decisionLabel: "The UX decision",
-    decisionsTitle: "Continuity first. Analysis second.",
-    decisionsIntro: "An isolated wearable reading says little. Researchers also need to know when data is missing, whose it is, and which period it covers.",
-    decision1Title: "Status before detail",
-    decision1: "The overview flags interrupted synchronization before asking a team to interpret metrics or reports.",
-    decision2Title: "Context stays visible",
-    decision2: "Project, participant, and time range accompany analysis views, so every reading keeps its reference.",
-    decision3Title: "Progressive exploration",
-    decision3: "From overview to metrics to reports: complexity appears when it is needed.",
+    decisionsTitle: "One clear question for every view.",
+    decisionsIntro:
+      "The platform spans a connected path: linking devices, organising studies, monitoring data, analysing results, and exporting them. I shaped the hierarchy to help people see where they are, what needs attention, and where to go next.",
+    decision1Title: "Where am I?",
+    decision1:
+      "Project, group, and participant provide a reference before someone reads metrics or reports.",
+    decision2Title: "What needs attention?",
+    decision2:
+      "The dashboard brings sync status and people to follow up to the front, ahead of the charts.",
+    decision3Title: "How do I go deeper?",
+    decision3:
+      "Once collection is clear, researchers can move to trends, reports, and exports while keeping the project context.",
     processLabel: "From design to product",
-    processTitle: "Designed and built end to end.",
-    processIntro: "I personally took both experiences from design to working applications. I used Figma to design flows and the visual system, Maze to test design choices, Next.js and Tailwind for the front end, and Supabase for the back end.",
-    siteLabel: "The website, too",
-    siteTitle: "A product people can understand before using it.",
-    site: "I also designed and developed the Whattaflow information site. It explains the data journey, introduces both applications, and gives research teams a way to request a demo.",
+    processTitle: "From tested flows to reusable components.",
+    processIntro:
+      "I designed flows and interfaces in Figma, checked decisions with Maze, and built the front end in Next.js. I used shadcn/ui as a starting point for components tailored to both applications, with Tailwind CSS keeping them consistent. Supabase handles backend services and data.",
+    processToolsLabel: "Tools and stack",
+    processTools: [
+      ["Figma", "UX/UI flows and prototypes"],
+      ["Maze", "Testing and design validation"],
+      ["Next.js", "Applications and front-end components"],
+      ["shadcn/ui", "Starting components tailored to the product"],
+      ["Tailwind CSS", "Consistent, reusable styling"],
+      ["Supabase", "Backend services and data"],
+    ],
+    aiLabel: "My method",
+    aiTitle: "How I integrated AI?",
+    aiIntro:
+      "I set the context before assigning tasks and directed the work proactively. I organised the Markdown files, chose MCP tools and models for each need, and reviewed outputs while keeping UX decisions in my hands.",
+    aiSteps: [
+      [
+        "Context",
+        "Markdown files organised around project goals, structure, and rules.",
+      ],
+      ["Tools", "MCP tools and models selected or changed to fit each task."],
+      [
+        "Direction",
+        "Focused tasks, reviewed iterations, and UX decisions led by me.",
+      ],
+    ],
     visitSite: "Visit the Whattaflow site",
-    closing: "Design and code in one project.",
     back: "Back to projects",
     screenResearcher: "Whattaflow researcher platform dashboard",
     screenParticipant: "Whattaflow participant platform dashboard",
@@ -129,12 +209,16 @@ export default function WhattaflowPage() {
 
   useEffect(() => {
     document.title = `Whattaflow — Andrea Feliziani`;
-    return () => { document.title = "Andrea Feliziani | Portfolio"; };
+    return () => {
+      document.title = "Andrea Feliziani | Portfolio";
+    };
   }, []);
 
   const scrollToContext = () => {
     document.getElementById("wf-context")?.scrollIntoView({
-      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth",
     });
   };
 
@@ -142,14 +226,12 @@ export default function WhattaflowPage() {
     {
       id: "researchers",
       label: c.researchers,
-      caption: c.researcherPreview,
       image: `${imageBase}/researchers.jpg`,
       alt: c.screenResearcher,
     },
     {
       id: "participants",
       label: c.participants,
-      caption: c.participantPreview,
       image: `${imageBase}/participants.jpg`,
       alt: c.screenParticipant,
     },
@@ -167,123 +249,337 @@ export default function WhattaflowPage() {
         <div className="hero-dot-grid" aria-hidden="true" />
         <div className="wf-hero-layout">
           <div className="wf-hero-content">
-            <motion.div className="wf-wordmark" aria-hidden="true" {...getEntranceProps(reduceMotion, 0.1)}>
-              <img className="wf-wordmark-light" src={`${imageBase}/logo-open.svg`} alt="" />
-              <img className="wf-wordmark-dark" src={`${imageBase}/logo-open-white.svg`} alt="" />
+            <motion.div
+              className="wf-wordmark"
+              aria-hidden="true"
+              {...getEntranceProps(reduceMotion, 0.1)}
+            >
+              <img
+                className="wf-wordmark-light"
+                src={`${imageBase}/logo-open.svg`}
+                alt=""
+              />
+              <img
+                className="wf-wordmark-dark"
+                src={`${imageBase}/logo-open-white.svg`}
+                alt=""
+              />
             </motion.div>
-            <motion.h1 id="wf-title" {...getEntranceProps(reduceMotion, 0.22)}>{c.heroLine}</motion.h1>
-            <motion.p className="wf-hero-description" {...getEntranceProps(reduceMotion, 0.34)}>{c.heroDescription}</motion.p>
-            <motion.button type="button" onClick={scrollToContext} className="wf-hero-action" {...getEntranceProps(reduceMotion, 0.46)}>
-              {c.discover}<FaArrowDown aria-hidden="true" />
+            <motion.h1 id="wf-title" {...getEntranceProps(reduceMotion, 0.22)}>
+              {c.heroLine}
+            </motion.h1>
+            <motion.p
+              className="wf-hero-description"
+              {...getEntranceProps(reduceMotion, 0.34)}
+            >
+              {c.heroDescription}
+            </motion.p>
+            <motion.button
+              type="button"
+              onClick={scrollToContext}
+              className="wf-hero-action"
+              {...getEntranceProps(reduceMotion, 0.46)}
+            >
+              {c.discover}
+              <FaArrowDown aria-hidden="true" />
             </motion.button>
           </div>
-          <motion.figure className="wf-hero-preview" {...getEntranceProps(reduceMotion, 0.3)}>
-            <figcaption className="wf-hero-preview-heading">
-              <span id="wf-active-preview" aria-live="polite" aria-atomic="true">{currentView.caption}</span>
-              <div className="wf-hero-switcher" role="group" aria-label={c.switchLabel}>
-                {heroViews.map((view, index) => (
+          <motion.figure
+            className="wf-hero-preview"
+            {...getEntranceProps(reduceMotion, 0.3)}
+          >
+            <div className="wf-preview-frame">
+              <figcaption className="wf-preview-toolbar">
+                <div className="wf-window-controls" aria-hidden="true">
+                  <span /><span /><span />
+                </div>
+                <span className="wf-preview-title" aria-live="polite" aria-atomic="true">
+                  <span className="wf-preview-product">Whattaflow</span>
+                  <span className="wf-preview-separator" aria-hidden="true">/</span>
+                  <span>{currentView.label}</span>
+                </span>
+                <div className="wf-preview-navigation" role="group" aria-label={c.previewNavigation}>
                   <button
-                    key={view.id}
                     type="button"
-                    aria-pressed={index === activeExperience}
-                    className={index === activeExperience ? "is-active" : ""}
-                    onClick={() => selectExperience(index)}
+                    aria-label={`${c.previousPreview}: ${heroViews[activeExperience - 1]?.label || currentView.label}`}
+                    onClick={() => selectExperience(activeExperience - 1)}
+                    disabled={activeExperience === 0}
                   >
-                    {view.label}
-                    {index === activeExperience && (
-                      <motion.span
-                        className="wf-hero-switch-indicator"
-                        layoutId="wf-hero-switch-indicator"
-                        aria-hidden="true"
-                        transition={{ duration: reduceMotion ? 0.15 : 0.32, ease: motionEase }}
-                      />
-                    )}
+                    <FaArrowLeft aria-hidden="true" />
                   </button>
-                ))}
+                  <span aria-hidden="true">0{activeExperience + 1} / 0{heroViews.length}</span>
+                  <button
+                    type="button"
+                    aria-label={`${c.nextPreview}: ${heroViews[activeExperience + 1]?.label || currentView.label}`}
+                    onClick={() => selectExperience(activeExperience + 1)}
+                    disabled={activeExperience === heroViews.length - 1}
+                  >
+                    <FaArrowRight aria-hidden="true" />
+                  </button>
+                </div>
+              </figcaption>
+              <div className="wf-hero-screen" aria-live="polite" aria-atomic="true">
+                <AnimatePresence initial={false} mode="wait" custom={slideDirection}>
+                  <motion.img
+                    key={currentView.id}
+                    src={currentView.image}
+                    alt={currentView.alt}
+                    custom={slideDirection}
+                    initial={
+                      reduceMotion
+                        ? { opacity: 0 }
+                        : { opacity: 0, x: slideDirection * 34, scale: 0.985, filter: "blur(7px)" }
+                    }
+                    animate={{ opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }}
+                    exit={
+                      reduceMotion
+                        ? { opacity: 0 }
+                        : { opacity: 0, x: slideDirection * -24, scale: 0.99, filter: "blur(4px)" }
+                    }
+                    transition={{ duration: reduceMotion ? 0.18 : 0.42, ease: motionEase }}
+                    fetchPriority={activeExperience === 0 ? "high" : "auto"}
+                  />
+                </AnimatePresence>
               </div>
-            </figcaption>
-            <div className="wf-hero-screen" aria-live="polite" aria-atomic="true">
-              <AnimatePresence initial={false} mode="wait" custom={slideDirection}>
-                <motion.img
-                  key={currentView.id}
-                  src={currentView.image}
-                  alt={currentView.alt}
-                  custom={slideDirection}
-                  initial={reduceMotion ? { opacity: 0 } : { opacity: 0, x: slideDirection * 34, scale: 0.985, filter: "blur(7px)" }}
-                  animate={{ opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }}
-                  exit={reduceMotion ? { opacity: 0 } : { opacity: 0, x: slideDirection * -24, scale: 0.99, filter: "blur(4px)" }}
-                  transition={{ duration: reduceMotion ? 0.18 : 0.42, ease: motionEase }}
-                  fetchPriority={activeExperience === 0 ? "high" : "auto"}
-                />
-              </AnimatePresence>
             </div>
           </motion.figure>
         </div>
       </section>
 
       <div className="wf-shell">
-        <section id="wf-context" className="wf-intro wf-section" aria-labelledby="wf-context-title">
-          <motion.div className="wf-section-marker" {...getRevealProps(0, 0.3)}>{c.contextLabel}</motion.div>
-          <motion.div {...getRevealProps(0.1, 0.2)}>
-            <h2 id="wf-context-title">{c.contextTitle}</h2>
-            <p className="wf-lead">{c.context}</p>
+        <section
+          id="wf-context"
+          className="wf-intro wf-section"
+          aria-labelledby="wf-context-title"
+        >
+          <motion.div className="wf-section-marker" {...getRevealProps(0, 0.3)}>
+            {c.projectLabel}
           </motion.div>
-          <motion.aside className="wf-role-note" {...getRevealProps(0.2, 0.2)}>
-            <span>{c.ownershipLabel}</span>
-            <p>{c.ownership}</p>
-            <small>{c.role}</small>
-          </motion.aside>
+          <motion.div className="wf-project-copy" {...getRevealProps(0.1, 0.2)}>
+            <h2 id="wf-context-title">{c.projectTitle}</h2>
+            <p className="wf-lead">{c.projectDescription}</p>
+            <div className="wf-website-note">
+              <span>{c.websiteLabel}</span>
+              <p>{c.websiteNote}</p>
+              <a
+                href="https://whattaflowinfo.whattadata.it/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>{c.websiteCta}</span>
+                <FaArrowUpRightFromSquare aria-hidden="true" />
+                <span className="sr-only">
+                  {lang === "it"
+                    ? "(si apre in una nuova scheda)"
+                    : "(opens in a new tab)"}
+                </span>
+              </a>
+            </div>
+          </motion.div>
         </section>
 
-        <section className="wf-section wf-experiences" aria-labelledby="wf-experiences-title">
-          <motion.div className="wf-experiences-heading" {...getRevealProps(0, 0.3)}>
+        <section
+          className="wf-role-section wf-section"
+          aria-labelledby="wf-role-title"
+        >
+          <div className="wf-role-panel">
+            <div className="wf-role-intro">
+              <motion.div
+                className="wf-section-marker"
+                {...getRevealProps(0, 0.3)}
+              >
+                {c.roleLabel}
+              </motion.div>
+              <motion.h2 id="wf-role-title" {...getRevealProps(0.1, 0.2)}>
+                <span>{c.roleTitleStart}</span>{" "}
+                <em>{c.roleTitleEmphasis}</em>
+              </motion.h2>
+            </div>
+            <div className="wf-role-main">
+              <motion.p className="wf-lead" {...getRevealProps(0.16, 0.2)}>
+                {c.roleDescription}
+              </motion.p>
+              <motion.div
+                className="wf-accessibility-note"
+                {...getRevealProps(0.22, 0.2)}
+              >
+                <span>{c.accessibilityLabel}</span>
+                <p>{c.accessibility}</p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          className="wf-section wf-experiences"
+          aria-labelledby="wf-experiences-title"
+        >
+          <motion.div
+            className="wf-experiences-heading"
+            {...getRevealProps(0, 0.3)}
+          >
             <div className="wf-section-marker">Whattaflow</div>
             <h2 id="wf-experiences-title">{c.twoSides}</h2>
           </motion.div>
           <div className="wf-experience">
-            <motion.div className="wf-experience-copy" {...getRevealProps(0, 0.2)}>
-              <h3>{c.researchers}</h3>
-              <p className="wf-experience-intro">{c.researchersIntro}</p>
-              <p>{c.researchersDecision}</p>
-            </motion.div>
-            <motion.figure {...getRevealProps(0.12, 0.15)}><img src={`${imageBase}/researchers-mockup.png`} alt={c.screenResearcher} loading="lazy" /><figcaption>{c.researchers} / Whattaflow</figcaption></motion.figure>
+            <div className="wf-experience-copy">
+              <motion.h3 {...getRevealProps(0, 0.3)}>{c.researchers}</motion.h3>
+              <motion.p
+                className="wf-experience-intro"
+                {...getRevealProps(0.1, 0.3)}
+              >
+                {c.researchersIntro}
+              </motion.p>
+              <motion.p {...getRevealProps(0.2, 0.3)}>
+                {c.researchersDecision}
+              </motion.p>
+            </div>
+            <motion.figure {...getRevealProps(0.12, 0.15)}>
+              <img
+                src={`${imageBase}/researchers-mockup.png`}
+                alt={c.screenResearcher}
+                loading="lazy"
+              />
+              <figcaption>{c.researchers} / Whattaflow</figcaption>
+            </motion.figure>
           </div>
           <div className="wf-experience wf-experience-reverse">
-            <motion.div className="wf-experience-copy" {...getRevealProps(0, 0.2)}>
-              <h3>{c.participants}</h3>
-              <p className="wf-experience-intro">{c.participantsIntro}</p>
-              <p>{c.participantsDecision}</p>
-            </motion.div>
-            <motion.figure {...getRevealProps(0.12, 0.15)}><img src={`${imageBase}/participants-mockup.png`} alt={c.screenParticipant} loading="lazy" /><figcaption>{c.participants} / Whattaflow</figcaption></motion.figure>
+            <div className="wf-experience-copy">
+              <motion.h3 {...getRevealProps(0, 0.3)}>
+                {c.participants}
+              </motion.h3>
+              <motion.p
+                className="wf-experience-intro"
+                {...getRevealProps(0.1, 0.3)}
+              >
+                {c.participantsIntro}
+              </motion.p>
+              <motion.p {...getRevealProps(0.2, 0.3)}>
+                {c.participantsDecision}
+              </motion.p>
+            </div>
+            <motion.figure {...getRevealProps(0.12, 0.15)}>
+              <img
+                src={`${imageBase}/participants-mockup.png`}
+                alt={c.screenParticipant}
+                loading="lazy"
+              />
+              <figcaption>{c.participants} / Whattaflow</figcaption>
+            </motion.figure>
           </div>
         </section>
 
-        <section className="wf-section wf-decisions" aria-labelledby="wf-decisions-title">
-          <motion.div className="wf-section-marker" {...getRevealProps(0, 0.3)}>{c.decisionLabel}</motion.div>
-          <motion.div className="wf-decisions-heading" {...getRevealProps(0.1, 0.2)}><h2 id="wf-decisions-title">{c.decisionsTitle}</h2><p>{c.decisionsIntro}</p></motion.div>
+        <section
+          className="wf-section wf-decisions"
+          aria-labelledby="wf-decisions-title"
+        >
+          <motion.div className="wf-section-marker" {...getRevealProps(0, 0.3)}>
+            {c.decisionLabel}
+          </motion.div>
+          <div className="wf-decisions-heading">
+            <motion.h2 id="wf-decisions-title" {...getRevealProps(0.1, 0.25)}>
+              {c.decisionsTitle}
+            </motion.h2>
+            <motion.p {...getRevealProps(0.2, 0.25)}>
+              {c.decisionsIntro}
+            </motion.p>
+          </div>
           <div className="wf-decisions-grid">
             <div className="wf-decisions-list">
-              {[[c.decision1Title, c.decision1], [c.decision2Title, c.decision2], [c.decision3Title, c.decision3]].map(([title, description], index) => (
-                <motion.div className="wf-decision" key={title} {...getRevealProps(index * 0.08, 0.2)}><h3>{title}</h3><p>{description}</p></motion.div>
+              {[
+                [c.decision1Title, c.decision1],
+                [c.decision2Title, c.decision2],
+                [c.decision3Title, c.decision3],
+              ].map(([title, description], index) => (
+                <div className="wf-decision" key={title}>
+                  <motion.h3 {...getRevealProps(index * 0.08, 0.3)}>
+                    {title}
+                  </motion.h3>
+                  <motion.p {...getRevealProps(index * 0.08 + 0.1, 0.3)}>
+                    {description}
+                  </motion.p>
+                </div>
               ))}
             </div>
-            <motion.figure {...getRevealProps(0.12, 0.15)}><img src={`${imageBase}/report-mockup.png`} alt={c.screenReport} loading="lazy" /><figcaption>{c.researchers} / {c.decisionLabel}</figcaption></motion.figure>
+            <motion.figure {...getRevealProps(0.12, 0.15)}>
+              <img
+                src={`${imageBase}/report-mockup.png`}
+                alt={c.screenReport}
+                loading="lazy"
+              />
+              <figcaption>
+                {c.researchers} / {c.decisionLabel}
+              </figcaption>
+            </motion.figure>
           </div>
         </section>
 
-        <section className="wf-section wf-build" aria-labelledby="wf-build-title">
-          <motion.div className="wf-section-marker" {...getRevealProps(0, 0.3)}>{c.processLabel}</motion.div>
-          <motion.div className="wf-build-main" {...getRevealProps(0.1, 0.2)}><h2 id="wf-build-title">{c.processTitle}</h2><p>{c.processIntro}</p></motion.div>
-          <motion.ul className="wf-tools" aria-label="Tools" {...getRevealProps(0.2, 0.2)}><li>Figma</li><li>Maze</li><li>Next.js</li><li>Tailwind</li><li>Supabase</li></motion.ul>
+        <section
+          className="wf-section wf-process"
+          aria-labelledby="wf-process-title"
+        >
+          <motion.div className="wf-section-marker" {...getRevealProps(0, 0.3)}>
+            {c.processLabel}
+          </motion.div>
+          <div className="wf-process-main">
+            <motion.h2 id="wf-process-title" {...getRevealProps(0.1, 0.25)}>
+              {c.processTitle}
+            </motion.h2>
+            <motion.p {...getRevealProps(0.22, 0.25)}>
+              {c.processIntro}
+            </motion.p>
+          </div>
+          <ul className="wf-process-tools" aria-label={c.processToolsLabel}>
+            {c.processTools.map(([tool, use], index) => (
+              <motion.li key={tool} {...getRevealProps(index * 0.06, 0.2)}>
+                <strong>{tool}</strong>
+                <span>{use}</span>
+              </motion.li>
+            ))}
+          </ul>
         </section>
 
-        <section className="wf-section wf-site" aria-labelledby="wf-site-title">
-          <motion.div className="wf-section-marker" {...getRevealProps(0, 0.3)}>{c.siteLabel}</motion.div>
-          <motion.div {...getRevealProps(0.1, 0.2)}><h2 id="wf-site-title">{c.siteTitle}</h2><p>{c.site}</p></motion.div>
-          <motion.a href="https://whattaflowinfo.whattadata.it/" target="_blank" rel="noopener noreferrer" className="wf-site-link" {...getRevealProps(0.2, 0.2)}>{c.visitSite}<FaArrowUpRightFromSquare aria-hidden="true" /><span className="sr-only">{lang === "it" ? "(si apre in una nuova scheda)" : "(opens in a new tab)"}</span></motion.a>
+        <section className="wf-section wf-ai" aria-labelledby="wf-ai-title">
+          <motion.div className="wf-section-marker" {...getRevealProps(0, 0.3)}>
+            {c.aiLabel}
+          </motion.div>
+          <motion.div className="wf-ai-heading" {...getRevealProps(0.1, 0.2)}>
+            <h2 id="wf-ai-title">{c.aiTitle}</h2>
+            <p>{c.aiIntro}</p>
+          </motion.div>
+          <ol className="wf-ai-steps">
+            {c.aiSteps.map(([step, description], index) => (
+              <motion.li
+                className="wf-ai-step"
+                key={step}
+                {...getRevealProps(index * 0.08, 0.2)}
+              >
+                <span>{step}</span>
+                <p>{description}</p>
+              </motion.li>
+            ))}
+          </ol>
         </section>
 
-        <motion.div className="wf-end" {...getRevealProps(0, 0.2)}><p>{c.closing}</p><Link to="/" state={{ scrollTo: "portfolio" }}>{c.back} ↗</Link></motion.div>
+        <motion.div className="wf-end" {...getRevealProps(0, 0.2)}>
+          <a
+            className="wf-end-site-link"
+            href="https://whattaflowinfo.whattadata.it/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {c.visitSite}
+            <FaArrowUpRightFromSquare aria-hidden="true" />
+            <span className="sr-only">
+              {lang === "it"
+                ? "(si apre in una nuova scheda)"
+                : "(opens in a new tab)"}
+            </span>
+          </a>
+          <Link to="/" state={{ scrollTo: "portfolio" }}>
+            {c.back} ↗
+          </Link>
+        </motion.div>
       </div>
     </article>
   );
