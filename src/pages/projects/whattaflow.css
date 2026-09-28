@@ -45,11 +45,13 @@
   :root:not([data-theme="light"]) .wf-wordmark-dark { display: block; }
 }
 .wf-hero-content h1 {
-  max-width: 12ch;
+  max-width: 14ch;
   margin: 0;
   font: 700 clamp(2.75rem, 4.5vw, 4.75rem)/0.98 var(--font-display);
   letter-spacing: -0.04em;
 }
+.wf-hero-content h1 > span { display: block; }
+.wf-hero-content h1 em { display: block; margin-top: 0.12em; color: var(--wf-accent); font-style: normal; }
 .wf-hero-description { max-width: 40ch; margin: 1.35rem 0 0; color: var(--wf-muted); font-size: clamp(1rem, 1.25vw, 1.15rem); line-height: 1.55; }
 .wf-hero-action {
   display: inline-flex;
@@ -114,6 +116,7 @@
 .wf-role-intro .wf-section-marker { margin-bottom: clamp(2rem, 4vw, 4rem); }
 .wf-role-intro h2 { max-width: 16ch; }
 .wf-role-intro h2 em { display: block; margin-top: 0.16em; color: var(--wf-accent); font-style: normal; }
+.wf-role-main { align-self: center; }
 .wf-role-main .wf-lead { max-width: 52ch; margin: 0; color: var(--wf-ink); font-size: clamp(1.15rem, 1.45vw, 1.4rem); line-height: 1.5; }
 .wf-role-panel .wf-accessibility-note { background: var(--wf-paper); }
 
@@ -160,6 +163,7 @@
 @media (max-width: 950px) {
   .wf-intro { grid-template-columns: 0.5fr 1.5fr; }
   .wf-role-panel { grid-template-columns: 1fr; gap: 2rem; }
+  .wf-role-main { align-self: start; }
   .wf-role-intro .wf-section-marker { margin-bottom: 2rem; }
   .wf-process, .wf-ai { grid-template-columns: 1fr 1fr; }
   .wf-process > .wf-section-marker, .wf-ai > .wf-section-marker { grid-column: 1 / -1; margin-bottom: 0; }
@@ -181,7 +185,7 @@
   .wf-hero { padding-top: 7.5rem; }
   .wf-hero-layout { gap: 2.5rem; }
   .wf-wordmark { width: min(12rem, 58vw); margin-bottom: 1.5rem; }
-  .wf-hero-content h1 { max-width: 13ch; font-size: clamp(2.4rem, 10vw, 3.5rem); }
+  .wf-hero-content h1 { max-width: 15ch; font-size: clamp(2.4rem, 10vw, 3.5rem); }
   .wf-hero-description { max-width: 36ch; margin-top: 1rem; font-size: 1rem; }
   .wf-hero-action { margin-top: 1.5rem; }
   .wf-case .wf-preview-toolbar { gap: 0.45rem; min-height: 3.2rem; padding: 0.4rem 0.55rem; }

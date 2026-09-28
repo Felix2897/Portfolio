@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
-import { FaArrowDown, FaArrowLeft, FaArrowRight, FaArrowUpRightFromSquare } from "react-icons/fa6";
+import {
+  FaArrowDown,
+  FaArrowLeft,
+  FaArrowRight,
+  FaArrowUpRightFromSquare,
+} from "react-icons/fa6";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../i18n/LanguageContext";
@@ -7,9 +12,10 @@ import "./whattaflow.css";
 
 const content = {
   it: {
-    heroLine: "Una piattaforma per la ricerca con i wearable.",
+    heroTitleStart: "Una piattaforma per la ricerca.",
+    heroTitleEmphasis: "Due esperienze connesse.",
     heroDescription:
-      "I ricercatori seguono le sincronizzazioni dalla dashboard; i partecipanti consultano i propri dati nel loro spazio personale.",
+      "I ricercatori gestiscono gli studi e monitorano i dati dei dispositivi indossabili; i partecipanti consultano le proprie misure in uno spazio personale.",
     previousPreview: "Mostra la vista precedente",
     nextPreview: "Mostra la vista successiva",
     previewNavigation: "Navigazione tra le viste della piattaforma",
@@ -26,7 +32,7 @@ const content = {
     roleTitleStart: "Ho seguito ogni fase del progetto.",
     roleTitleEmphasis: "Dalla ricerca al codice.",
     roleDescription:
-      "Ho studiato bisogni e flussi, progettato e testato le esperienze UX/UI, poi sviluppato il front-end delle due applicazioni con componenti riutilizzabili. Ho realizzato anche la documentazione ufficiale.",
+      "Ho studiato bisogni e flussi, progettato e testato le esperienze UX/UI, poi guidato lo sviluppo del front-end delle due applicazioni con componenti riutilizzabili. Ho realizzato anche la documentazione ufficiale.",
     accessibilityLabel: "Accessibilità",
     accessibility:
       "Ho seguito le linee guida WCAG 2.2, curando struttura semantica, navigazione da tastiera e supporto agli screen reader.",
@@ -57,29 +63,32 @@ const content = {
     processLabel: "Dal design al prodotto",
     processTitle: "Dai flussi testati a componenti riutilizzabili.",
     processIntro:
-      "Ho progettato flussi e interfacce in Figma, verificato le scelte con Maze e sviluppato il front-end in Next.js. Ho usato shadcn/ui come base di componenti da personalizzare per le due applicazioni, con Tailwind CSS per mantenerli coerenti. Supabase gestisce servizi backend e dati.",
+      "Ho progettato flussi e interfacce in Figma, verificato le scelte con Maze e guidato lo sviluppo del front-end in Next.js. Ho usato shadcn/ui come base di componenti da personalizzare per le due applicazioni, con Tailwind CSS per mantenerli coerenti. Supabase gestisce servizi backend e dati.",
     processToolsLabel: "Strumenti e stack",
     processTools: [
       ["Figma", "Flussi UX/UI e prototipi"],
       ["Maze", "Test e verifica delle scelte"],
       ["Next.js", "Applicazioni e componenti front-end"],
-      ["shadcn/ui", "Componenti di partenza personalizzati"],
+      ["Shadcn/Ui", "Componenti di partenza personalizzati"],
       ["Tailwind CSS", "Stili coerenti e riutilizzabili"],
       ["Supabase", "Servizi backend e dati"],
     ],
     aiLabel: "Il mio metodo",
     aiTitle: "Come ho integrato l’AI?",
     aiIntro:
-      "Ho impostato il contesto prima dei task e guidato il lavoro in modo proattivo. Ho organizzato i file Markdown, scelto strumenti MCP e modelli in base alle necessità, e verificato gli output mantenendo mie le decisioni UX.",
+      "Ho usato l’AI nella UX/UI e nello sviluppo, preparando il contesto con file Markdown e skill e scegliendo MCP e modelli per ogni task. Nel codice l’AI ha contribuito alle implementazioni: ho confrontato le proposte, guidato le iterazioni e verificato gli output, mantenendo mie le decisioni di progetto.",
     aiSteps: [
       [
-        "Contesto",
-        "File Markdown organizzati con obiettivi, struttura e regole del progetto.",
+        "Impostazione",
+        "File Markdown e skill per dare obiettivi, vincoli e criteri chiari al lavoro.",
       ],
-      ["Strumenti", "MCP e modelli scelti o cambiati in base al tipo di task."],
       [
-        "Direzione",
-        "Task mirati, iterazioni riviste e decisioni UX sotto la mia guida.",
+        "UX e test",
+        "Audit comparativi dei flussi e test simulati, poi confrontati con le prove svolte da persone reali.",
+      ],
+      [
+        "Verifica finale",
+        "Ho richiesto audit sulla logica dei percorsi, sull’usabilità e sul codice, poi valutato gli esiti.",
       ],
     ],
     visitSite: "Visita il sito Whattaflow",
@@ -89,9 +98,10 @@ const content = {
     screenReport: "Vista dei report della piattaforma Ricercatori",
   },
   en: {
-    heroLine: "One platform for research with wearable data.",
+    heroTitleStart: "A platform for research.",
+    heroTitleEmphasis: "Two connected experiences.",
     heroDescription:
-      "Researchers track syncs in the dashboard; participants see their own data in a personal space.",
+      "Researchers manage studies and monitor data from wearable devices; participants check their own measurements in a personal space.",
     previousPreview: "Show previous view",
     nextPreview: "Show next view",
     previewNavigation: "Navigate platform views",
@@ -108,7 +118,7 @@ const content = {
     roleTitleStart: "I shaped every stage of the project.",
     roleTitleEmphasis: "From research to code.",
     roleDescription:
-      "I studied user needs and workflows, designed and tested the UX/UI, then built the front end for both applications with reusable components. I also created the official documentation.",
+      "I studied user needs and workflows, designed and tested the UX/UI, then led front-end development for both applications with reusable components. I also created the official documentation.",
     accessibilityLabel: "Accessibility",
     accessibility:
       "I followed the WCAG 2.2 guidelines, with attention to semantic structure, keyboard navigation, and screen-reader support.",
@@ -139,29 +149,32 @@ const content = {
     processLabel: "From design to product",
     processTitle: "From tested flows to reusable components.",
     processIntro:
-      "I designed flows and interfaces in Figma, checked decisions with Maze, and built the front end in Next.js. I used shadcn/ui as a starting point for components tailored to both applications, with Tailwind CSS keeping them consistent. Supabase handles backend services and data.",
+      "I designed flows and interfaces in Figma, checked decisions with Maze, and led front-end development in Next.js. I used shadcn/ui as a starting point for components tailored to both applications, with Tailwind CSS keeping them consistent. Supabase handles backend services and data.",
     processToolsLabel: "Tools and stack",
     processTools: [
       ["Figma", "UX/UI flows and prototypes"],
       ["Maze", "Testing and design validation"],
       ["Next.js", "Applications and front-end components"],
-      ["shadcn/ui", "Starting components tailored to the product"],
+      ["Shadcn/Ui", "Starting components tailored to the product"],
       ["Tailwind CSS", "Consistent, reusable styling"],
       ["Supabase", "Backend services and data"],
     ],
     aiLabel: "My method",
     aiTitle: "How I integrated AI?",
     aiIntro:
-      "I set the context before assigning tasks and directed the work proactively. I organised the Markdown files, chose MCP tools and models for each need, and reviewed outputs while keeping UX decisions in my hands.",
+      "I used AI across UX/UI and development, setting the context with Markdown files and skills and choosing MCP tools and models for each task. AI contributed to the implementation; I compared proposals, steered iterations, and checked the outputs, keeping project decisions in my hands.",
     aiSteps: [
       [
-        "Context",
-        "Markdown files organised around project goals, structure, and rules.",
+        "Setup",
+        "Markdown files and skills set clear goals, constraints, and quality criteria.",
       ],
-      ["Tools", "MCP tools and models selected or changed to fit each task."],
       [
-        "Direction",
-        "Focused tasks, reviewed iterations, and UX decisions led by me.",
+        "UX and testing",
+        "Comparative flow audits and simulated tests, then checked against sessions with real people.",
+      ],
+      [
+        "Final review",
+        "I requested audits of journey logic, usability, and code, then assessed the findings.",
       ],
     ],
     visitSite: "Visit the Whattaflow site",
@@ -190,10 +203,10 @@ function getRevealProps(delay = 0, amount = 0.2) {
 
 function getEntranceProps(reduceMotion, delay = 0) {
   return {
-    initial: reduceMotion ? false : { opacity: 0, y: 20 },
+    initial: reduceMotion ? false : { opacity: 0, y: 28 },
     animate: { opacity: 1, y: 0 },
     transition: {
-      duration: reduceMotion ? 0.35 : 0.8,
+      duration: reduceMotion ? 0 : 0.9,
       delay: reduceMotion ? 0 : delay,
       ease: motionEase,
     },
@@ -265,12 +278,17 @@ export default function WhattaflowPage() {
                 alt=""
               />
             </motion.div>
-            <motion.h1 id="wf-title" {...getEntranceProps(reduceMotion, 0.22)}>
-              {c.heroLine}
-            </motion.h1>
+            <h1 id="wf-title">
+              <motion.span {...getEntranceProps(reduceMotion, 0.28)}>
+                {c.heroTitleStart}
+              </motion.span>
+              <motion.em {...getEntranceProps(reduceMotion, 0.43)}>
+                {c.heroTitleEmphasis}
+              </motion.em>
+            </h1>
             <motion.p
               className="wf-hero-description"
-              {...getEntranceProps(reduceMotion, 0.34)}
+              {...getEntranceProps(reduceMotion, 0.6)}
             >
               {c.heroDescription}
             </motion.p>
@@ -278,7 +296,7 @@ export default function WhattaflowPage() {
               type="button"
               onClick={scrollToContext}
               className="wf-hero-action"
-              {...getEntranceProps(reduceMotion, 0.46)}
+              {...getEntranceProps(reduceMotion, 0.74)}
             >
               {c.discover}
               <FaArrowDown aria-hidden="true" />
@@ -286,19 +304,41 @@ export default function WhattaflowPage() {
           </div>
           <motion.figure
             className="wf-hero-preview"
-            {...getEntranceProps(reduceMotion, 0.3)}
+            initial={
+              reduceMotion
+                ? false
+                : { opacity: 0, y: 28, scale: 0.88, filter: "blur(12px)" }
+            }
+            animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+            transition={{
+              duration: reduceMotion ? 0 : 1.2,
+              delay: reduceMotion ? 0 : 0.18,
+              ease: motionEase,
+            }}
           >
             <div className="wf-preview-frame">
               <figcaption className="wf-preview-toolbar">
                 <div className="wf-window-controls" aria-hidden="true">
-                  <span /><span /><span />
+                  <span />
+                  <span />
+                  <span />
                 </div>
-                <span className="wf-preview-title" aria-live="polite" aria-atomic="true">
+                <span
+                  className="wf-preview-title"
+                  aria-live="polite"
+                  aria-atomic="true"
+                >
                   <span className="wf-preview-product">Whattaflow</span>
-                  <span className="wf-preview-separator" aria-hidden="true">/</span>
+                  <span className="wf-preview-separator" aria-hidden="true">
+                    /
+                  </span>
                   <span>{currentView.label}</span>
                 </span>
-                <div className="wf-preview-navigation" role="group" aria-label={c.previewNavigation}>
+                <div
+                  className="wf-preview-navigation"
+                  role="group"
+                  aria-label={c.previewNavigation}
+                >
                   <button
                     type="button"
                     aria-label={`${c.previousPreview}: ${heroViews[activeExperience - 1]?.label || currentView.label}`}
@@ -307,7 +347,9 @@ export default function WhattaflowPage() {
                   >
                     <FaArrowLeft aria-hidden="true" />
                   </button>
-                  <span aria-hidden="true">0{activeExperience + 1} / 0{heroViews.length}</span>
+                  <span aria-hidden="true">
+                    0{activeExperience + 1} / 0{heroViews.length}
+                  </span>
                   <button
                     type="button"
                     aria-label={`${c.nextPreview}: ${heroViews[activeExperience + 1]?.label || currentView.label}`}
@@ -318,8 +360,16 @@ export default function WhattaflowPage() {
                   </button>
                 </div>
               </figcaption>
-              <div className="wf-hero-screen" aria-live="polite" aria-atomic="true">
-                <AnimatePresence initial={false} mode="wait" custom={slideDirection}>
+              <div
+                className="wf-hero-screen"
+                aria-live="polite"
+                aria-atomic="true"
+              >
+                <AnimatePresence
+                  initial={false}
+                  mode="wait"
+                  custom={slideDirection}
+                >
                   <motion.img
                     key={currentView.id}
                     src={currentView.image}
@@ -328,15 +378,33 @@ export default function WhattaflowPage() {
                     initial={
                       reduceMotion
                         ? { opacity: 0 }
-                        : { opacity: 0, x: slideDirection * 34, scale: 0.985, filter: "blur(7px)" }
+                        : {
+                            opacity: 0,
+                            x: slideDirection * 34,
+                            scale: 0.985,
+                            filter: "blur(7px)",
+                          }
                     }
-                    animate={{ opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }}
+                    animate={{
+                      opacity: 1,
+                      x: 0,
+                      scale: 1,
+                      filter: "blur(0px)",
+                    }}
                     exit={
                       reduceMotion
                         ? { opacity: 0 }
-                        : { opacity: 0, x: slideDirection * -24, scale: 0.99, filter: "blur(4px)" }
+                        : {
+                            opacity: 0,
+                            x: slideDirection * -24,
+                            scale: 0.99,
+                            filter: "blur(4px)",
+                          }
                     }
-                    transition={{ duration: reduceMotion ? 0.18 : 0.42, ease: motionEase }}
+                    transition={{
+                      duration: reduceMotion ? 0.18 : 0.42,
+                      ease: motionEase,
+                    }}
                     fetchPriority={activeExperience === 0 ? "high" : "auto"}
                   />
                 </AnimatePresence>
@@ -391,8 +459,7 @@ export default function WhattaflowPage() {
                 {c.roleLabel}
               </motion.div>
               <motion.h2 id="wf-role-title" {...getRevealProps(0.1, 0.2)}>
-                <span>{c.roleTitleStart}</span>{" "}
-                <em>{c.roleTitleEmphasis}</em>
+                <span>{c.roleTitleStart}</span> <em>{c.roleTitleEmphasis}</em>
               </motion.h2>
             </div>
             <div className="wf-role-main">
