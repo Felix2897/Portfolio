@@ -2,9 +2,11 @@ import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useLanguage } from "../i18n/LanguageContext";
+import bimTaloroLogo from "../../assets/BimTaloro/logoport.png";
 
 const projects = [
   { id: "whattaflow", title: "Whattaflow", image: "/assets/whattaflow/logo-open.svg", imageDark: "/assets/whattaflow/logo-open-white.svg", categories: ["UI/UX Design", "Front-End Project"], link: "/projects/whattaflow", copy: "portfolio.projects.whattaflow.description" },
+  { id: "bimtaloro", title: "BIM Taloro", image: bimTaloroLogo, imageAlt: "Logo BIM Taloro Sardegna", imageTreatment: "wordmark", categories: ["UI/UX Design", "Front-End Project"], link: "/projects/bim-taloro", copy: "portfolio.projects.bimtaloro.description" },
   { id: "study", title: "Study Ward", image: "./Img/Group 2.png", categories: ["UI/UX Design"], link: "/projects/study", copy: "portfolio.projects.study.description" },
   { id: "opla", title: "Oplà", image: "./Img/opmobile.png", categories: ["UI/UX Design"], link: "/projects/opla", copy: "portfolio.projects.opla.description" },
   { id: "serenity", title: "Serenity Dream Travels", image: "./Img/heroimg.png", categories: ["UI/UX Design", "Front-End Project"], link: "/projects/serenity", copy: "portfolio.projects.serenity.description" },
@@ -81,8 +83,8 @@ export default function PortfolioSection({ activeFilter, onFilterChange }) {
                 <h3>{project.title}</h3>
                 <p>{t(project.copy)}</p>
               </div>
-              <div className={`editorial-project-preview${project.imageDark ? " editorial-project-preview--logo" : ""}`}>
-                <img src={project.image} alt={project.imageDark ? `${project.title} logo` : `${project.title} preview`} loading="lazy" />
+              <div className={`editorial-project-preview${project.imageDark ? " editorial-project-preview--logo" : ""}${project.imageTreatment ? ` editorial-project-preview--${project.imageTreatment}` : ""}`}>
+                <img src={project.image} alt={project.imageAlt || (project.imageDark ? `${project.title} logo` : `${project.title} preview`)} loading="lazy" />
                 {project.imageDark && <img className="editorial-project-logo-dark" src={project.imageDark} alt="" loading="lazy" />}
               </div>
               <span className="editorial-project-link" aria-hidden="true">

@@ -2516,6 +2516,10 @@ body {
 .editorial-home .editorial-project-row:hover .editorial-project-preview--logo { transform: none; }
 .editorial-home .editorial-project-preview--logo img { width: 100%; height: auto; max-height: 100%; object-fit: contain; opacity: 1; grid-area: 1 / 1; }
 .editorial-home .editorial-project-row:hover .editorial-project-preview--logo img { transform: none; }
+.editorial-home .editorial-project-preview--wordmark { display: grid; place-items: center; padding: clamp(1.25rem, 2.5vw, 2.5rem); background: #f4f0e9; transform: none; }
+.editorial-home .editorial-project-row:hover .editorial-project-preview--wordmark { transform: none; }
+.editorial-home .editorial-project-preview--wordmark img { width: 100%; height: 100%; object-fit: contain; opacity: 1; transform: translate(-2%, -11%); }
+.editorial-home .editorial-project-row:hover .editorial-project-preview--wordmark img { transform: translate(-2%, -11%); opacity: 1; }
 .editorial-home .editorial-project-preview--logo .editorial-project-logo-dark { display: none; }
 [data-theme="dark"] .editorial-home .editorial-project-preview--logo img:first-child { display: none; }
 [data-theme="dark"] .editorial-home .editorial-project-preview--logo .editorial-project-logo-dark { display: block; }

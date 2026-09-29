@@ -92,6 +92,9 @@ export default {
       whattaflow: {
         description: "One platform, two experiences: wearable data for researchers and participants. Designed and built end to end.",
       },
+      bimtaloro: {
+        description: "A mobile app to explore the villages, experiences and communities of inland Sardinia.",
+      },
       study: {
         description:
           "A student application that facilitates study organization and collaboration.",

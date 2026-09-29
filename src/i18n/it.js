@@ -93,6 +93,9 @@ export default {
       whattaflow: {
         description: "Una piattaforma, due esperienze: dati wearable per ricercatori e partecipanti. Progettata e sviluppata end-to-end.",
       },
+      bimtaloro: {
+        description: "Un’app per scoprire borghi, esperienze e comunità dell’entroterra sardo.",
+      },
       study: {
         description:
           "Applicazione per studenti che facilita l'organizzazione dello studio e la collaborazione.",
