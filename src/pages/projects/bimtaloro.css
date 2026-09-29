@@ -1,5 +1,5 @@
 .bt-case { --wf-paper: var(--color-bg); --wf-ink: var(--color-text); --wf-muted: var(--color-muted); --wf-line: var(--color-border); --wf-accent: var(--color-accent-text); }
-.bt-case .wf-role-section { border-bottom: 0; }
+.bt-case .wf-role-section { border-bottom: 1px solid var(--wf-line); }
 .bt-case .wf-experiences > .wf-experience:first-child { border-top: 0; }
 .bt-inline-accent { color: var(--wf-accent); font-weight: 700; }
 .bt-collaboration { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.3rem; max-width: 58ch; margin: 1.1rem 0 0; color: var(--wf-muted); font: 600 0.7rem/1.5 var(--font-mono) !important; letter-spacing: 0.06em; text-transform: uppercase; }
