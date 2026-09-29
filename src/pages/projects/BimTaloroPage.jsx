@@ -4,6 +4,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 import { motion, useReducedMotion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../i18n/LanguageContext";
+import uxImage from "../../../assets/BimTaloro/ux.png";
 import "./whattaflow.css";
 import "./bimtaloro.css";
 
@@ -16,9 +17,12 @@ const copy = {
     project: "Il progetto",
     projectTitle: "Dal lago ai borghi, tutto in un solo percorso.",
     projectBody: "Tra la Barbagia e il Gennargentu, tredici comunità custodiscono luoghi, tradizioni e attività spesso raccontati in fonti separate. L’app raccoglie queste informazioni e le rende facili da esplorare, aggiungendo uno spazio dove le persone possono condividere il territorio che vivono.",
+    projectHighlight: "tredici comunità",
+    collaboration: "Progetto realizzato in collaborazione con",
     role: "Il mio ruolo",
     roleTitle: "Dalla ricerca all’app mobile.",
     roleBody: "Ho progettato l’UX/UI in Figma, verificato i percorsi con Maze e sviluppato l’app con React Native ed Expo. Le scelte di interfaccia tengono insieme la scoperta dei luoghi, le informazioni pratiche e la partecipazione della comunità.",
+    roleHighlight: "sviluppato",
     roleNoteLabel: "Obiettivo di design",
     roleNote: "Accompagnare chi visita dall’ispirazione alla pianificazione, lasciando spazio anche alle voci di chi conosce il territorio.",
     experiences: "Due percorsi per vivere il territorio.",
@@ -28,6 +32,7 @@ const copy = {
     communityTitle: "Condividere la comunità",
     communityLead: "Il territorio continua a raccontarsi attraverso le persone.",
     communityBody: "Il feed raccoglie foto e momenti geolocalizzati. La distinzione tra post della comunità e post personali rende chiaro dove leggere e dove ritrovare i propri contributi.",
+    communityHighlight: "post della comunità e post personali",
     decisions: "Scelte UX che riducono la distanza tra curiosità e azione.",
     decisionIntro: "Ho organizzato contenuti diversi intorno alle domande più immediate di chi apre l’app: dove andare, cosa fare e cosa sta succedendo.",
     decisionItems: [
@@ -35,16 +40,18 @@ const copy = {
       ["Decidere con i dettagli giusti", "Nelle esperienze, informazioni come durata, prezzo e contatto sono vicine all’azione, senza costringere a cercarle in un testo lungo."],
       ["Restare aggiornati", "Le notizie del Consorzio hanno una sezione dedicata e una lettura pulita, distinta dai contenuti pubblicati dalla comunità."],
     ],
-    newsCaption: "Notizie ufficiali / BIM Taloro",
     build: "Dal design al prodotto",
     buildTitle: "Un’interfaccia mobile, un sistema coerente.",
-    buildBody: "I prototipi in Figma e i test in Maze hanno guidato le scelte dei flussi. Ho sviluppato l’app con React Native ed Expo; NativeWind mantiene gli stili coerenti tra schermate, mentre Supabase supporta dati, autenticazione e contenuti condivisi. La navigazione, il tema chiaro e scuro e le schermate di dettaglio fanno parte dello stesso sistema.",
+    buildBody: "I prototipi in Figma e i test in Maze hanno guidato le scelte dei flussi. Ho sviluppato l’app per iOS e Android con React Native ed Expo. NativeWind mantiene coerenti gli stili tra schermate; Supabase gestisce dati, autenticazione e contenuti condivisi.",
+    buildHighlight: "React Native ed Expo",
     aiLabel: "AI nel processo",
-    aiTitle: "Un supporto per rendere i contenuti più chiari.",
-    aiIntro: "Ho usato l’AI per esplorare modi diversi di organizzare contenuti, parole e stati dell’interfaccia. Le proposte sono diventate una base di confronto: ho selezionato e rifinito solo ciò che aiutava a rendere borghi, esperienze e notizie più semplici da trovare e capire.",
+    aiTitle: "Un supporto per contenuti, interfacce e codice.",
+    aiIntro: "Ho usato l’AI per esplorare modi diversi di organizzare i contenuti, definire parole e stati dell’interfaccia e valutare soluzioni di codice. Le proposte sono diventate una base di confronto: ho selezionato e adattato al progetto ciò che aiutava a rendere l’app più chiara e semplice da usare.",
+    aiHighlight: "soluzioni di codice",
     aiSteps: [
       ["Struttura editoriale", "Ho confrontato possibili raggruppamenti di borghi, esperienze e notizie per rendere la scoperta del territorio più immediata."],
       ["Parole nell’interfaccia", "L’ho usata per esplorare alternative di microcopy per ricerca, filtri e azioni, mantenendo un tono chiaro e vicino al contesto locale."],
+      ["Esplorare il codice", "Ho chiesto all’AI proposte per organizzare i componenti e gestire gli stati dell’interfaccia, poi le ho riviste e adattate ai flussi dell’app."],
       ["Casi reali", "Ho simulato diverse combinazioni di contenuti e informazioni mancanti per verificare che le schermate restassero utili anche fuori dai percorsi ideali."],
     ],
     downloadLabel: "Prova l’app",
@@ -54,11 +61,11 @@ const copy = {
     downloadGoogle: "Scarica su Google Play",
     scanQr: "Apri lo store o scansiona il QR code.",
     tools: "Strumenti e stack",
-    stack: [["Figma", "Flussi e interfacce"], ["Maze", "Test dei percorsi"], ["React Native + Expo", "App iOS e Android"], ["NativeWind", "Stili e componenti"], ["Supabase", "Backend, dati e media"]],
+    stack: [["Figma", "Flussi e interfacce"], ["Maze", "Test dei flussi"], ["React Native + Expo", "App iOS e Android"], ["NativeWind", "Stili e componenti"], ["Supabase", "Backend, dati e media"]],
     altHero: "Due schermate dell’app BIM Taloro su smartphone: dettaglio di Desulo e home con i borghi",
     altService: "Schermata di dettaglio di un’esperienza locale nell’app BIM Taloro",
     altSocial: "Feed della comunità nell’app BIM Taloro",
-    altNews: "Elenco delle notizie ufficiali nell’app BIM Taloro",
+    altUx: "Schermate dell’app BIM Taloro che mostrano le scelte UX",
     altNight: "La home dell’app BIM Taloro nei temi chiaro e scuro",
   },
   en: {
@@ -69,9 +76,12 @@ const copy = {
     project: "The project",
     projectTitle: "From the lake to the villages, one connected journey.",
     projectBody: "Across Barbagia and Gennargentu, thirteen communities preserve places, traditions and activities often described in separate sources. The app makes this information easier to explore and adds a space where people can share the territory they know.",
+    projectHighlight: "thirteen communities",
+    collaboration: "A project created in collaboration with",
     role: "My role",
     roleTitle: "From research to mobile app.",
     roleBody: "I designed the UX/UI in Figma, checked journeys with Maze, and developed the app with React Native and Expo. The interface connects discovery, practical travel information and community participation.",
+    roleHighlight: "developed",
     roleNoteLabel: "Design goal",
     roleNote: "Help visitors move from inspiration to planning while making room for the voices of people who know the area.",
     experiences: "Two journeys through the territory.",
@@ -81,6 +91,7 @@ const copy = {
     communityTitle: "Share the community",
     communityLead: "The place keeps telling its story through its people.",
     communityBody: "The feed collects photos and moments tagged by location. Separate community and personal post views make it clear where to explore and where to find your own contributions.",
+    communityHighlight: "Separate community and personal post views",
     decisions: "UX choices that connect curiosity to action.",
     decisionIntro: "I organised different types of content around the questions people bring to the app: where to go, what to do and what is happening now.",
     decisionItems: [
@@ -88,16 +99,18 @@ const copy = {
       ["Decide with the right details", "Experience pages keep duration, price and contact information close to the action instead of burying them in long descriptions."],
       ["Stay informed", "Consortium news has its own section and a clear reading layout, separate from community posts."],
     ],
-    newsCaption: "Official news / BIM Taloro",
     build: "From design to product",
     buildTitle: "A mobile interface with a consistent system.",
-    buildBody: "Figma prototypes and Maze tests informed the journeys. I developed the app with React Native and Expo; NativeWind keeps styles consistent across screens, while Supabase supports data, authentication and shared content. Navigation, light and dark themes and detail views belong to the same system.",
+    buildBody: "Figma prototypes and Maze tests informed the user flows. I developed the app for iOS and Android with React Native and Expo. NativeWind keeps styling consistent across screens; Supabase manages data, authentication and shared content.",
+    buildHighlight: "React Native and Expo",
     aiLabel: "AI in the process",
-    aiTitle: "Support for clearer content.",
-    aiIntro: "I used AI to explore different ways of organising content, wording and interface states. Its proposals became a basis for comparison: I selected and refined only what helped make villages, experiences and news easier to find and understand.",
+    aiTitle: "Support for content, interfaces and code.",
+    aiIntro: "I used AI to explore ways to organise content, shape interface wording and states, and consider code solutions. Its suggestions gave me options to compare: I selected and adapted the ideas that made the app clearer and easier to use.",
+    aiHighlight: "code solutions",
     aiSteps: [
       ["Editorial structure", "I compared ways of grouping villages, experiences and news to make discovering the area more immediate."],
       ["Interface language", "I explored microcopy options for search, filters and actions, keeping the tone clear and grounded in the local context."],
+      ["Exploring the code", "I asked AI for ways to organise components and handle interface states, then reviewed and adapted its suggestions to the app’s flows."],
       ["Real-world cases", "I simulated different content combinations and missing information to check that each screen stayed useful beyond the ideal journey."],
     ],
     downloadLabel: "Try the app",
@@ -111,7 +124,7 @@ const copy = {
     altHero: "Two BIM Taloro app screens on phones: Desulo details and a home screen of villages",
     altService: "A local experience detail screen in the BIM Taloro app",
     altSocial: "Community feed in the BIM Taloro app",
-    altNews: "Official news list in the BIM Taloro app",
+    altUx: "BIM Taloro app screens showing the UX choices",
     altNight: "BIM Taloro home screen in light and dark themes",
   },
 };
@@ -127,6 +140,10 @@ export default function BimTaloroPage() {
   const { lang } = useLanguage();
   const c = copy[lang] || copy.en;
   const reduceMotion = useReducedMotion();
+  const highlight = (text, phrase) => {
+    const [before, ...after] = text.split(phrase);
+    return after.length ? <>{before}<strong className="bt-inline-accent">{phrase}</strong>{after.join(phrase)}</> : text;
+  };
   const reveal = (delay = 0) => reduceMotion ? {} : {
     initial: { opacity: 0, y: 18 },
     whileInView: { opacity: 1, y: 0 },
@@ -171,7 +188,8 @@ export default function BimTaloroPage() {
           <motion.div className="wf-section-marker" {...reveal()}>{c.project}</motion.div>
           <div className="wf-project-copy">
             <motion.h2 id="bt-context-title" {...reveal(0.06)}>{c.projectTitle}</motion.h2>
-            <motion.p className="wf-lead" {...reveal(0.12)}>{c.projectBody}</motion.p>
+            <motion.p className="wf-lead" {...reveal(0.12)}>{highlight(c.projectBody, c.projectHighlight)}</motion.p>
+            <motion.p className="bt-collaboration" {...reveal(0.16)}><span>{c.collaboration}</span> <strong>BIM Taloro</strong></motion.p>
           </div>
         </section>
 
@@ -182,7 +200,7 @@ export default function BimTaloroPage() {
               <motion.h2 id="bt-role-title" {...reveal(0.06)}>{c.roleTitle}</motion.h2>
             </div>
             <div className="wf-role-main">
-              <motion.p className="wf-lead" {...reveal(0.1)}>{c.roleBody}</motion.p>
+              <motion.p className="wf-lead" {...reveal(0.1)}>{highlight(c.roleBody, c.roleHighlight)}</motion.p>
               <motion.div className="wf-accessibility-note" {...reveal(0.16)}><span>{c.roleNoteLabel}</span><p>{c.roleNote}</p></motion.div>
             </div>
           </div>
@@ -201,7 +219,7 @@ export default function BimTaloroPage() {
             <div className="wf-experience-copy">
               <motion.h3 {...reveal()}>{c.communityTitle}</motion.h3>
               <motion.p className="wf-experience-intro" {...reveal(0.06)}>{c.communityLead}</motion.p>
-              <motion.p {...reveal(0.12)}>{c.communityBody}</motion.p>
+              <motion.p {...reveal(0.12)}>{highlight(c.communityBody, c.communityHighlight)}</motion.p>
             </div>
             <motion.figure className="bt-tall-figure" {...reveal(0.1)}><img src={`${asset}/social.png`} alt={c.altSocial} loading="lazy" /></motion.figure>
           </div>
@@ -215,7 +233,7 @@ export default function BimTaloroPage() {
           </div>
           <div className="wf-decisions-grid">
             <div className="wf-decisions-list">{c.decisionItems.map(([title, body], index) => <motion.div className="wf-decision" key={title} {...reveal(index * 0.06)}><h3>{title}</h3><p>{body}</p></motion.div>)}</div>
-            <motion.figure className="bt-news-figure" {...reveal(0.1)}><img src={`${asset}/news.png`} alt={c.altNews} loading="lazy" /><figcaption>{c.newsCaption}</figcaption></motion.figure>
+            <motion.figure className="bt-news-figure" {...reveal(0.1)}><img src={uxImage} alt={c.altUx} loading="lazy" /></motion.figure>
           </div>
         </section>
 
@@ -223,7 +241,7 @@ export default function BimTaloroPage() {
           <motion.div className="wf-section-marker" {...reveal()}>{c.build}</motion.div>
           <div className="wf-process-main">
             <motion.h2 id="bt-process-title" {...reveal(0.06)}>{c.buildTitle}</motion.h2>
-            <motion.p {...reveal(0.12)}>{c.buildBody}</motion.p>
+            <motion.p {...reveal(0.12)}>{highlight(c.buildBody, c.buildHighlight)}</motion.p>
           </div>
           <ul className="wf-process-tools" aria-label={c.tools}>{c.stack.map(([tool, purpose], index) => <motion.li key={tool} {...reveal(index * 0.05)}><strong>{tool}</strong><span>{purpose}</span></motion.li>)}</ul>
         </section>
@@ -232,7 +250,7 @@ export default function BimTaloroPage() {
           <motion.div className="wf-section-marker" {...reveal()}>{c.aiLabel}</motion.div>
           <div className="wf-ai-heading">
             <motion.h2 id="bt-ai-title" {...reveal(0.06)}>{c.aiTitle}</motion.h2>
-            <motion.p {...reveal(0.12)}>{c.aiIntro}</motion.p>
+            <motion.p {...reveal(0.12)}>{highlight(c.aiIntro, c.aiHighlight)}</motion.p>
           </div>
           <ol className="wf-ai-steps">
             {c.aiSteps.map(([step, description], index) => (

@@ -1,6 +1,9 @@
 .bt-case { --wf-paper: var(--color-bg); --wf-ink: var(--color-text); --wf-muted: var(--color-muted); --wf-line: var(--color-border); --wf-accent: var(--color-accent-text); }
 .bt-case .wf-role-section { border-bottom: 0; }
 .bt-case .wf-experiences > .wf-experience:first-child { border-top: 0; }
+.bt-inline-accent { color: var(--wf-accent); font-weight: 700; }
+.bt-collaboration { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.3rem; max-width: 58ch; margin: 1.1rem 0 0; color: var(--wf-muted); font: 600 0.7rem/1.5 var(--font-mono) !important; letter-spacing: 0.06em; text-transform: uppercase; }
+.bt-collaboration strong { color: var(--wf-accent); font-weight: 700; }
 .bt-hero { position: relative; height: 100vh; height: 100svh; padding: clamp(7.5rem, 15vh, 10rem) 1.5rem 0; overflow: hidden; text-align: center; background: var(--wf-paper); }
 .bt-hero::after { position: absolute; z-index: 1; inset: auto 0 0; height: 9%; background: linear-gradient(to bottom, transparent, var(--wf-paper)); content: ""; pointer-events: none; }
 .bt-hero-copy { position: relative; z-index: 2; width: min(100%, 900px); margin-inline: auto; }
