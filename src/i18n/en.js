@@ -12,13 +12,13 @@ export default {
     badge: "Mobile UI/UX Designer & Front-end",
     greeting: "Hi, I'm",
     name: "Andrea Feliziani",
-    typedStrings: ["UI/UX Designer", "Front-end Developer"],
-    subtitle: "I design accessible digital experiences around real user needs.",
+    typedStrings: ["UI/UX Designer", "Front-end Developer", "Mobile Developer"],
+    subtitle: "I design and develop accessible digital experiences around real user needs.",
     cta: "Get in Touch",
     downloadCv: "Download CV",
     location: "Milan, Italy",
     cardDesign: "UI/UX Design",
-    cardDev: "Front-end",
+    cardDev: "Front-end & Mobile",
   },
 
   // About Section
@@ -26,11 +26,11 @@ export default {
     badge: "About Me",
     title: "About Me",
     bio1: "My background combines computer science and design, with a <strong>Bachelor's degree</strong> in Product Design and a <strong>Master's degree</strong> in Theory and Technology of Communication.",
-    bio2: "I work as a <strong>UI/UX Designer</strong> at <strong>Aton IT</strong>, where I design digital experiences that are clear, accessible, and shaped around real user needs. Today I focus on <strong>user research</strong>, information architecture, flows, and interfaces that feel simple to use, with strong attention to <strong>accessibility</strong>, consistency, and overall experience quality. I complement this approach with <strong>front-end</strong> skills that help me connect design and interface implementation.",
+    bio2: "I work as a <strong>UI/UX Designer, Front-end & Mobile Developer</strong> at <strong>Aton IT</strong>, where I design and build digital experiences that are clear, accessible, and shaped around real user needs. Today I focus on <strong>user research</strong>, information architecture, flows, and interfaces that feel simple to use, with strong attention to <strong>accessibility</strong>, consistency, and overall experience quality. I complement this approach with <strong>front-end and mobile development</strong> skills that help me connect design and implementation.",
     bio3: "",
     downloadCv: "Download CV",
     designTitle: "UI/UX Designer",
-    devTitle: "Front-end/Mobile Developer",
+    devTitle: "Front-end & Mobile Developer",
   },
 
   // Counter Section
@@ -46,7 +46,7 @@ export default {
     current: {
       company: "Aton IT",
       location: "Milan",
-      role: "UI/UX Designer · Front-end Developer",
+      role: "UI/UX Designer · Front-end & Mobile Developer",
       period: "Jan 2025 — Present",
     },
     previous: {

@@ -12,14 +12,14 @@ export default {
     badge: "Mobile UI/UX Designer & Front-end",
     greeting: "Ciao, sono",
     name: "Andrea Feliziani",
-    typedStrings: ["UI/UX Designer", "Front-end Developer"],
+    typedStrings: ["UI/UX Designer", "Front-end Developer", "Mobile Developer"],
     subtitle:
-      "Progetto esperienze digitali e accessibili attorno ai bisogni reali degli utenti.",
+      "Progetto e sviluppo esperienze digitali e accessibili attorno ai bisogni reali degli utenti.",
     cta: "Contattami",
     downloadCv: "Download CV",
     location: "Milano, Italia",
     cardDesign: "UI/UX Design",
-    cardDev: "Front-end",
+    cardDev: "Front-end & Mobile",
   },
 
   // About Section
@@ -27,11 +27,11 @@ export default {
     badge: "Chi sono",
     title: "About Me",
     bio1: "Ho una formazione tra informatica e design, con una <strong>laurea triennale</strong> in Design del Prodotto e una <strong>magistrale</strong> in Teoria e Tecnologia della Comunicazione.",
-    bio2: "Lavoro come <strong>UI/UX Designer</strong> in <strong>Aton IT</strong>, dove progetto esperienze digitali chiare, accessibili e costruite attorno ai bisogni reali degli utenti. Oggi mi concentro su <strong>ricerca utente</strong>, architettura dell'informazione, flussi e interfacce semplici da usare, con grande attenzione a <strong>accessibilità</strong>, coerenza e qualità dell'esperienza. Integro questo approccio con competenze di <strong>front-end</strong>, che mi permettono di collegare progettazione e realizzazione dell'interfaccia.",
+    bio2: "Lavoro come <strong>UI/UX Designer, Front-end & Mobile Developer</strong> in <strong>Aton IT</strong>, dove progetto e sviluppo esperienze digitali chiare, accessibili e costruite attorno ai bisogni reali degli utenti. Oggi mi concentro su <strong>ricerca utente</strong>, architettura dell'informazione, flussi e interfacce semplici da usare, con grande attenzione a <strong>accessibilità</strong>, coerenza e qualità dell'esperienza. Integro questo approccio con competenze di <strong>sviluppo front-end e mobile</strong>, che mi permettono di collegare progettazione e realizzazione dell'interfaccia.",
     bio3: "",
     downloadCv: "Download CV",
     designTitle: "UI/UX Designer",
-    devTitle: "Front-end & Mobile",
+    devTitle: "Front-end & Mobile Developer",
   },
 
   // Counter Section
@@ -47,7 +47,7 @@ export default {
     current: {
       company: "Aton IT",
       location: "Milano",
-      role: "UI/UX Designer · Front-end Developer",
+      role: "UI/UX Designer · Front-end & Mobile Developer",
       period: "Gen 2025 — oggi",
     },
     previous: {

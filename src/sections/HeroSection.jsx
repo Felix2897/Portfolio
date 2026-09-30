@@ -3,7 +3,12 @@ import Typed from "typed.js";
 import { FaMapMarkerAlt, FaArrowRight, FaDownload } from "react-icons/fa";
 import SocialLinks from "../components/SocialLinks";
 import { useLanguage } from "../i18n/LanguageContext";
-import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useReducedMotion,
+} from "framer-motion";
 
 export default function HeroSection() {
   const typedRef = useRef(null);
@@ -12,12 +17,22 @@ export default function HeroSection() {
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {
+    const rawStrings = [
+      t("hero.typedStrings.0"),
+      t("hero.typedStrings.1"),
+      t("hero.typedStrings.2"),
+    ].filter(Boolean);
+    const strings =
+      rawStrings.length > 0
+        ? rawStrings
+        : ["UI/UX Designer", "Front-end Developer", "Mobile Developer"];
+
     if (reduceMotion) {
-      if (typedRef.current) typedRef.current.textContent = t("hero.typedStrings.0");
+      if (typedRef.current) typedRef.current.textContent = strings[0];
       return;
     }
     const typed = new Typed(typedRef.current, {
-      strings: [t("hero.typedStrings.0"), t("hero.typedStrings.1")],
+      strings,
       typeSpeed: 48,
       backSpeed: 28,
       backDelay: 1800,
@@ -99,7 +114,10 @@ export default function HeroSection() {
               <span className="sr-only">
                 {`${t("hero.typedStrings.0")}, ${t("hero.typedStrings.1")}`}
               </span>
-              <span className="hero-role-bracket font-mono text-2xl" aria-hidden="true">
+              <span
+                className="hero-role-bracket font-mono text-2xl"
+                aria-hidden="true"
+              >
                 {"<"}
               </span>
               <span
@@ -107,7 +125,10 @@ export default function HeroSection() {
                 aria-hidden="true"
                 className="hero-role-typed text-(--color-text-main) font-display tracking-wide"
               />
-              <span className="hero-role-bracket font-mono text-2xl" aria-hidden="true">
+              <span
+                className="hero-role-bracket font-mono text-2xl"
+                aria-hidden="true"
+              >
                 {"/>"}
               </span>
             </motion.div>
@@ -184,19 +205,19 @@ export default function HeroSection() {
           </div>
 
           {/* ── Right: Portrait ── */}
-          <div className="hidden lg:flex w-full lg:w-[45%] relative mt-20 lg:mt-0 justify-center z-10 min-h-[500px] lg:min-h-[700px]">
+          <div className="hidden lg:flex w-full lg:w-[45%] relative mt-20 lg:mt-0 justify-center z-10 min-h-125 lg:min-h-175">
             <motion.div
               style={{ y: yImage }}
               initial={{ opacity: 0, scale: 0.85, filter: "blur(12px)" }}
               animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
               transition={{ duration: 1.4, delay: 0.1, ease: "easeOut" }}
-              className="relative w-full max-w-[560px] flex items-end justify-center"
+              className="relative w-full max-w-140 flex items-end justify-center"
             >
               <div className="hero-portrait-glow" aria-hidden="true" />
 
               <div className="hero-portrait-stage">
                 <div className="hero-portrait-rim" aria-hidden="true" />
-                <div className="relative w-full rounded-[2rem] overflow-hidden border border-(--color-border)/40 shadow-[0_28px_72px_rgba(0,0,0,0.4)] z-10 transform translate-y-[2%]">
+                <div className="relative w-full rounded-4xl overflow-hidden border border-(--color-border)/40 shadow-[0_28px_72px_rgba(0,0,0,0.4)] z-10 transform translate-y-[2%]">
                   <img
                     src="./assets/images/Andrea.jpeg"
                     alt="Andrea Feliziani"
@@ -216,7 +237,9 @@ export default function HeroSection() {
         onClick={scrollToAbout}
         role="button"
         tabIndex={0}
-        aria-label={lang === "it" ? "Vai alla sezione About" : "Scroll to about section"}
+        aria-label={
+          lang === "it" ? "Vai alla sezione About" : "Scroll to about section"
+        }
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
@@ -240,7 +263,7 @@ export default function HeroSection() {
         <span className="hidden md:block text-[10px] uppercase tracking-[0.3em] text-(--color-text-muted) font-bold">
           Scroll
         </span>
-        <div className="w-px h-[50px] bg-linear-to-b from-(--color-accent)/80 to-transparent" />
+        <div className="w-px h-12.5 bg-linear-to-b from-(--color-accent)/80 to-transparent" />
       </motion.div>
     </section>
   );
