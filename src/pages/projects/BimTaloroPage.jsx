@@ -93,7 +93,7 @@ const copy = {
     scanQr: "Apri lo store o scansiona il QR code.",
     tools: "Strumenti e stack",
     stack: [
-      ["Figma", "Flussi e interfacce"],
+      ["Figma", "Flussi, interfacce e screenshot per gli store"],
       ["Maze", "Test dei flussi"],
       ["React Native + Expo", "App iOS e Android"],
       ["NativeWind", "Stili e componenti"],
@@ -192,7 +192,7 @@ const copy = {
     scanQr: "Open the store or scan the QR code.",
     tools: "Tools and stack",
     stack: [
-      ["Figma", "Flows and interfaces"],
+      ["Figma", "Flows, interfaces and store screenshots"],
       ["Maze", "Journey testing"],
       ["React Native + Expo", "iOS and Android app"],
       ["NativeWind", "Styling and components"],

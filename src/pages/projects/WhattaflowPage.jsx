@@ -63,7 +63,7 @@ const content = {
     processLabel: "Dal design al prodotto",
     processTitle: "Dai flussi testati a componenti riutilizzabili.",
     processIntro:
-      "Ho progettato flussi e interfacce in Figma, verificato le scelte con Maze e guidato lo sviluppo del front-end in Next.js. Ho usato shadcn/ui come base di componenti da personalizzare per le due applicazioni, con Tailwind CSS per mantenerli coerenti. Supabase gestisce servizi backend e dati.",
+      "Ho progettato flussi e interfacce in Figma, verificato le scelte con Maze e guidato lo sviluppo del front-end in Next.js. Ho usato shadcn/ui come base di componenti da personalizzare per le due applicazioni, con Tailwind CSS per mantenerli coerenti. Supabase gestisce servizi backend e dati, con Coolify impiegato per l'hosting.",
     processToolsLabel: "Strumenti e stack",
     processTools: [
       ["Figma", "Flussi UX/UI e prototipi"],
@@ -72,6 +72,7 @@ const content = {
       ["Shadcn/Ui", "Componenti di partenza personalizzati"],
       ["Tailwind CSS", "Stili coerenti e riutilizzabili"],
       ["Supabase", "Servizi backend e dati"],
+      ["Coolify", "Hosting e deployment"],
     ],
     aiLabel: "Il mio metodo",
     aiTitle: "Come ho integrato l’AI?",
@@ -154,7 +155,7 @@ const content = {
     processLabel: "From design to product",
     processTitle: "From tested flows to reusable components.",
     processIntro:
-      "I designed flows and interfaces in Figma, checked decisions with Maze, and led front-end development in Next.js. I used shadcn/ui as a starting point for components tailored to both applications, with Tailwind CSS keeping them consistent. Supabase handles backend services and data.",
+      "I designed flows and interfaces in Figma, checked decisions with Maze, and led front-end development in Next.js. I used shadcn/ui as a starting point for components tailored to both applications, with Tailwind CSS keeping them consistent. Supabase handles backend services and data, with Coolify used for hosting.",
     processToolsLabel: "Tools and stack",
     processTools: [
       ["Figma", "UX/UI flows and prototypes"],
@@ -163,6 +164,7 @@ const content = {
       ["Shadcn/Ui", "Starting components tailored to the product"],
       ["Tailwind CSS", "Consistent, reusable styling"],
       ["Supabase", "Backend services and data"],
+      ["Coolify", "Hosting and deployment"],
     ],
     aiLabel: "My method",
     aiTitle: "How I integrated AI?",

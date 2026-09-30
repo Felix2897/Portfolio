@@ -27,7 +27,7 @@ export default {
     badge: "Chi sono",
     title: "About Me",
     bio1: "Ho una formazione tra informatica e design, con una <strong>laurea triennale</strong> in Design del Prodotto e una <strong>magistrale</strong> in Teoria e Tecnologia della Comunicazione.",
-    bio2: "Lavoro come <strong>UI/UX Designer, Front-end & Mobile Developer</strong> in <strong>Aton IT</strong>, dove progetto e sviluppo esperienze digitali chiare, accessibili e costruite attorno ai bisogni reali degli utenti. Oggi mi concentro su <strong>ricerca utente</strong>, architettura dell'informazione, flussi e interfacce semplici da usare, con grande attenzione a <strong>accessibilità</strong>, coerenza e qualità dell'esperienza. Integro questo approccio con competenze di <strong>sviluppo front-end e mobile</strong>, che mi permettono di collegare progettazione e realizzazione dell'interfaccia.",
+    bio2: "Lavoro come <strong>UI/UX Designer, Front-end & Mobile Developer</strong> nel team di <strong>Ricerca e Sviluppo</strong> in <strong>Aton IT</strong>, dove progetto e sviluppo esperienze digitali chiare, accessibili e costruite attorno ai bisogni reali degli utenti. Oggi mi concentro su <strong>ricerca utente</strong>, architettura dell'informazione, flussi e interfacce semplici da usare, con grande attenzione a <strong>accessibilità</strong>, coerenza e qualità dell'esperienza. Integro questo approccio con competenze di <strong>sviluppo front-end e mobile</strong>, che mi permettono di collegare progettazione e realizzazione dell'interfaccia.",
     bio3: "",
     downloadCv: "Download CV",
     designTitle: "UI/UX Designer",
