@@ -175,7 +175,7 @@ export default function HeroSection() {
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
               </a>
               <a
-                href={lang === "it" ? "./CV.pdf" : "./Andrea_Feliziani_CV.pdf"}
+                href={lang === "it" ? "./Feliziani_Andrea_CV.pdf" : "./Feliziani_Andrea.pdf"}
                 download
                 className="btn btn-outline group px-8 py-4 text-base hover:bg-(--color-text) hover:text-(--color-bg) transition-colors duration-300 border-2"
               >

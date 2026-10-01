@@ -14,6 +14,7 @@ import ValeriPage from "./pages/projects/ValeriPage";
 import SecurePage from "./pages/projects/SecurePage";
 import WhattaflowPage from "./pages/projects/WhattaflowPage";
 import BimTaloroPage from "./pages/projects/BimTaloroPage";
+import PenguinPage from "./pages/projects/PenguinPage";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -77,6 +78,7 @@ export default function App() {
             <Route path="/projects/secure-it" element={<SecurePage />} />
             <Route path="/projects/whattaflow" element={<WhattaflowPage />} />
             <Route path="/projects/bim-taloro" element={<BimTaloroPage />} />
+            <Route path="/projects/penguin" element={<PenguinPage />} />
           </Routes>
 
           <Footer />

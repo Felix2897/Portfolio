@@ -83,8 +83,12 @@ export default {
     badge: "My Work",
     title: "Portfolio",
     filterAll: "All",
+    filterWork: "Professional",
+    filterUniversity: "University",
     filterDesign: "UI/UX Design",
     filterFrontend: "Front-end",
+    groupWork: "Professional projects",
+    groupUniversity: "University projects",
     viewProject: "View",
     docNote:
       "Documentation available in Italian only — English version in progress",
@@ -94,6 +98,9 @@ export default {
       },
       bimtaloro: {
         description: "A mobile app to explore the villages, experiences and communities of inland Sardinia.",
+      },
+      penguin: {
+        description: "A therapeutic journey in everyday life: UX/UI and mobile development for the patient’s space.",
       },
       study: {
         description:

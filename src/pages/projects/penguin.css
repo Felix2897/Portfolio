@@ -1,0 +1,61 @@
+.pg-name { margin: 0 0 1.5rem; color: var(--wf-accent); font: 700 clamp(1.8rem, 2.5vw, 2.5rem)/1 var(--font-display); letter-spacing: -0.035em; }
+.pg-hero .wf-hero-content h1 { max-width: 16ch; }
+.pg-hero-phones { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr) minmax(0, 0.8fr); align-items: center; gap: clamp(0.65rem, 1.3vw, 1.5rem); width: min(100%, 750px); margin-inline: auto; padding-block: 1rem; }
+.pg-case .pg-hero-phones img { display: block; width: 100%; height: auto; }
+.pg-hero-phones img:first-child { margin-top: 2rem; }
+.pg-hero-phones img:last-child { margin-top: 4rem; }
+.pg-hero-home { position: relative; z-index: 1; }
+.pg-context-note { max-width: 62ch; margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--wf-line); }
+.pg-context-note h3 { margin: 0; color: var(--wf-accent); font: 600 0.72rem/1.4 var(--font-mono); }
+.pg-context-note p { margin: 0.65rem 0 0; font-size: 1rem; }
+.pg-case .wf-role-panel { border-radius: 0; border-top-width: 1px; }
+.pg-case .wf-role-intro h2 { max-width: 17ch; }
+.pg-journeys { padding-block: 2rem; }
+.pg-case .pg-experience { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(3rem, 8vw, 9rem); }
+.pg-journeys > .pg-experience:first-child { border-top: 0; }
+.pg-case .pg-diary-experience { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); }
+.pg-case .pg-experience-copy p { max-width: 48ch; }
+.pg-reason { max-width: 48ch; margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--wf-line); }
+.pg-case .pg-reason p { margin-top: 0; font-size: 1rem; }
+.pg-phone-figure { display: grid; justify-items: center; }
+.pg-case .pg-phone-figure img { width: auto; max-width: 100%; height: auto; max-height: 570px; object-fit: contain; }
+.pg-diary-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: clamp(0.75rem, 2vw, 2rem); }
+.pg-diary-pair img:last-child { margin-top: 3rem; }
+.pg-case .pg-diary-pair img { width: 100%; height: auto; }
+.pg-day-pair { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); align-items: center; gap: clamp(0.75rem, 2vw, 2rem); }
+.pg-case .pg-day-pair img { width: 100%; height: auto; }
+.pg-case .pg-experience figcaption { width: 100%; margin-top: 1.5rem; text-align: center; }
+.pg-case .wf-decisions-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; }
+.pg-case .wf-decisions-heading h2 { max-width: 17ch; }
+.pg-case .pg-chat-experience { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); padding-block: 0; border-top: 0; }
+.pg-case .pg-chat-experience .pg-phone-figure img { max-height: 680px; }
+.pg-case .pg-chat-subtitle { max-width: 28ch; margin: 2.5rem 0 0; font-size: clamp(1.4rem, 2vw, 2rem); line-height: 1.2; }
+.pg-code-choices { grid-column: 2 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+.pg-back { display: inline-flex; align-items: center; gap: 0.8rem; }
+.pg-case .wf-end .wf-hero-action { margin: 0; }
+.pg-up { transform: rotate(180deg); }
+.pg-case a:focus-visible, .pg-case button:focus-visible { outline: 2px solid var(--wf-accent); outline-offset: 5px; }
+.pg-case section[tabindex="-1"]:focus { outline: none; }
+
+@media (max-width: 950px) {
+  .pg-hero .wf-hero-layout { gap: 1.5rem; }
+  .pg-hero .wf-hero-content h1 { max-width: 20ch; }
+  .pg-hero-phones { width: min(100%, 610px); margin-inline: auto; gap: 1rem; }
+  .pg-case .pg-experience, .pg-case .pg-diary-experience { gap: 2.5rem; }
+  .pg-code-choices { grid-column: 1 / -1; }
+  .pg-case .wf-ai-heading, .pg-case .wf-ai-steps { grid-row: 2; }
+}
+@media (max-width: 700px) {
+  .pg-name { margin-bottom: 1.25rem; }
+  .pg-hero .wf-hero-content h1 { max-width: 17ch; font-size: clamp(2.35rem, 9.8vw, 3.5rem); }
+  .pg-hero-phones { gap: 0.55rem; padding-block: 1rem 0; }
+  .pg-hero-phones img:first-child { margin-top: 1rem; }
+  .pg-hero-phones img:last-child { margin-top: 2rem; }
+  .pg-case .pg-experience, .pg-case .pg-diary-experience, .pg-case .pg-chat-experience, .pg-case .wf-decisions-grid, .pg-code-choices { grid-template-columns: 1fr; }
+  .pg-case .pg-phone-figure img { max-height: 450px; }
+  .pg-case .pg-diary-pair { max-width: 440px; margin-inline: auto; }
+  .pg-case figcaption { display: none; }
+  .pg-case .pg-chat-experience .pg-phone-figure img { max-height: 560px; }
+  .pg-code-choices { grid-column: auto; gap: 0; }
+  .pg-case .wf-ai-heading, .pg-case .wf-ai-steps { grid-row: auto; }
+}

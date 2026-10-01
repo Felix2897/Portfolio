@@ -84,8 +84,12 @@ export default {
     badge: "I miei lavori",
     title: "Portfolio",
     filterAll: "Tutti",
+    filterWork: "Lavorativi",
+    filterUniversity: "Universitari",
     filterDesign: "UI/UX Design",
     filterFrontend: "Front-end",
+    groupWork: "Progetti lavorativi",
+    groupUniversity: "Progetti universitari",
     viewProject: "Visualizza",
     docNote:
       "Documentazione disponibile solo in italiano — versione inglese in sviluppo",
@@ -95,6 +99,9 @@ export default {
       },
       bimtaloro: {
         description: "Un’app per scoprire borghi, esperienze e comunità dell’entroterra sardo.",
+      },
+      penguin: {
+        description: "Il percorso terapeutico nella quotidianità: UX/UI e sviluppo mobile per lo spazio del paziente.",
       },
       study: {
         description:
