@@ -103,6 +103,9 @@ export default {
       penguin: {
         description: "Il percorso terapeutico nella quotidianità: UX/UI e sviluppo mobile per lo spazio del paziente.",
       },
+      crowdit: {
+        description: "UX/UI e sviluppo dell’app per orientarsi durante gli eventi: percorsi, scoperta e gamification.",
+      },
       study: {
         description:
           "Applicazione per studenti che facilita l'organizzazione dello studio e la collaborazione.",

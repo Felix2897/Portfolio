@@ -102,6 +102,9 @@ export default {
       penguin: {
         description: "A therapeutic journey in everyday life: UX/UI and mobile development for the patient’s space.",
       },
+      crowdit: {
+        description: "UX/UI and mobile development for navigating events: routes, discovery and gamification.",
+      },
       study: {
         description:
           "A student application that facilitates study organization and collaboration.",

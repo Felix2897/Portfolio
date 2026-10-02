@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useLanguage } from "../i18n/LanguageContext";
 import bimTaloroLogo from "../../assets/BimTaloro/logoport.png";
+import crowditLogo from "../../assets/CrowdIT/logo.svg";
 import penguinLogo from "../../assets/Penguin/logo.png";
 
 const projects = [
   { id: "whattaflow", title: "Whattaflow", group: "work", image: "/assets/whattaflow/logo-open.svg", imageDark: "/assets/whattaflow/logo-open-white.svg", categories: ["UI/UX Design", "Front-End Project"], link: "/projects/whattaflow", copy: "portfolio.projects.whattaflow.description" },
   { id: "bimtaloro", title: "BIM Taloro", group: "work", image: bimTaloroLogo, imageAlt: "Logo BIM Taloro Sardegna", imageTreatment: "wordmark", categories: ["UI/UX Design", "Front-End Project"], link: "/projects/bim-taloro", copy: "portfolio.projects.bimtaloro.description" },
   { id: "penguin", title: "Penguin", group: "work", image: penguinLogo, imageAlt: "Logo Penguin", imageTreatment: "brand", categories: ["UI/UX Design", "Front-End Project"], link: "/projects/penguin", copy: "portfolio.projects.penguin.description" },
+  { id: "crowdit", title: "CrowdIT", group: "work", image: crowditLogo, imageAlt: "Logo CrowdIT", imageTreatment: "brand", categories: ["UI/UX Design", "Front-End Project"], link: "/projects/crowdit", copy: "portfolio.projects.crowdit.description" },
   { id: "study", title: "Study Ward", group: "university", image: "./Img/Group 2.png", categories: ["UI/UX Design"], link: "/projects/study", copy: "portfolio.projects.study.description" },
   { id: "opla", title: "Oplà", group: "university", image: "./Img/opmobile.png", categories: ["UI/UX Design"], link: "/projects/opla", copy: "portfolio.projects.opla.description" },
   { id: "serenity", title: "Serenity Dream Travels", group: "university", image: "./Img/heroimg.png", categories: ["UI/UX Design", "Front-End Project"], link: "/projects/serenity", copy: "portfolio.projects.serenity.description" },
