@@ -42,7 +42,11 @@ export default function AboutSection() {
           >
             <p className="editorial-lead" dangerouslySetInnerHTML={{ __html: t("about.bio1") }} />
             <p dangerouslySetInnerHTML={{ __html: t("about.bio2") }} />
-            <a href={lang === "it" ? "./Feliziani_Andrea_CV.pdf" : "./Feliziani_Andrea.pdf"} download className="editorial-inline-link">
+            <a
+              href={lang === "it" ? `${import.meta.env.BASE_URL}Feliziani_Andrea_CV.pdf` : `${import.meta.env.BASE_URL}Andrea_Feliziani_CV.pdf`}
+              download={lang === "it" ? "Feliziani_Andrea_CV.pdf" : "Andrea_Feliziani_CV_EN.pdf"}
+              className="editorial-inline-link"
+            >
               <span>{t("about.downloadCv")}</span>
               <FaDownload aria-hidden="true" />
             </a>
