@@ -90,7 +90,7 @@ export default function HeroSection() {
           {/* ── Center/Back: HUGE Name Text ── */}
           <motion.div
             style={{ y: yText }}
-            className="absolute top-[5%] lg:top-[12%] left-0 w-full flex justify-center lg:justify-start z-0 select-none pointer-events-none"
+            className="hero-name-backdrop absolute top-[5%] lg:top-[12%] left-0 w-full flex justify-center lg:justify-start z-0 select-none pointer-events-none"
             initial={{ opacity: 0, scale: 0.9, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}

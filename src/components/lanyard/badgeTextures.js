@@ -84,9 +84,15 @@ export async function createBadgeTextures() {
   strap.context.fillStyle = ACCENT;
   strap.context.fillRect(652, 64, 6, 66);
 
+  const mobileStrap = surface(768, 192, INK);
+  text(mobileStrap.context, 'DESIGN & CODE', 42, 111, 42, 800, PAPER);
+  mobileStrap.context.fillStyle = ACCENT;
+  mobileStrap.context.fillRect(652, 64, 6, 66);
+
   return {
     front: front.canvas.toDataURL('image/webp', 0.92),
     back: back.canvas.toDataURL('image/webp', 0.92),
     strap: strap.canvas.toDataURL('image/png'),
+    mobileStrap: mobileStrap.canvas.toDataURL('image/png'),
   };
 }

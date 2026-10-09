@@ -21,10 +21,18 @@ export default function HeroLanyard() {
   const reducedMotion = useReducedMotion();
   const actionsRef = useRef(null);
   const stageRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(() => window.matchMedia('(max-width: 767px)').matches);
   const [sceneHost, setSceneHost] = useState(null);
   const [textures, setTextures] = useState(null);
   const [ready, setReady] = useState(false);
   const [unavailable, setUnavailable] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia('(max-width: 767px)');
+    const update = () => setIsMobile(query.matches);
+    query.addEventListener('change', update);
+    return () => query.removeEventListener('change', update);
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -75,11 +83,11 @@ export default function HeroLanyard() {
               <Lanyard
                 frontImage={textures.front}
                 backImage={textures.back}
-                strapImage={textures.strap}
+                strapImage={isMobile ? textures.mobileStrap : textures.strap}
                 cardColor="#f2ede6"
                 strapColor="#1a1510"
-                size={0.68}
-                strapLength={0.2}
+                size={isMobile ? 0.78 : 0.68}
+                strapLength={isMobile ? 0.1 : 0.2}
                 cornerRadius={0.35}
                 strapWidth={0.65}
                 finish="glossy"

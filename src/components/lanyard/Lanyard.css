@@ -63,6 +63,13 @@
   .hero-lanyard-stage { height: 520px; }
 }
 
-@media (max-width: 640px) {
-  .hero-lanyard-stage { height: 440px; }
+@media (max-width: 767px) {
+  .hero-section { padding-top: 5rem; }
+  .hero-name-backdrop { display: none; }
+  .hero-lanyard-column { order: -1; margin-top: 0; }
+  .hero-lanyard { position: relative; --mobile-lanyard-height: clamp(330px, 88vw, 380px); }
+  .hero-lanyard-stage { height: var(--mobile-lanyard-height); }
+  .hero-lanyard-fallback > img,
+  .hero-lanyard-fallback-card { height: 78%; top: 15%; }
+  .hero-lanyard-fallback-strap { height: calc(100vh + 15%); }
 }
