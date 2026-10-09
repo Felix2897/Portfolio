@@ -85,11 +85,11 @@ export default {
     title: "Portfolio",
     filterAll: "Tutti",
     filterWork: "Lavorativi",
-    filterUniversity: "Universitari",
+    filterUniversity: "Universitari e personali",
     filterDesign: "UI/UX Design",
     filterFrontend: "Front-end",
     groupWork: "Progetti lavorativi",
-    groupUniversity: "Progetti universitari",
+    groupUniversity: "Progetti universitari e personali",
     viewProject: "Visualizza",
     docNote:
       "Documentazione disponibile solo in italiano — versione inglese in sviluppo",

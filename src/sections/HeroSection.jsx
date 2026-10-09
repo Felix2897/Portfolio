@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import { FaMapMarkerAlt, FaArrowRight, FaDownload } from "react-icons/fa";
 import SocialLinks from "../components/SocialLinks";
+import HeroLanyard from "../components/HeroLanyard";
 import { useLanguage } from "../i18n/LanguageContext";
 import {
   motion,
@@ -72,7 +73,6 @@ export default function HeroSection() {
 
   // Parallax effects
   const yText = useTransform(scrollY, [0, 500], [0, 80]);
-  const yImage = useTransform(scrollY, [0, 500], [0, -40]);
   const opacityScroll = useTransform(scrollY, [0, 200], [1, 0]);
 
   return (
@@ -204,28 +204,9 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* ── Right: Portrait ── */}
-          <div className="hidden lg:flex w-full lg:w-[45%] relative mt-20 lg:mt-0 justify-center z-10 min-h-125 lg:min-h-175">
-            <motion.div
-              style={{ y: yImage }}
-              initial={{ opacity: 0, scale: 0.85, filter: "blur(12px)" }}
-              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-              transition={{ duration: 1.4, delay: 0.1, ease: "easeOut" }}
-              className="relative w-full max-w-140 flex items-end justify-center"
-            >
-              <div className="hero-portrait-glow" aria-hidden="true" />
-
-              <div className="hero-portrait-stage">
-                <div className="hero-portrait-rim" aria-hidden="true" />
-                <div className="relative w-full rounded-4xl overflow-hidden border border-(--color-border)/40 shadow-[0_28px_72px_rgba(0,0,0,0.4)] z-10 transform translate-y-[2%]">
-                  <img
-                    src="./assets/images/Andrea.jpeg"
-                    alt="Andrea Feliziani"
-                    className="w-full aspect-4/5 object-cover object-top origin-top scale-[1.03] transform-gpu hover:scale-[1.08] transition-transform duration-700"
-                  />
-                </div>
-              </div>
-            </motion.div>
+          {/* Interactive portrait badge, adapted from React Bits Lanyard. */}
+          <div className="hero-lanyard-column">
+            <HeroLanyard />
           </div>
         </div>
       </div>
