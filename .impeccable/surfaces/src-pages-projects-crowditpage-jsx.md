@@ -48,3 +48,9 @@ The current Italian title is “L’applicazione che accompagna le persone duran
 The desktop hero grid now uses .7fr/1.3fr columns, `clamp(1.5rem, 2.5vw, 3rem)` gap and 8rem/3rem vertical padding. Image height is capped at `calc(100vh - 11rem)`; the hero retains 100vh. These are local surface refinements, not global token changes.
 
 Build and diff checks pass. Fresh reviewer disposition: ship with no material fixes within the covered scope. `.impeccable/review/crowdit-revision/hero-copy-mobile.png` records the actual 579×876 default browser viewport despite its filename. Viewport operations timed out, so this pass produced no new desktop or 390px capture; earlier captures do not verify this final hero revision at those widths. Global design documentation and sidecar remain unchanged.
+
+## Latest portfolio and stack update
+
+User confirms GitHub version control and CI/CD for every professional project; both localized technical tool lists now reflect this. The portfolio preview uses the original logo, with an ordinary-weight App mobile tag and filter. This is a narrow content/component extension; incumbent page identity and global tokens remain unchanged.
+
+Latest user correction supersedes the phone-preview amendment: the portfolio entry again uses its original logo and containment, while the mobile filter and ordinary-weight tag remain.

@@ -16,6 +16,7 @@ import WhattaflowPage from "./pages/projects/WhattaflowPage";
 import BimTaloroPage from "./pages/projects/BimTaloroPage";
 import CrowditPage from "./pages/projects/CrowditPage";
 import PenguinPage from "./pages/projects/PenguinPage";
+import AriannePage from "./pages/projects/AriannePage";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -81,6 +82,7 @@ export default function App() {
             <Route path="/projects/bim-taloro" element={<BimTaloroPage />} />
             <Route path="/projects/crowdit" element={<CrowditPage />} />
             <Route path="/projects/penguin" element={<PenguinPage />} />
+            <Route path="/projects/arianne" element={<AriannePage />} />
           </Routes>
 
           <Footer />

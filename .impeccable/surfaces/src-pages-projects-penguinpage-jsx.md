@@ -28,3 +28,9 @@ Constraints: Italian/English, both themes, mobile, keyboard, real supplied asset
 ## Finish evidence
 
 Revised at the user’s request on 2026-10-01. Scroll sampling confirmed opacity 0 / 48px before entry, intermediate opacity 0.20 / 38px during entry, and opacity 1 / no transform after settling. All sections revealed on desktop and mobile. Captions are block on desktop, none on mobile; desktop captions now centre under each screenshot pair. The repeated "La scelta UX" / "The UX decision" labels were removed so the reasoning reads naturally below a divider. No Safety Plan content, horizontal overflow or browser warnings/errors. Penguin logo containment and exact centring verified at 320, 390 and 1440px; BIM Taloro preview corrected to contain its artwork at 1920px as well. Build passed. Desktop/mobile and portfolio captures saved in .impeccable/review/penguin/. Inline finish review substituted for unavailable independent reviewer; disposition: ship. Existing global design documentation drift remains outside this edit; global tokens remain unchanged. Intentional local typography: mobile hero clamp(2.35rem, 9.8vw, 3.5rem), chatbot subtitle clamp(1.4rem, 2vw, 2rem).
+
+## Latest portfolio and stack update
+
+User confirms GitHub version control and CI/CD for every professional project; both localized technical tool lists now reflect this. The portfolio preview uses the original logo, with an ordinary-weight App mobile tag and filter. This is a narrow content/component extension; incumbent page identity and global tokens remain unchanged.
+
+Latest user correction supersedes the phone-preview amendment: the portfolio entry again uses its original logo and containment, while the mobile filter and ordinary-weight tag remain.

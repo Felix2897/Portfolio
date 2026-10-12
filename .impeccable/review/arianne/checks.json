@@ -1,0 +1,62 @@
+[
+  {
+    "name": "desktop",
+    "width": 1440,
+    "lang": "it",
+    "theme": "light",
+    "errors": [],
+    "overflows": [],
+    "title": "Arianne — Andrea Feliziani",
+    "h1": [
+      "One shared journey.Two experiences to design."
+    ]
+  },
+  {
+    "name": "mobile",
+    "width": 390,
+    "lang": "it",
+    "theme": "dark",
+    "errors": [],
+    "overflows": [],
+    "title": "Arianne — Andrea Feliziani",
+    "h1": [
+      "Un percorso condiviso.Due esperienze da progettare."
+    ]
+  },
+  {
+    "name": "tablet-en",
+    "width": 768,
+    "lang": "en",
+    "theme": "light",
+    "errors": [],
+    "overflows": [],
+    "title": "Arianne — Andrea Feliziani",
+    "h1": [
+      "One shared journey.Two experiences to design."
+    ]
+  },
+  {
+    "name": "desktop-en-dark",
+    "width": 1440,
+    "lang": "en",
+    "theme": "dark",
+    "errors": [],
+    "overflows": [],
+    "title": "Arianne — Andrea Feliziani",
+    "h1": [
+      "One shared journey.Two experiences to design."
+    ]
+  },
+  {
+    "name": "mobile-en-light",
+    "width": 390,
+    "lang": "en",
+    "theme": "light",
+    "errors": [],
+    "overflows": [],
+    "title": "Arianne — Andrea Feliziani",
+    "h1": [
+      "One shared journey.Two experiences to design."
+    ]
+  }
+]

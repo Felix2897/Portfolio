@@ -88,6 +88,7 @@ export default {
     filterUniversity: "Universitari e personali",
     filterDesign: "UI/UX Design",
     filterFrontend: "Front-end",
+    filterMobile: "App mobile",
     groupWork: "Progetti lavorativi",
     groupUniversity: "Progetti universitari e personali",
     viewProject: "Visualizza",
@@ -99,6 +100,9 @@ export default {
       },
       bimtaloro: {
         description: "Un’app per scoprire borghi, esperienze e comunità dell’entroterra sardo.",
+      },
+      arianne: {
+        description: "Due ambienti per un percorso terapeutico condiviso: contributo UI/UX e frontend in un progetto di squadra.",
       },
       penguin: {
         description: "Il percorso terapeutico nella quotidianità: UX/UI e sviluppo mobile per lo spazio del paziente.",

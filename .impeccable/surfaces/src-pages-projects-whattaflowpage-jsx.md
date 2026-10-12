@@ -26,3 +26,7 @@ FORM: User requested a simple hero with animated circles, later clarified that b
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 
 Constraints: bilingual copy, light and dark themes, responsive layouts, visible focus, reduced-motion fallback, real assets only, no invented test statistics or business claims.
+
+## Latest portfolio and stack update
+
+User confirms GitHub version control and CI/CD for every professional project; both localized technical tool lists now reflect this. This is a narrow content/component extension; incumbent page identity and global tokens remain unchanged.

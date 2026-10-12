@@ -98,6 +98,7 @@ const copy = {
       ["React Native + Expo", "App iOS e Android"],
       ["NativeWind", "Stili e componenti"],
       ["Supabase", "Backend, dati e media"],
+      ["GitHub + CI/CD", "Versionamento del codice e pipeline CI/CD per integrazione e rilascio"],
     ],
     altHero:
       "Due schermate dell’app BIM Taloro su smartphone: dettaglio di Desulo e home con i borghi",
@@ -197,6 +198,7 @@ const copy = {
       ["React Native + Expo", "iOS and Android app"],
       ["NativeWind", "Styling and components"],
       ["Supabase", "Backend, data and media"],
+      ["GitHub + CI/CD", "Code version control and CI/CD pipelines for integration and releases"],
     ],
     altHero:
       "Two BIM Taloro app screens on phones: Desulo details and a home screen of villages",

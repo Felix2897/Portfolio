@@ -87,6 +87,7 @@ export default {
     filterUniversity: "University and personal",
     filterDesign: "UI/UX Design",
     filterFrontend: "Front-end",
+    filterMobile: "Mobile apps",
     groupWork: "Professional projects",
     groupUniversity: "University and personal projects",
     viewProject: "View",
@@ -98,6 +99,9 @@ export default {
       },
       bimtaloro: {
         description: "A mobile app to explore the villages, experiences and communities of inland Sardinia.",
+      },
+      arianne: {
+        description: "Two spaces for a shared therapeutic journey: a UI/UX and front-end contribution within a team.",
       },
       penguin: {
         description: "A therapeutic journey in everyday life: UX/UI and mobile development for the patient’s space.",

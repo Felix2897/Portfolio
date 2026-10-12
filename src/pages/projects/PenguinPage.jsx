@@ -60,6 +60,7 @@ const copy = {
       ["Supabase", "Servizi backend e dati"],
       ["TanStack Query + tRPC", "Recupero dati dai servizi condivisi"],
       ["WebView", "Integrazione della chat"],
+      ["GitHub + CI/CD", "Versionamento del codice e pipeline CI/CD per integrazione e rilascio"],
     ],
     codeChoices: [
       ["Componenti coerenti", "Campi, scelte e azioni seguono una grammatica comune, anche quando il contenuto del diario cambia."],
@@ -130,6 +131,7 @@ const copy = {
       ["Supabase", "Backend services and data"],
       ["TanStack Query + tRPC", "Fetching data from shared services"],
       ["WebView", "Chat integration"],
+      ["GitHub + CI/CD", "Code version control and CI/CD pipelines for integration and releases"],
     ],
     codeChoices: [
       ["Consistent components", "Fields, choices and actions follow a shared grammar even when diary content changes."],
