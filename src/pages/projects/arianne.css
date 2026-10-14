@@ -1,7 +1,8 @@
-.ar-logo { display: block; width: min(14rem, 58vw); height: auto; margin-bottom: 2rem; }
+.ar-logo { display: block; width: min(14rem, 58vw); height: auto; }
 .ar-case p strong { color: var(--wf-ink); font-weight: 700; }
 .ar-case .wf-hero-layout { grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr); gap: clamp(2rem, 4vw, 5rem); }
 .ar-case .wf-hero-content h1 { max-width: 16ch; }
+.ar-hero-visual { display: grid; justify-items: end; gap: 2rem; min-width: 0; }
 .ar-hero-image { width: 100%; }
 .ar-case .wf-hero-description { max-width: 44ch; }
 .ar-case .wf-section h2 { max-width: 19ch; }
@@ -18,6 +19,8 @@
 .ar-case .ar-decision-copy h3 { font-size: clamp(2rem, 3vw, 3.2rem); max-width: 20ch; }
 .ar-case .ar-decision-copy p { max-width: 54ch; font-size: 1rem; }
 .ar-case figcaption { margin-top: 0.65rem; color: var(--wf-muted); font: 400 0.875rem/1.4 var(--font-sans); text-align: center; text-transform: none; letter-spacing: normal; }
+/* These mockups have an off-centre stand and transparent space below its base. */
+.ar-case .ar-screen-figure figcaption, .ar-case .ar-chat figcaption, .ar-case .ar-site figcaption { width: 89.2%; margin-left: 10.8%; margin-top: calc(0.65rem - 2.1%); }
 .ar-dashboard { max-width: 580px; justify-self: center; }
 .ar-screen-controls { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--wf-line); }
 .ar-screen-controls button { min-height: 44px; margin-bottom: -1px; padding: 0.65rem 0.1rem; border-bottom: 2px solid transparent; color: var(--wf-muted); font: 500 0.85rem/1.4 var(--font-sans); cursor: pointer; transition: color 0.2s ease, border-color 0.2s ease; }
@@ -42,8 +45,7 @@
 .editorial-home .editorial-project-row:hover .editorial-project-preview.editorial-project-preview--arianne img { transform: none; }
 @media (max-width: 950px) {
   .ar-case .wf-hero-layout { grid-template-columns: 1fr; gap: 3rem; }
-  .ar-logo { margin-inline: auto; }
-  .ar-hero-image { max-width: 850px; margin-inline: auto; }
+  .ar-hero-visual { width: 100%; max-width: 850px; margin-inline: auto; }
   .ar-case .ar-experience, .ar-case .ar-experience.wf-experience-reverse { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2.5rem; }
 }
 @media (min-width: 701px) and (max-width: 950px) {
@@ -57,7 +59,7 @@
   .ar-case .wf-section h2 { font-size: clamp(2.35rem, 9vw, 3.5rem); }
   .ar-case .wf-hero-content h1 { font-size: clamp(2.35rem, 9.6vw, 3.5rem); }
   .ar-case .wf-hero-layout { gap: 2rem; }
-  .ar-logo { margin-bottom: 1.5rem; }
+  .ar-hero-visual { gap: 1.5rem; }
   .ar-releases { margin-top: 3rem; }
   .ar-screen-controls { gap: 0.25rem 1rem; }
 }

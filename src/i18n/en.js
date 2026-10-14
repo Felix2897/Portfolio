@@ -101,7 +101,7 @@ export default {
         description: "A mobile app to explore the villages, experiences and communities of inland Sardinia.",
       },
       arianne: {
-        description: "Two spaces for a shared therapeutic journey: a UI/UX and front-end contribution within a team.",
+        description: "Two spaces for a shared therapeutic journey: a UI/UX and front-end contribution.",
       },
       penguin: {
         description: "A therapeutic journey in everyday life: UX/UI and mobile development for the patient’s space.",

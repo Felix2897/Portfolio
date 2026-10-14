@@ -102,7 +102,7 @@ export default {
         description: "Un’app per scoprire borghi, esperienze e comunità dell’entroterra sardo.",
       },
       arianne: {
-        description: "Due ambienti per un percorso terapeutico condiviso: contributo UI/UX e frontend in un progetto di squadra.",
+        description: "Due ambienti per un percorso terapeutico condiviso: contributo UI/UX e frontend.",
       },
       penguin: {
         description: "Il percorso terapeutico nella quotidianità: UX/UI e sviluppo mobile per lo spazio del paziente.",

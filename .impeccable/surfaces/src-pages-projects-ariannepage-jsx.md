@@ -56,3 +56,5 @@ Browser samples at 1440px and 390px demonstrate opacity0/y48 before viewport, in
 Final motion/restoration review: ship, no material findings. Documentation preserves global system files; task-local Penguin/CrowdIT preview descriptions were reconciled with restored logos.
 
 Latest user correction: the Arianne page hero uses one original white logo in both themes. This overrides theme-dependent color for the hero only; the portfolio entry retains its orange/light and white/dark variants. Existing entrance motion is preserved. Build and source checks pass.
+
+Latest hero trial supersedes the white-logo correction: the user requests the Arianne primary orange (#FF8C42) wordmark in the right column, above the existing desktop/tablet mockup. Their follow-up aligns its right edge with the rightmost monitor. The hero groups the orange logo and mockup together, with a 2rem gap on desktop and 1.5rem on mobile. At narrow widths the visual group follows the introduction. Existing entrance motion and reduced-motion handling are preserved. Production build, layout scan, light/dark desktop inspection and 390px mobile inspection pass; no horizontal overflow.

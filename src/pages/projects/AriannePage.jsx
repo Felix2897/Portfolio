@@ -3,7 +3,7 @@ import { FaArrowDown, FaArrowLeft, FaArrowUpRightFromSquare } from "react-icons/
 import { motion, useReducedMotion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../i18n/LanguageContext";
-import logo from "../../../assets/arianne/logo.svg";
+import logo from "../../../assets/arianne/logo-orange.svg";
 import solution from "../../../assets/arianne/soluction.png";
 import home from "../../../assets/arianne/home.png";
 import diaries from "../../../assets/arianne/diaries.png";
@@ -203,7 +203,6 @@ export default function AriannePage() {
       <section className="wf-hero ar-hero" aria-labelledby="ar-title">
         <div className="wf-hero-layout">
           <div className="wf-hero-content">
-            <motion.img className="ar-logo" src={logo} alt="Arianne" width="862" height="182" {...enter()} />
             <motion.h1 id="ar-title" {...enter(0.1)}><span>{c.title}</span><em>{c.emphasis}</em></motion.h1>
             <motion.p className="wf-hero-description" {...enter(0.2)}>{emphasize(c.hero)}</motion.p>
             <motion.a className="wf-hero-action" href="#ar-context" {...enter(0.3)} onClick={(event) => {
@@ -211,10 +210,13 @@ export default function AriannePage() {
               document.getElementById("ar-context")?.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
             }}>{c.discover}<FaArrowDown aria-hidden="true" /></motion.a>
           </div>
-          <motion.figure className="ar-hero-image" initial={reduceMotion ? false : { opacity: 0, y: 40, scale: 0.96 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: reduceMotion ? 0 : 0.9, delay: reduceMotion ? 0 : 0.16, ease: motionEase }}>
-            <img src={solution} alt={c.solutionAlt} width="1745" height="944" fetchPriority="high" />
-          </motion.figure>
+          <div className="ar-hero-visual">
+            <motion.img className="ar-logo" src={logo} alt="Arianne" width="862" height="182" {...enter()} />
+            <motion.figure className="ar-hero-image" initial={reduceMotion ? false : { opacity: 0, y: 40, scale: 0.96 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: reduceMotion ? 0 : 0.9, delay: reduceMotion ? 0 : 0.16, ease: motionEase }}>
+              <img src={solution} alt={c.solutionAlt} width="1745" height="944" fetchPriority="high" />
+            </motion.figure>
+          </div>
         </div>
       </section>
       <div className="wf-shell">
