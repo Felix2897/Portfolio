@@ -20,9 +20,9 @@ export default function EducationSection() {
   ];
 
   const items = [
-    { period: "2012 — 2017", title: t("education.diploma.title"), subtitle: t("education.diploma.subtitle"), text: t("education.diploma.text") },
-    { period: "2018 — 2021", title: t("education.bachelors.title"), subtitle: t("education.bachelors.subtitle"), text: t("education.bachelors.text") },
     { period: "2022 — 2024", title: t("education.masters.title"), subtitle: t("education.masters.subtitle"), text: t("education.masters.text") },
+    { period: "2018 — 2021", title: t("education.bachelors.title"), subtitle: t("education.bachelors.subtitle"), text: t("education.bachelors.text") },
+    { period: "2012 — 2017", title: t("education.diploma.title"), subtitle: t("education.diploma.subtitle"), text: t("education.diploma.text") },
   ];
 
   return (

@@ -47,7 +47,7 @@ export default {
       company: "Aton IT",
       location: "Milan",
       role: "UI/UX Designer · Front-end & Mobile Developer",
-      period: "Jan 2025 — Present",
+      period: "Jul 2024 — Present",
     },
     previous: {
       company: "IBS",

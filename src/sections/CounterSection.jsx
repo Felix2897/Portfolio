@@ -26,9 +26,14 @@ export default function CounterSection() {
   const [started, setStarted] = useState(false);
   const { t } = useLanguage();
 
+  const itStartDate = new Date(2024, 5, 1); // June 2024
+  const now = new Date();
+  const itYears = Math.floor((now - itStartDate) / (1000 * 60 * 60 * 24 * 365.25));
+  const experienceValue = itYears + 1;
+
   const counters = [
     { label: t("counters.company"), value: "Aton IT", text: true },
-    { label: t("counters.experience"), value: 2, suffix: "+" },
+    { label: t("counters.experience"), value: experienceValue, suffix: "+" },
     { label: t("counters.certifications"), value: 11 },
   ];
 
